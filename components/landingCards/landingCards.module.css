@@ -1,0 +1,53 @@
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.cardContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.innerCardContainer {
+  position: relative;
+  top: 200px;
+  height: 100vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: visible;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.innerCardContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  margin-bottom: 50px;
+  height: 300px;
+  width: auto;
+  min-height: 250px;
+  min-width: 250px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.5s; /* Animation */
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s; /* Animation */
+}
+
+.emptyDiv {
+  height: 100px;
+  width: 100px;
+}

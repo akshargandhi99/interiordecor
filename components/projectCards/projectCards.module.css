@@ -1,0 +1,109 @@
+.projectImageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+}
+
+.projectTitle {
+  color: rgba(0, 0, 0, 1);
+  width: 300px;
+  text-wrap: wrap;
+}
+
+.projectDescription {
+  position: absolute;
+  color: rgba(132, 130, 130, 1);
+  font-family: "Century Gothic", "Arial";
+  width: 300px;
+  text-wrap: wrap;
+  overflow-y: visible;
+  top: 92%;
+  left: 0%;
+}
+.glassDescription {
+  position: absolute;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  opacity: 0; /* Initially hidden */
+  top: 55%;
+  left: 0%;
+  z-index: 1;
+  /* transform: translate(-1px, 15px); */
+  color: rgba(255, 255, 255, 1);
+  font-weight: 300;
+  background: rgba(0, 0, 0, 0.35); /* Transparent background */
+
+  backdrop-filter: blur(10px); /* Apply blur */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  color: #fff;
+  width: 260px;
+  text-wrap: wrap;
+  height: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.glassDescription:hover {
+  opacity: 1;
+  display: flex;
+  /* transition: transform 0.4s ease-in-out; */
+}
+
+.gridContainer {
+  position: relative;
+  top: 200px;
+  height: 100vh;
+  width: auto;
+  display: grid;
+  column-gap: 20px;
+  row-gap: 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  overflow-y: visible;
+}
+
+.gridContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.projectImage {
+  height: 300px;
+  width: 300px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+.projectImage:hover ~ .glassDescription {
+  opacity: 1;
+  /* display: flex; */
+}
+/* .projectImage:hover ~ .projectTitle,
+.projectDescription {
+  position: relative;
+  top: -19%;
+  left: 0%;
+} */
+
+.emptyDiv {
+  height: 100px;
+  width: 100px;
+}
+
+/* Less than 1100px */
+@media (max-width: 1100px) {
+  .gridContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
+}
