@@ -1,4 +1,5 @@
 import Image from "next/image";
+import NavBar from "../navbar/navbar";
 import styles from "./landingCards.module.css";
 import card1 from "@/public/landingCards/Blissful Blues.webp";
 import card2 from "@/public/landingCards/Chasing Red.webp";
@@ -10,6 +11,7 @@ import card6 from "@/public/landingCards/Refining Classics.webp";
 const LandingCard = () => {
   return (
     <div className={styles.cardContainer}>
+      <NavBar />
       <div className={styles.innerCardContainer}>
         <div className={styles.emptyDiv} />
         <div className={styles.emptyDiv} />

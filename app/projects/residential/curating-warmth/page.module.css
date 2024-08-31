@@ -1,0 +1,147 @@
+.fullContainer {
+  /* background-image: linear-gradient(
+    rgba(255, 255, 255, 1),
+    rgba(223, 219, 233, 1)
+  ); */
+  /* Overrides main background image */
+  background-position: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+.topContainer {
+  position: fixed;
+  top: 130px;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.topContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.bodyContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.breadCrumbMenu {
+  margin-top: 50px;
+  font-size: 12px;
+}
+
+.breadCrumbLink {
+  color: black;
+  text-decoration: none;
+}
+
+.breadCrumbArrow {
+  font-size: 6px;
+  color: rgba(217, 217, 217, 1);
+  vertical-align: middle;
+}
+
+.active {
+  color: rgba(126, 53, 19, 1);
+}
+
+.mainHeader {
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 1px;
+  text-align: left;
+
+  color: black;
+}
+
+.mainContainer {
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-x: auto;
+
+  margin-right: 50px;
+  width: 35vw;
+}
+
+.location {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.locationText {
+  font-size: 14px;
+  line-height: 20px;
+  color: (0, 0, 0, 0.8);
+}
+
+.paragraph {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
+  text-align: justify;
+  color: rgba(132, 128, 119, 1);
+  font-family: "Century Gothic";
+}
+
+.subHeader {
+  margin-top: 40px;
+  font-size: 16px;
+}
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 1fr 1.5fr 1fr 1.5fr;
+  gap: 10px;
+  width: 50vw;
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+
+.gridImage1,
+.gridImage2,
+.gridImage3,
+.gridImage4,
+.gridImage5,
+.gridImage6 {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.gridImage1 {
+  grid-column: span 6;
+  grid-row: span 1;
+}
+.gridImage2 {
+  grid-column: span 4;
+  grid-row: span 1;
+}
+
+.gridImage3 {
+  grid-column: span 10;
+  grid-row: span 1;
+}
+
+.gridImage4,
+.gridImage5 {
+  grid-column: span 5;
+  grid-row: span 1;
+}
+
+.gridImage6 {
+  grid-column: span 10;
+  grid-row: span 1;
+}
+
+.emptyDiv {
+  height: 100px;
+  width: 100px;
+}

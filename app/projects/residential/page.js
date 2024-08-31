@@ -1,19 +1,11 @@
+"use client";
 import styles from "./page.module.css";
-import ProjectCards from "@/components/projectCards/projectCards";
+import ResidentialProjectCards from "@/components/projectCards/residentialProjectCards";
 
 const Residential = () => {
   return (
     <div className={styles.projectContainer}>
-      {/* <div className={styles.emptyDiv} /> */}
-
-      <ProjectCards />
-
-      {/* <div className={styles.emptyDiv} />
-      <div className={styles.emptyDiv} />
-      <div className={styles.emptyDiv} />
-      <div className={styles.emptyDiv} />
-      <div className={styles.emptyDiv} />
-      <div className={styles.emptyDiv} /> */}
+      <ResidentialProjectCards />`
     </div>
   );
 };

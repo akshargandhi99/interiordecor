@@ -7,6 +7,7 @@
   overflow-y: scroll;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  user-select: none;
 }
 
 .cardContainer::-webkit-scrollbar {
@@ -24,6 +25,7 @@
   overflow-y: visible;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  user-select: none;
 }
 
 .innerCardContainer::-webkit-scrollbar {

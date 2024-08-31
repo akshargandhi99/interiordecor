@@ -1,0 +1,9 @@
+.projectContainer {
+  display: flex;
+  justify-content: center;
+  overflow-y: scroll;
+}
+
+.projectContainer::-webkit-scrollbar {
+  display: none;
+}

@@ -1,3 +1,4 @@
+"use client";
 import LandingCard from "@/components/landingCards/landingCards";
 import styles from "./page.module.css";
 

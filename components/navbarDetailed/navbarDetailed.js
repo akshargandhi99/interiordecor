@@ -1,48 +1,15 @@
 "use client";
+import styles from "./navbarDetailed.module.css"; // Keep only this constant when updating Navbar
 import Image from "next/image";
 import Link from "next/link";
 import { juliusSansOne } from "@/app/fonts";
-import styles from "./navbar.module.css";
-import { useState, useEffect, useRef } from "react";
-import { usePathname } from "next/navigation";
-import logo from "@/public/static/Logo.svg";
+import { StoreContext } from "@/store/store-context";
+import { useState, useEffect, useRef, useContext } from "react";
 
-const NavBar = () => {
+const NavBarDetailed = () => {
   const [projectsNav, setProjectsNav] = useState(false);
-
-  const pathname = usePathname();
-  console.log(pathname);
-  let navbarLayout = "";
-  let navbarUnderline = "";
-
-  switch (pathname) {
-    case "/":
-      navbarLayout = "big";
-      navbarUnderline = "main";
-      break;
-    case "/projects/residential":
-      navbarLayout = "big";
-      navbarUnderline = "projects";
-      break;
-    case "/projects/commercial":
-      navbarLayout = "big";
-      navbarUnderline = "projects";
-      break;
-    case "/projects/residential/curating-warmth":
-      navbarLayout = "small";
-      navbarUnderline = "projects";
-      break;
-    default:
-      navbarLayout = "small";
-      navbarUnderline = "main";
-      break;
-  }
-  // Adjust the styles as needed
-  const mainContainer =
-    navbarLayout === "small" ? styles.mainContainerSmall : styles.mainContainer;
-  const navbarItem =
-    navbarLayout === "small" ? styles.navbarItemSmall : styles.navbarItem;
-  const logoImage = navbarLayout === "small" ? styles.logoSmall : styles.logo;
+  const { state } = useContext(StoreContext);
+  const { navbarState } = state;
   // Handling outside click
   const subNavRef = useRef(null);
   const handleClickOutside = (event) => {
@@ -58,20 +25,23 @@ const NavBar = () => {
   }, []);
 
   return (
-    <nav className={mainContainer}>
+    <nav className={styles.mainContainer}>
       <Link href="/">
-        <Image src={logo} className={logoImage} alt="Logo" />
+        <Image src="/static/Logo.svg" alt="Logo" height="70" width="70" />
       </Link>
       <hr className={styles.horizontalLine} />
       <div className={styles.navbarItemContainer}>
-        <Link href="/" className={`${navbarItem} ${styles.navItemContainer}`}>
-          <span className={`${navbarItem} ${juliusSansOne.className}`}>
+        <Link
+          href="/"
+          className={`${styles.navbarItem} ${styles.navItemContainer}`}
+        >
+          <span className={`${styles.navbarItem} ${juliusSansOne.className}`}>
             SPATIAL DESIGN
           </span>
-          {navbarUnderline === "main" && <hr className={styles.selected} />}
+          {navbarState === "main" && <hr className={styles.selected} />}
         </Link>
 
-        <span className={`${navbarItem} ${juliusSansOne.className}`}>
+        <span className={`${styles.navbarItem} ${juliusSansOne.className}`}>
           ABOUT US
         </span>
 
@@ -79,13 +49,11 @@ const NavBar = () => {
           <div className={styles.navItemContainer}>
             <span
               onClick={() => setProjectsNav(!projectsNav)}
-              className={`${navbarItem} ${juliusSansOne.className}`}
+              className={`${styles.navbarItem} ${juliusSansOne.className}`}
             >
               PROJECTS
             </span>
-            {navbarUnderline === "projects" && (
-              <hr className={styles.selected} />
-            )}
+            {navbarState === "projects" && <hr className={styles.selected} />}
           </div>
           {projectsNav && (
             <div
@@ -116,7 +84,7 @@ const NavBar = () => {
             </div>
           )}
         </div>
-        <span className={`${navbarItem} ${juliusSansOne.className}`}>
+        <span className={`${styles.navbarItem} ${juliusSansOne.className}`}>
           CONTACT
         </span>
       </div>
@@ -124,4 +92,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default NavBarDetailed;

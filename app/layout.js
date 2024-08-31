@@ -1,9 +1,8 @@
-import { Inter } from "next/font/google";
-import NavBar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/footer";
 import "./globals.css";
 import styles from "./page.module.css";
 import Image from "next/image";
+import NavBar from "@/components/navbar/navbar";
 
 export const metadata = {
   title: "Avani Vaidya",
