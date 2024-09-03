@@ -9,12 +9,12 @@
   background-image: linear-gradient(#ffffff, #f5f4ef);
   z-index: 1000;
   user-select: none;
-  height: 175px;
+  height: 100px;
 }
 
 .logo {
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
 }
 
 .horizontalLine {
@@ -40,32 +40,29 @@
 }
 
 .selected {
-  width: 175px;
+  position: absolute;
+  top: 87px;
+  width: 100px;
   border-color: rgba(29, 29, 31, 1);
 }
 
 .navbarItem {
-  font-size: 20px;
+  font-size: 14px;
   text-transform: uppercase;
   text-decoration: none;
   color: #000000;
   cursor: pointer;
 }
 
-/* .navbarItem:hover {
-  text-decoration: underline;
-} */
-
-.projects {
-  text-decoration: underline;
-}
-
 .projectsSubNavContainer {
-  position: fixed;
-  display: flex;
+  position: absolute;
+  top: 93px;
+  display: none;
+  /* left: 0px; */
+
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-start;
   border-width: 1px;
   border-radius: 16px;
 
@@ -76,43 +73,27 @@
   background-color: rgba(255, 255, 255, 0.4);
   height: 150px;
   width: 138px;
-  transform: translateX(-15%);
+}
+
+/* .projects:hover {
+  text-decoration: underline;
+} */
+
+.projects:hover ~ .projectsSubNavContainer {
+  display: flex;
+}
+
+.projectsSubNavContainer:hover {
+  display: flex;
 }
 
 .subNavLinks {
   text-decoration: none;
   color: rgba(0, 0, 0, 1);
   font-size: 14px;
+  margin-left: 15px;
 }
 
 .subNavLinks:hover {
   text-decoration: underline;
-}
-
-/* Small Navbar for Detailed Pages */
-
-.mainContainerSmall {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-image: linear-gradient(#ffffff, #f5f4ef);
-  z-index: 1000;
-  user-select: none;
-  height: 130px;
-}
-.navbarItemSmall {
-  font-size: 14px;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #000000;
-  cursor: pointer;
-}
-
-.logoSmall {
-  height: 70px;
-  width: 70px;
 }

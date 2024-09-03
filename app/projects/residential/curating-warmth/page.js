@@ -1,4 +1,3 @@
-"use client";
 import styles from "./page.module.css";
 import { juliusSansOne } from "@/app/fonts";
 import Link from "next/link";
@@ -104,6 +103,28 @@ const CuratingWarmth = () => {
               and room layouts provide easy circulation, creating a harmonious
               flow that supports both daily activities and family interaction.
             </p>
+            {/* <div className={styles.pillContainer}> */}
+            <span
+              className={`${styles.pill} ${styles.nobreak} ${juliusSansOne.className}`}
+            >
+              Open-Plan Living
+            </span>
+            <span
+              className={`${styles.pill} ${styles.nobreak} ${juliusSansOne.className}`}
+            >
+              Minimalist Design
+            </span>
+            <span
+              className={`${styles.pill} ${styles.nobreak} ${juliusSansOne.className}`}
+            >
+              Natural Light Optimization
+            </span>
+            <span
+              className={`${styles.pill} ${styles.nobreak} ${juliusSansOne.className}`}
+            >
+              Adaptable Spaces
+            </span>
+            {/* </div> */}
             <div className={styles.emptyDiv} />
           </main>
           <div className={styles.imageGrid}>

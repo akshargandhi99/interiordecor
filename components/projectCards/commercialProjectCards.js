@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import card1 from "@/public/commercial/Clothing Boutique.webp";
@@ -18,7 +16,9 @@ const CommercialProjectCards = () => {
     "Tropical Cafe",
   ];
 
-  const cardDescriptions = ["Clothing Boutique", "Kitchen", "Tropical Cafe"];
+  const cardSubtitles = ["Clothing Boutique", "Kitchen", "Tropical Cafe"];
+
+  const cardDescriptions = [];
   const cardLinks = ["", "", ""];
   return (
     <div className={styles.gridContainer}>
@@ -33,19 +33,24 @@ const CommercialProjectCards = () => {
               />
             </Link>
 
-            <div className={styles.glassDescription}>
-              {cardDescriptions[key]}
-            </div>
-
-            <h2 className={`${styles.projectTitle} ${juliusSansOne.className}`}>
-              {cardTitles[key]}
-            </h2>
-            <p className={styles.projectDescription}>{cardDescriptions[key]}</p>
+            {cardDescriptions[key] !== null &&
+              cardDescriptions[key] !== undefined &&
+              cardDescriptions[key] !== "" && (
+                <div className={styles.glassDescription}>
+                  {cardDescriptions[key]}
+                </div>
+              )}
+            <Link href={cardLinks[key]} className={styles.projectLink}>
+              <h2
+                className={`${styles.projectTitle} ${juliusSansOne.className}`}
+              >
+                {cardTitles[key]}
+              </h2>
+            </Link>
+            <p className={styles.projectDescription}>{cardSubtitles[key]}</p>
           </div>
         );
       })}
-      <div className={styles.emptyDiv} />
-      <div className={styles.emptyDiv} />
       <div className={styles.emptyDiv} />
       <div className={styles.emptyDiv} />
       <div className={styles.emptyDiv} />

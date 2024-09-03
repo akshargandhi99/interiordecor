@@ -11,7 +11,7 @@
 
 .topContainer {
   position: fixed;
-  top: 130px;
+  top: 100px;
   flex-direction: column;
   width: 100vw;
   height: 100vh;
@@ -81,12 +81,33 @@
 }
 
 .paragraph {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 25px;
   text-align: justify;
   color: rgba(132, 128, 119, 1);
   font-family: "Century Gothic";
+}
+
+.pillContainer {
+  display: flex;
+  justify-content: space-evenly;
+  overflow: visible;
+}
+
+.pill {
+  font-size: 14px;
+  background: rgba(209, 187, 174, 0.5);
+  padding: 7px;
+  border-radius: 16px;
+  margin-right: 25px;
+  display: inline-block; /* Allows wrapping of each span individually */
+  white-space: normal; /* Allows the span to wrap to the next line */
+  margin-top: 10px;
+}
+
+.pill.nobreak {
+  white-space: nowrap; /* Prevents the phrase from breaking inside the span */
 }
 
 .subHeader {
@@ -98,7 +119,7 @@
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: 1fr 1.5fr 1fr 1.5fr;
   gap: 10px;
-  width: 50vw;
+  width: 35vw;
   margin-top: 100px;
   margin-bottom: 200px;
 }
@@ -142,6 +163,19 @@
 }
 
 .emptyDiv {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
+}
+
+/* Less than 1100px */
+@media (max-width: 1300px) {
+  .imageGrid {
+    width: 45vw;
+  }
+}
+
+@media (max-width: 1150px) {
+  .imageGrid {
+    width: 50vw;
+  }
 }
