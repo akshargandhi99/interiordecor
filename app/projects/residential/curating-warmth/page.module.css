@@ -100,7 +100,7 @@
   background: rgba(209, 187, 174, 0.5);
   padding: 7px;
   border-radius: 16px;
-  margin-right: 25px;
+  margin-right: 10px;
   display: inline-block; /* Allows wrapping of each span individually */
   white-space: normal; /* Allows the span to wrap to the next line */
   margin-top: 10px;

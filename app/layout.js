@@ -3,6 +3,7 @@ import "./globals.css";
 import styles from "./page.module.css";
 import Image from "next/image";
 import NavBar from "@/components/navbar/navbar";
+import StoreProvider from "@/store/store-context";
 
 export const metadata = {
   title: "Avani Vaidya",
@@ -15,7 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <NavBar />
-        {children}
+        <StoreProvider>{children}</StoreProvider>
         <Footer />
         <Image
           src="/static/Glass effect 1.webp"

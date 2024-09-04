@@ -1,0 +1,191 @@
+/* Expanded State */
+
+.expandedContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.marginBottom0 {
+  margin-bottom: 0px;
+}
+.marginBottom50 {
+  margin-bottom: 50px;
+}
+
+.innerFlexContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.resetCard {
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 5%;
+  margin-bottom: 10px;
+  font-family: "Century Gothic";
+  color: rgba(81, 77, 67, 1);
+}
+
+.pageCount {
+  margin-top: 15px;
+  margin-bottom: 50px;
+  align-self: center;
+}
+
+.innerExpandedContainer {
+  display: flex;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  width: 100%;
+}
+
+.justifySpaceBetween {
+  justify-content: space-between;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.innerExpandedContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.smallImage {
+  height: 150px;
+  width: 150px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.5s; /* Animation */
+}
+
+.smallImage:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s; /* Animation */
+}
+
+.smallImage:active {
+  transform: scale(0.95);
+  transition: transform 0.5s; /* Animation */
+}
+
+.expandedImage {
+  height: 400px;
+  width: 400px;
+  border-radius: 20px;
+  /* transition: height 1s ease-in; */
+}
+
+.firstTextContainer {
+  flex-direction: column;
+  align-items: flex-end;
+  /* margin-left: 70vw; */
+  margin-right: 25px;
+  align-self: center;
+  width: 100%;
+}
+
+.firstText {
+  text-align: right;
+  font-family: "Century Gothic";
+  width: 300px;
+  color: rgba(81, 77, 67, 1);
+}
+
+.firstTextHeader {
+  font-family: "Century Gothic";
+  text-align: end;
+  font-size: 24px;
+  color: rgba(81, 77, 67, 1);
+}
+
+.firstTextSubheader {
+  font-family: "Century Gothic";
+  text-align: right;
+  font-size: 25px;
+  color: rgba(81, 77, 67, 1);
+}
+
+.restOfText {
+  text-align: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: "Century Gothic";
+  min-width: 300px;
+  color: rgba(81, 77, 67, 1);
+  align-self: center;
+}
+
+.btnContainer {
+}
+
+.btnLink {
+  text-decoration: none;
+}
+
+.discoverMoreBtn {
+  background: linear-gradient(
+    to right,
+    rgba(21, 21, 21, 0.5),
+    rgba(21, 21, 21, 0.12)
+  );
+  color: white;
+  font-family: "Century Gothic";
+  border-radius: 5px;
+  padding: 10px 20px 10px 20px;
+  border: 1px;
+  letter-spacing: 1px;
+  width: 163px;
+  cursor: pointer;
+}
+
+.viewDetailsBtn {
+  background: linear-gradient(
+    152.97deg,
+    rgba(126, 53, 19, 0.3) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  color: rgba(108, 63, 53, 1);
+  font-family: "Century Gothic";
+  border-radius: 5px;
+  padding: 10px 20px 10px 20px;
+  border: 1px;
+  width: 163px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-left: 25px;
+}
+
+.noDisplay {
+  display: none;
+}
+
+.display {
+  display: flex;
+}
+
+.emptyDiv {
+  margin-right: 100px;
+}
+
+/* Less than 1200px */
+@media (max-width: 1200px) {
+  .expandedImage {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .expandedImage {
+    height: 250px;
+    width: 250px;
+  }
+}
