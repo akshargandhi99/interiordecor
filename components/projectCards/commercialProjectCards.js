@@ -18,7 +18,11 @@ const CommercialProjectCards = () => {
 
   const cardSubtitles = ["Clothing Boutique", "Kitchen", "Tropical Cafe"];
 
-  const cardDescriptions = [];
+  const cardDescriptions = [
+    "Earthy textures and minimalist design create a serene, curated shopping experience",
+    "A seamless blend of traditional grandeur and contemporary refinement, designed to evoke luxury and comfort.",
+    "A warm, light-filled haven where the natural beauty of the tropics enhances culinary experience in a serene environment.",
+  ];
   const cardLinks = ["", "", ""];
   return (
     <div className={styles.gridContainer}>

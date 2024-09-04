@@ -97,6 +97,26 @@
   margin-bottom: 50px;
 }
 
+.innerFlexContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.resetCard {
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 5%;
+  margin-bottom: 10px;
+  font-family: "Century Gothic";
+}
+
+.pageCount {
+  margin-top: 15px;
+  align-self: center;
+}
+
 .innerExpandedContainer {
   display: flex;
   overflow-x: scroll;
@@ -189,9 +209,10 @@
   color: white;
   font-family: "Century Gothic";
   border-radius: 5px;
-  padding: 7px;
+  padding: 20px 40px 20px 40px;
   border: 1px;
   letter-spacing: 1px;
+  width: 204px;
   cursor: pointer;
 }
 
@@ -203,8 +224,9 @@
   );
   font-family: "Century Gothic";
   border-radius: 5px;
-  padding: 7px;
+  padding: 20px 40px 20px 40px;
   border: 1px;
+  width: 204px;
   letter-spacing: 1px;
   cursor: pointer;
   margin-left: 25px;

@@ -28,6 +28,7 @@ const ResidentialProjectCards = () => {
     "Each corner sparks creativity, fostering an environment where children can grow and learn, with flexibility to adapt.",
     "This retreat is designed to be a haven where the family can gather for getaways, engage in farming activities, and reconnect with nature.",
     "The space is designed for a sophisticated couple that values a juxtaposition of a timeless neoclassical structure with modern furniture. ",
+    "A minimalistic monochromic home, blending simplicity, sophistication and elegance in every detail.",
   ];
 
   const cardSubtitles = [

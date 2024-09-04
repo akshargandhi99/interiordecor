@@ -13,13 +13,16 @@
 }
 
 .footerItems {
+  display: flex;
+  align-items: center;
   color: rgba(0, 0, 0, 1);
   cursor: pointer;
   font-size: 14px;
 }
 
 .plus {
-  font-size: 20px;
+  margin-left: 5px;
+  font-size: 25px;
 }
 
 .whatsapp {

@@ -81,12 +81,13 @@ const LandingCard = () => {
     };
   }, []);
 
-  const scrollMainCardToView = (refCard, refContainer) => {
+  const verticalScroll = (refCard) => {
     // First, scroll the card into view vertically
     refCard.current.scrollIntoView({ behavior: "smooth" });
+  };
 
-    // Delay the horizontal scroll to allow the vertical scroll to complete
-    setTimeout(() => {
+  const scrollMainCardToView = (refCard, refContainer, isImmediate) => {
+    const scrollMainCard = (refCard, refContainer) => {
       const container = refContainer.current;
       const image = refCard.current;
 
@@ -102,8 +103,19 @@ const LandingCard = () => {
         imageOffsetLeft + imageWidth / 2 - viewportWidth / 2;
 
       // Scroll the container to the calculated position
-      container.scrollLeft = scrollPosition;
-    }, 500); // Adjust the timeout duration as needed
+      container.scrollTo({
+        left: scrollPosition,
+        behavior: "smooth", // Smooth scroll
+      });
+    };
+    // Delay the horizontal scroll to allow the vertical scroll to complete
+    if (isImmediate) {
+      scrollMainCard(refCard, refContainer);
+    } else {
+      setTimeout(() => {
+        scrollMainCard(refCard, refContainer);
+      }, 400); // Adjust the timeout duration as needed
+    }
   };
 
   return (
@@ -127,102 +139,116 @@ const LandingCard = () => {
         {/* Curating Warmth Project */}
 
         <div className={`${styles.expandedContainer} ${marginBottom}`}>
-          <div
-            className={`${styles.innerExpandedContainer} ${justify}`}
-            ref={mainCardContainer}
-          >
-            <div className={`${styles.emptyDiv} ${display}`} />
-            <div className={`${styles.emptyDiv} ${display}`} />
-            <div className={`${styles.emptyDiv} ${display}`} />
-            <div className={`${styles.emptyDiv} ${display}`} />
-            <div className={`${styles.emptyDiv} ${display}`} />
-            <div className={`${styles.emptyDiv} ${display}`} />
+          <div className={styles.innerFlexContainer}>
+            <span
+              className={`${styles.resetCard} ${display}`}
+              onClick={() => {
+                scrollMainCardToView(mainCard, mainCardContainer, true);
+              }}
+            >
+              Reset
+            </span>
+            <div
+              className={`${styles.innerExpandedContainer} ${justify}`}
+              ref={mainCardContainer}
+            >
+              <div className={`${styles.emptyDiv} ${display}`} />
+              <div className={`${styles.emptyDiv} ${display}`} />
+              <div className={`${styles.emptyDiv} ${display}`} />
+              <div className={`${styles.emptyDiv} ${display}`} />
+              <div className={`${styles.emptyDiv} ${display}`} />
+              <div className={`${styles.emptyDiv} ${display}`} />
 
-            <div className={`${styles.firstTextContainer} ${display}`}>
-              <span
-                className={`${styles.firstTextHeader} ${styles.firstText} ${juliusSansOne.className} ${display}`}
-              >
-                Curating Warmth
-              </span>
-              <span
-                className={`${styles.firstTextSubheader} ${styles.firstText} ${juliusSansOne.className} ${display}`}
-              >
-                Dadar, Mumbai
-              </span>
-              <span
-                className={`${styles.firstTextSubheader} ${styles.firstText} ${juliusSansOne.className} ${display}`}
-              >
-                2023
-              </span>
-
-              <p className={`${styles.firstText} ${display}`}>
-                An inviting contemporary home for a family of four, with the
-                brief of creating open, communal spaces that promote family
-                togetherness.
-              </p>
-              <div className={`${styles.btnContainer} ${display}`}>
-                <Link
-                  href="/projects/residential"
-                  className={`${styles.btnLink} ${display}`}
+              <div className={`${styles.firstTextContainer} ${display}`}>
+                <span
+                  className={`${styles.firstTextHeader} ${styles.firstText} ${juliusSansOne.className} ${display}`}
                 >
+                  Curating Warmth
+                </span>
+                <span
+                  className={`${styles.firstTextSubheader} ${styles.firstText} ${juliusSansOne.className} ${display}`}
+                >
+                  Dadar, Mumbai
+                </span>
+                <span
+                  className={`${styles.firstTextSubheader} ${styles.firstText} ${juliusSansOne.className} ${display}`}
+                >
+                  2023
+                </span>
+
+                <p className={`${styles.firstText} ${display}`}>
+                  An inviting contemporary home for a family of four, with the
+                  brief of creating open, communal spaces that promote family
+                  togetherness.
+                </p>
+                <div className={`${styles.btnContainer} ${display}`}>
+                  <Link
+                    href="/projects/residential"
+                    className={`${styles.btnLink} ${display}`}
+                  >
+                    <button
+                      type="button"
+                      className={`${styles.discoverMoreBtn} ${display}`}
+                    >
+                      DISCOVER MORE
+                    </button>
+                  </Link>
                   <button
                     type="button"
-                    className={`${styles.discoverMoreBtn} ${display}`}
+                    className={`${styles.viewDetailsBtn} ${display}`}
                   >
-                    DISCOVER MORE
+                    VIEW DETAILS ⟶
                   </button>
-                </Link>
-                <button
-                  type="button"
-                  className={`${styles.viewDetailsBtn} ${display}`}
-                >
-                  VIEW DETAILS ⟶
-                </button>
+                </div>
               </div>
-            </div>
-            <Image
-              src={curatingWarmth1}
-              className={`${cardStyle} `}
-              alt="Curating Warmth Project Image 1"
-              onClick={() => {
-                setCardOpen(true);
-                scrollMainCardToView(mainCard, mainCardContainer);
-              }}
-              ref={mainCard}
-            />
+              <Image
+                src={curatingWarmth1}
+                className={`${cardStyle} `}
+                alt="Curating Warmth Project Image 1"
+                onClick={() => {
+                  setCardOpen(true);
+                  verticalScroll(mainCard);
+                  scrollMainCardToView(mainCard, mainCardContainer, false); // Don't scroll immediately, since we need time for the previous function to get the container into view first
+                }}
+                ref={mainCard}
+              />
 
-            <p className={`${styles.restOfText} ${display}`}>
-              The design emphasises on minimalism with uncluttered spaces,
-              ensuring fewer distractions and a peaceful environment.
-            </p>
-            <Image
-              src={curatingWarmth2}
-              className={`${styles.expandedImage} ${display}`}
-              alt="Curating Warmth Project Image 2"
-            />
-            <p className={`${styles.restOfText} ${display}`}>
-              The design emphasises on minimalism with uncluttered spaces,
-              ensuring fewer distractions and a peaceful environment.
-            </p>
-            <Image
-              src={curatingWarmth3}
-              className={`${styles.expandedImage} ${display}`}
-              alt="Curating Warmth Project Image 3"
-            />
-            <p className={`${styles.restOfText} ${display}`}>
-              The design emphasises on minimalism with uncluttered spaces,
-              ensuring fewer distractions and a peaceful environment.
-            </p>
-            <div className={`${styles.emptyDiv} ${display}`} />
-            <div className={`${styles.emptyDiv} ${display}`} />
-            <div className={`${styles.emptyDiv} ${display}`} />
-            <div className={`${styles.emptyDiv} ${display}`} />
+              <p className={`${styles.restOfText} ${display}`}>
+                The design emphasises on minimalism with uncluttered spaces,
+                ensuring fewer distractions and a peaceful environment.
+              </p>
+              <Image
+                src={curatingWarmth2}
+                className={`${styles.expandedImage} ${display}`}
+                alt="Curating Warmth Project Image 2"
+              />
+              <p className={`${styles.restOfText} ${display}`}>
+                The design emphasises on minimalism with uncluttered spaces,
+                ensuring fewer distractions and a peaceful environment.
+              </p>
+              <Image
+                src={curatingWarmth3}
+                className={`${styles.expandedImage} ${display}`}
+                alt="Curating Warmth Project Image 3"
+              />
+              <p className={`${styles.restOfText} ${display}`}>
+                The design emphasises on minimalism with uncluttered spaces,
+                ensuring fewer distractions and a peaceful environment.
+              </p>
+              <div className={`${styles.emptyDiv} ${display}`} />
+              <div className={`${styles.emptyDiv} ${display}`} />
+              <div className={`${styles.emptyDiv} ${display}`} />
+              <div className={`${styles.emptyDiv} ${display}`} />
+            </div>
+            <span
+              className={`${styles.pageCount} ${juliusSansOne.className} ${display}`}
+            >
+              {String(currentIndex).padStart(2, "0")}/
+              {String(totalImages).padStart(2, "0")}
+            </span>
           </div>
         </div>
-        <span>
-          {String(currentIndex).padStart(2, "0")}/
-          {String(totalImages).padStart(2, "0")}
-        </span>
+
         <Image src={card5} className={styles.card} alt="Project 5" />
         <Image src={card6} className={styles.card} alt="Project 6" />
         <div className={styles.emptyDiv} />
