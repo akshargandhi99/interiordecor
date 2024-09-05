@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import styles from "./landingCards.module.css";
 import ExpandedCard from "../expandedLandingCards/expandedLandingCards";
@@ -8,14 +7,6 @@ import { Fragment, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { ACTION_TYPES, StoreContext } from "@/store/store-context";
 import { useContext } from "react";
-
-// Overview Cards
-import card1 from "@/public/landingCards/Blissful Blues.webp";
-import card2 from "@/public/landingCards/Chasing Red.webp";
-import card3 from "@/public/landingCards/Crafting a Farmhouse.webp";
-import card4 from "@/public/landingCards/Curating Warmth.webp";
-import card5 from "@/public/landingCards/Monochromic.webp";
-import card6 from "@/public/landingCards/Refining Classics.webp";
 import { juliusSansOne } from "@/app/fonts";
 
 const LandingCard = () => {
@@ -59,7 +50,7 @@ const LandingCard = () => {
         <ExpandedCard projectName={"chasingRed"} />
         <ExpandedCard projectName={"craftingFarmhouse"} />
         <ExpandedCard projectName={"curatingWarmth"} />
-        <Image src={card5} className={styles.card} alt="Project 5" />
+        <ExpandedCard projectName={"monochromic"} />
         <ExpandedCard projectName={"refiningClassics"} />
 
         <div className={styles.emptyDiv} />

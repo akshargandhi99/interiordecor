@@ -72,9 +72,8 @@ const ExpandedCard = (props) => {
         "An inviting contemporary home for a family of four, with the brief of creating open, communal spaces that promote family togetherness.";
       images = [curatingWarmth1, curatingWarmth2, curatingWarmth3];
       descriptions = [
-        "The design emphasises on minimalism with uncluttered spaces, ensuring fewer distractions and a peaceful environment.",
-        "The design emphasises on minimalism with uncluttered spaces, ensuring fewer distractions and a peaceful environment.",
-        "The design emphasises on minimalism with uncluttered spaces, ensuring fewer distractions and a peaceful environment.",
+        "Abundant natural light is maximised through large windows and skylights, complemented by recessed and task lighting that enhances the open, uncluttered feel.",
+        "Ergonomic furniture and family-centric spaces like a cozy window nook or kitchen island ensure comfort and functionality",
       ];
       projectLink = "/projects/residential/curating-warmth";
 
@@ -84,12 +83,11 @@ const ExpandedCard = (props) => {
       location = "Bandra, Mumbai";
       area = "1050 sq ft";
       firstText =
-        "An inviting contemporary home for a family of four, with the brief of creating open, communal spaces that promote family togetherness.";
+        "Tailored for a vibrant, creative family of three, infused with hues that reflect their dynamic personalities. Designed with longevity in mind, every detail maximises functionality and aesthetic appeal.";
       images = [blissfulBlues1, blissfulBlues2, blissfulBlues3];
       descriptions = [
-        "The design emphasises on minimalism with uncluttered spaces, ensuring fewer distractions and a peaceful environment.",
-        "The design emphasises on minimalism with uncluttered spaces, ensuring fewer distractions and a peaceful environment.",
-        "The design emphasises on minimalism with uncluttered spaces, ensuring fewer distractions and a peaceful environment.",
+        "Each corner of the home is designed to inspire creativity, with flexible spaces that can easily adapt as the family grows and evolves.",
+        "The design includes areas specifically crafted for family bonding and relaxation, supporting their lifestyle and need for quality time together.",
       ];
       break;
     case "chasingRed":
@@ -97,12 +95,11 @@ const ExpandedCard = (props) => {
       location = "Worli, Mumbai";
       area = "2150 sq ft";
       firstText =
-        "An inviting contemporary home for a family of four, with the brief of creating open, communal spaces that promote family togetherness.";
+        "A multi-generational family home designed for an elderly couple, a younger couple and their two children.The common colour psychology result as per the Vaastu factor for the family, is a deep red colour which is balanced with walnut wood and oak wood tones.";
       images = [chasingRed1, chasingRed2, chasingRed3];
       descriptions = [
-        "The design emphasises on minimalism with uncluttered spaces, ensuring fewer distractions and a peaceful environment.",
-        "The design emphasises on minimalism with uncluttered spaces, ensuring fewer distractions and a peaceful environment.",
-        "The design emphasises on minimalism with uncluttered spaces, ensuring fewer distractions and a peaceful environment.",
+        "Deep red accents are incorporated strategically to create a warm and inviting atmosphere throughout the home.",
+        "Flexible zones accommodate the younger couple’s varied routines, with communal spaces that foster family interaction and private areas for quiet moments.",
       ];
       break;
     case "craftingFarmhouse":
@@ -110,12 +107,11 @@ const ExpandedCard = (props) => {
       location = "Khopoli, Maharashtra";
       area = "900 sq ft";
       firstText =
-        "An inviting contemporary home for a family of four, with the brief of creating open, communal spaces that promote family togetherness.";
+        "This retreat is designed to be a haven for a small family where they can gather for family getaways, engage in farming activities, and reconnect with nature. ";
       images = [craftingFarmhouse1, craftingFarmhouse2, craftingFarmhouse3];
       descriptions = [
-        "The design emphasises on minimalism with uncluttered spaces, ensuring fewer distractions and a peaceful environment.",
-        "The design emphasises on minimalism with uncluttered spaces, ensuring fewer distractions and a peaceful environment.",
-        "The design emphasises on minimalism with uncluttered spaces, ensuring fewer distractions and a peaceful environment.",
+        "Use of large windows,balconies and sliding doors to create visual and physical connections with the surrounding landscape. ",
+        "Selecting sustainable materials such as reclaimed wood, bamboo flooring, and low-VOC paints to promote eco-friendly living.",
       ];
       break;
     case "refiningClassics":
@@ -123,12 +119,24 @@ const ExpandedCard = (props) => {
       location = "Vile Parle, Mumbai";
       area = "1350 sq ft";
       firstText =
-        "An inviting contemporary home for a family of four, with the brief of creating open, communal spaces that promote family togetherness.";
+        "The space is designed for a sophisticated couple that values a juxtaposition of a timeless neoclassical structure with modern furniture. They appreciate a serene environment with thoughtfully curated elements, showcasing their love for both classic and modern aesthetics.";
       images = [refiningClassics1, refiningClassics2, refiningClassics3];
       descriptions = [
-        "The design emphasises on minimalism with uncluttered spaces, ensuring fewer distractions and a peaceful environment.",
-        "The design emphasises on minimalism with uncluttered spaces, ensuring fewer distractions and a peaceful environment.",
-        "The design emphasises on minimalism with uncluttered spaces, ensuring fewer distractions and a peaceful environment.",
+        "Opting for a serene, neutral colour palette with accents in richer tones or metallics to maintain a sophisticated, minimalist look.",
+        "Decor that reflect both classic and modern styles, keeping the decor minimal and purposeful to enhance the serene, refined atmosphere.",
+      ];
+      break;
+
+    case "monochromic":
+      title = "Monochromic";
+      location = "Mulund, Mumbai";
+      area = "600 sq ft";
+      firstText =
+        "For the design for this 1-bedroom apartment, we aim to create a sleek and modern living space for a young couple, centered around a monochrome colour scheme of black and white.";
+      images = [monochromic1, monochromic2, monochromic3];
+      descriptions = [
+        "Combining different finishes and textures while maintaining a consistent design language. Ensuring smooth transitions between the living, kitchen, and bedroom areas.",
+        "Utilisation of natural light and complement with strategic artificial lighting. Includes adjustable lighting options to set different moods.",
       ];
       break;
     default:
