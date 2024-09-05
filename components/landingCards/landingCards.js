@@ -32,6 +32,8 @@ const LandingCard = () => {
   }, [pathname, dispatch]);
   return (
     <div className={styles.cardContainer}>
+      {homeTitle !== 0 && <div className={styles.fade} />}
+
       <div className={styles.pageHeaderContainer}>
         {homeTitle === 0 && (
           <Fragment>

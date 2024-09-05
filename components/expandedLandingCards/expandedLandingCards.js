@@ -8,6 +8,7 @@ import Image from "next/image";
 import { Fragment } from "react";
 import styles from "./expandedLandingCards.module.css";
 
+import rightArrow from "@/public/static/whiteArrowRight.webp";
 // Detailed Cards
 import curatingWarmth1 from "@/public/homepageImages/curatingWarmth/image.webp";
 import curatingWarmth2 from "@/public/homepageImages/curatingWarmth/image-1.webp";
@@ -38,8 +39,7 @@ const ExpandedCard = (props) => {
   const { projectName } = props;
   const [isCardOpen, setCardOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(1);
-  const mainCard = useRef(null);
-  const mainCardContainer = useRef(null);
+
   const fullImageContainer = useRef(null);
   const { dispatch, state } = useContext(StoreContext);
   const { homeTitle } = state;
@@ -61,14 +61,13 @@ const ExpandedCard = (props) => {
   let firstText = "";
   let images = [];
   let descriptions = [];
-  let totalImages = 0;
   let projectLink = "";
   switch (projectName) {
     case "curatingWarmth":
       title = "Curating Warmth";
       location = "Dadar, Mumbai";
       year = "2023";
-      area = "1300 sq. ft.";
+      area = "1300 sq ft";
       firstText =
         "An inviting contemporary home for a family of four, with the brief of creating open, communal spaces that promote family togetherness.";
       images = [curatingWarmth1, curatingWarmth2, curatingWarmth3];
@@ -83,7 +82,7 @@ const ExpandedCard = (props) => {
     case "blissfulBlues":
       title = "Blissful Blues";
       location = "Bandra, Mumbai";
-      area = "1050 sq. ft.";
+      area = "1050 sq ft";
       firstText =
         "An inviting contemporary home for a family of four, with the brief of creating open, communal spaces that promote family togetherness.";
       images = [blissfulBlues1, blissfulBlues2, blissfulBlues3];
@@ -96,7 +95,7 @@ const ExpandedCard = (props) => {
     case "chasingRed":
       title = "Chasing Red";
       location = "Worli, Mumbai";
-      area = "2150 sq. ft.";
+      area = "2150 sq ft";
       firstText =
         "An inviting contemporary home for a family of four, with the brief of creating open, communal spaces that promote family togetherness.";
       images = [chasingRed1, chasingRed2, chasingRed3];
@@ -109,7 +108,7 @@ const ExpandedCard = (props) => {
     case "craftingFarmhouse":
       title = "Crafting a Farmhouse";
       location = "Khopoli, Maharashtra";
-      area = "900 sq. ft.";
+      area = "900 sq ft";
       firstText =
         "An inviting contemporary home for a family of four, with the brief of creating open, communal spaces that promote family togetherness.";
       images = [craftingFarmhouse1, craftingFarmhouse2, craftingFarmhouse3];
@@ -122,7 +121,7 @@ const ExpandedCard = (props) => {
     case "refiningClassics":
       title = "Refining Classics";
       location = "Vile Parle, Mumbai";
-      area = "1350 sq. ft.";
+      area = "1350 sq ft";
       firstText =
         "An inviting contemporary home for a family of four, with the brief of creating open, communal spaces that promote family togetherness.";
       images = [refiningClassics1, refiningClassics2, refiningClassics3];
@@ -135,7 +134,11 @@ const ExpandedCard = (props) => {
     default:
       throw new Error("Invalid Project name");
   }
-  totalImages = images.length;
+  const totalImages = images.length;
+
+  const refsArray = useRef([]);
+  const mainCardContainer = useRef(null);
+
   const handleScroll = () => {
     if (!mainCardContainer.current) return;
 
@@ -184,10 +187,10 @@ const ExpandedCard = (props) => {
     });
   };
 
-  const scrollMainCardToView = (refCard, refContainer, isImmediate) => {
+  const scrollMainCardToView = (refCard, index, refContainer, isImmediate) => {
     const scrollMainCard = (refCard, refContainer) => {
       const container = refContainer.current;
-      const image = refCard.current;
+      const image = refCard.current[index];
 
       // Get the container width (viewport width)
       const viewportWidth = container.clientWidth;
@@ -238,11 +241,29 @@ const ExpandedCard = (props) => {
         <span
           className={`${styles.resetCard} ${display}`}
           onClick={() => {
-            scrollMainCardToView(mainCard, mainCardContainer, true);
+            scrollMainCardToView(refsArray, 0, mainCardContainer, true);
           }}
         >
-          Reset
+          🡠 GO BACK
         </span>
+        <Image
+          className={`${styles.rightArrow} ${display}`}
+          src={rightArrow}
+          alt="Go to next Image"
+          onClick={() => {
+            const nextImageNumber =
+              Number(currentIndex) < totalImages - 1
+                ? Number(currentIndex)
+                : Number(totalImages - 1);
+            console.log(nextImageNumber);
+            scrollMainCardToView(
+              refsArray,
+              nextImageNumber,
+              mainCardContainer,
+              true
+            );
+          }}
+        />
         <div
           className={`${styles.innerExpandedContainer} ${justify}`}
           ref={mainCardContainer}
@@ -314,7 +335,8 @@ const ExpandedCard = (props) => {
                           setCardOpen(true);
                           verticalScroll(fullImageContainer);
                           scrollMainCardToView(
-                            mainCard,
+                            refsArray,
+                            index,
                             mainCardContainer,
                             false
                           ); // Don't scroll immediately, since we need time for the previous function to get the container into view first
@@ -322,7 +344,7 @@ const ExpandedCard = (props) => {
                         }
                       : null
                   }
-                  ref={index === 0 ? mainCard : null}
+                  ref={(el) => (refsArray.current[index] = el)}
                 />
 
                 <p className={`${styles.restOfText} ${display}`}>

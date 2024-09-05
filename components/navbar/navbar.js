@@ -9,28 +9,42 @@ import logo from "@/public/static/Logo.svg";
 const NavBar = () => {
   const pathname = usePathname();
   let navbarUnderline = "";
+  let navbarColor = "";
 
   switch (pathname) {
     case "/":
       navbarUnderline = "main";
+      navbarColor = "normal";
       break;
     case "/projects/residential":
       navbarUnderline = "projects";
+      navbarColor = "normal";
       break;
     case "/projects/commercial":
       navbarUnderline = "projects";
+      navbarColor = "normal";
       break;
-    case "/projects/residential/curating-warmth":
-      navbarUnderline = "projects";
-      break;
+
     default:
       navbarUnderline = "main";
+      navbarColor = "normal";
       break;
   }
+
+  if (pathname.includes("/projects/residential/")) {
+    navbarUnderline = "projects";
+    navbarColor = "white";
+  } else if (pathname.includes("/projects/commercial/")) {
+    navbarUnderline = "projects";
+    navbarColor = "white";
+  }
+
+  const navbarColorStyle =
+    navbarColor === "normal" ? styles.mainContainer : styles.mainContainerWhite;
   // Adjust the styles as needed
 
   return (
-    <nav className={styles.mainContainer}>
+    <nav className={navbarColorStyle}>
       <Link href="/">
         <Image src={logo} className={styles.logo} alt="Logo" />
       </Link>
@@ -44,10 +58,11 @@ const NavBar = () => {
           SPATIAL DESIGN
         </span>
         {/* </Link> */}
-
-        <span className={`${styles.navbarItem} ${juliusSansOne.className}`}>
-          ABOUT US
-        </span>
+        <Link href="/about" className={styles.navLink}>
+          <span className={`${styles.navbarItem} ${juliusSansOne.className}`}>
+            ABOUT US
+          </span>
+        </Link>
 
         <div>
           <div className={styles.navItemContainer}>

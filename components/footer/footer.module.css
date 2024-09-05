@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   height: 30px;
   background-color: rgba(237, 232, 223, 1);
@@ -12,22 +12,42 @@
   z-index: 2;
 }
 
+.innerFooterContainer {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .footerItems {
   display: flex;
   align-items: center;
-  color: rgba(0, 0, 0, 1);
+  color: rgba(60, 35, 28, 1);
   cursor: pointer;
   font-size: 14px;
 }
 
 .plus {
+  color: rgba(60, 35, 28, 1);
   margin-left: 5px;
   font-size: 25px;
 }
 
+.whatsappContainer {
+  display: flex;
+  align-items: center;
+}
+
 .whatsapp {
-  color: rgba(0, 0, 0, 1);
+  color: rgba(60, 35, 28, 1);
   cursor: pointer;
   font-size: 14px;
   text-decoration: underline;
+}
+
+.arrow {
+  margin-left: 5px;
+  height: 12px;
+  width: 12px;
+  cursor: pointer;
 }

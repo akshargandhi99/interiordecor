@@ -102,6 +102,20 @@
   cursor: pointer;
 }
 
+.fade {
+  position: absolute;
+  height: 100vh;
+  width: 10vw;
+  right: 0;
+  background: linear-gradient(
+    105.17deg,
+    rgba(246, 243, 241, 0.4) -0.03%,
+    rgba(209, 187, 174, 0.4) 37.73%,
+    rgba(107, 96, 89, 0.4) 79.05%
+  );
+  z-index: 2;
+}
+
 @media (max-width: 1200px) {
   .spatial {
     font-size: 30px;

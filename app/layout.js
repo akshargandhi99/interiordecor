@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           alt="Glass Effect Background"
           fill={true}
           className={styles.backgroundImage}
-        ></Image>
+        />
       </body>
     </html>
   );

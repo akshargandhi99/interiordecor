@@ -16,6 +16,7 @@
 }
 
 .innerFlexContainer {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -24,11 +25,23 @@
 
 .resetCard {
   cursor: pointer;
-  font-size: 18px;
+  font-size: 14px;
   margin-left: 5%;
   margin-bottom: 10px;
   font-family: "Century Gothic";
   color: rgba(81, 77, 67, 1);
+  z-index: 2;
+}
+
+.resetCard:hover {
+  text-decoration: underline;
+}
+
+.rightArrow {
+  position: absolute;
+  top: 40%;
+  right: 10%;
+  cursor: pointer;
 }
 
 .pageCount {
