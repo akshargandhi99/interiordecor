@@ -13,6 +13,14 @@ const LandingCard = () => {
   const { dispatch, state } = useContext(StoreContext);
   const { homeTitle } = state;
   const pathname = usePathname();
+
+  const goBack = () => {
+    dispatch({
+      type: ACTION_TYPES.SET_HOME_TITLE,
+      payload: { homeTitle: 0 },
+    });
+  };
+
   useEffect(() => {
     if (pathname === "/") {
       dispatch({
@@ -23,22 +31,32 @@ const LandingCard = () => {
   }, [pathname, dispatch]);
   return (
     <div className={styles.cardContainer}>
-      {homeTitle !== 0 && <div className={styles.fade} />}
+      {/* {homeTitle !== 0 && <div className={styles.fade} />} */}
 
       <div className={styles.pageHeaderContainer}>
+        {homeTitle > 0 && (
+          <span
+            className={`${styles.goBack} ${juliusSansOne.className}`}
+            onClick={() => goBack()}
+          >
+            🡠 GO BACK
+          </span>
+        )}
         {homeTitle === 0 && (
           <Fragment>
-            <span className={`${styles.spatial} ${juliusSansOne.className}`}>
-              SPATIAL
-            </span>
-            <span className={`${styles.projects} ${juliusSansOne.className}`}>
-              PROJECTS
-            </span>
-            <Link href="/projects/residential" className={styles.btnLink}>
-              <button type="button" className={styles.discoverMoreBtn}>
-                DISCOVER MORE
-              </button>
-            </Link>
+            <div className={styles.titleContainer}>
+              <span className={`${styles.spatial} ${juliusSansOne.className}`}>
+                SPATIAL
+              </span>
+              <span className={`${styles.projects} ${juliusSansOne.className}`}>
+                PROJECTS
+              </span>
+              <Link href="/projects/residential" className={styles.btnLink}>
+                <button type="button" className={styles.discoverMoreBtn}>
+                  DISCOVER MORE
+                </button>
+              </Link>
+            </div>
           </Fragment>
         )}
       </div>

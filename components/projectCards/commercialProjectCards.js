@@ -29,21 +29,25 @@ const CommercialProjectCards = () => {
       {cards.map((card, key) => {
         return (
           <div className={styles.projectImageContainer} key={key}>
-            <Link href={cardLinks[key]} className={styles.projectLink}>
-              <Image
-                src={card}
-                alt="Blissful Blues Project"
-                className={styles.projectImage}
-              />
-            </Link>
+            <div className={styles.projectImageOverlayContainer}>
+              <Link href={cardLinks[key]} className={styles.projectLink}>
+                {/* <div className={styles.projectImage}></div> */}
+                <Image
+                  src={card}
+                  alt={`${cardTitles} Project`}
+                  className={styles.projectImage}
+                />
+              </Link>
 
-            {cardDescriptions[key] !== null &&
-              cardDescriptions[key] !== undefined &&
-              cardDescriptions[key] !== "" && (
-                <div className={styles.glassDescription}>
-                  {cardDescriptions[key]}
-                </div>
-              )}
+              {cardDescriptions[key] !== null &&
+                cardDescriptions[key] !== undefined &&
+                cardDescriptions[key] !== "" && (
+                  <div className={styles.glassDescription}>
+                    {cardDescriptions[key]}
+                  </div>
+                )}
+            </div>
+
             <Link href={cardLinks[key]} className={styles.projectLink}>
               <h2
                 className={`${styles.projectTitle} ${juliusSansOne.className}`}

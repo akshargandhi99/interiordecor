@@ -44,6 +44,14 @@
   cursor: pointer;
 }
 
+.leftArrow {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  cursor: pointer;
+  transform: scaleX(-1);
+}
+
 .pageCount {
   margin-top: 15px;
   margin-bottom: 50px;
@@ -128,8 +136,8 @@
 
 .restOfText {
   text-align: left;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
   font-family: "Century Gothic";
   min-width: 300px;
   color: rgba(81, 77, 67, 1);
@@ -173,7 +181,7 @@
   width: 163px;
   letter-spacing: 1px;
   cursor: pointer;
-  margin-left: 25px;
+  margin-left: 5px;
 }
 
 .noDisplay {

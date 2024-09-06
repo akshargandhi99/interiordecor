@@ -26,6 +26,7 @@
   margin-left: 50px;
   margin-right: 50px;
   width: 900px;
+
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -42,11 +43,13 @@
   color: rgba(132, 130, 130, 1);
   text-align: left;
   font-family: "Century Gothic";
+  margin-top: 0;
 }
 
 .profileImage {
   width: auto;
-  height: 350px;
+  height: 336px;
+  transform: translateY(108px);
 }
 
 .header2 {
@@ -56,8 +59,8 @@
 .testimonialContainer {
   display: flex;
   flex-direction: column;
-  width: 540px;
-  height: 275px;
+  width: 450px;
+  height: 350px;
   margin: 25px 25px 0 25px;
   background: linear-gradient(
     142.13deg,
@@ -68,8 +71,8 @@
 }
 
 .quotes {
-  margin-top: 15px;
-  margin-left: 15px;
+  margin-top: 40px;
+  margin-left: 40px;
   height: auto;
   width: 22px;
 }
@@ -78,6 +81,7 @@
   text-align: center;
   margin-left: 50px;
   margin-right: 50px;
+
   font-family: "Century Gothic";
   color: rgba(59, 59, 59, 1);
 }

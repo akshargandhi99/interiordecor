@@ -24,6 +24,13 @@
   user-select: none;
 }
 
+.projectImageOverlayContainer {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  width: 300px;
+}
+
 .projectTitle {
   color: rgba(0, 0, 0, 1);
   width: 300px;
@@ -46,8 +53,8 @@
   justify-content: left;
   align-items: center;
   font-family: "Century Gothic";
-  opacity: 0; /* Initially hidden */
-  top: 81%;
+  opacity: 1; /* Initially hidden */
+  top: 100%;
   left: 0%;
   z-index: 1;
   /* transform: translate(-1px, 15px); */
@@ -71,7 +78,7 @@
 .glassDescription:hover {
   opacity: 1;
   display: flex;
-  top: 49%;
+  top: 60%;
 }
 
 .projectImage {
@@ -94,7 +101,7 @@
 
 .projectLink:hover ~ .glassDescription {
   opacity: 1;
-  top: 49%;
+  top: 60%;
 }
 .emptyDiv {
   height: 100px;

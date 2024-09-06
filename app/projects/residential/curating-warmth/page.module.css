@@ -33,8 +33,12 @@
 }
 
 .breadCrumbMenu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   margin-top: 50px;
   font-size: 12px;
+  width: 365px;
 }
 
 .breadCrumbLink {
@@ -58,26 +62,24 @@
   line-height: 60px;
   letter-spacing: 1px;
   text-align: left;
-
+  transform: translateY(3px);
   color: black;
 }
 
 .mainContainer {
-  justify-content: flex-start;
-  align-items: flex-start;
   overflow-x: auto;
-
   margin-right: 50px;
   width: 35vw;
 }
 
 .location {
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
 }
 
 .locationText {
+  margin-top: 0;
+  transform: translateY(-15px);
   font-size: 14px;
   line-height: 20px;
   color: (0, 0, 0, 0.8);
@@ -87,9 +89,11 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 25px;
+  margin-bottom: 10px;
   text-align: justify;
   color: rgba(132, 128, 119, 1);
   font-family: "Century Gothic";
+  transform: translateY(-15px);
 }
 
 .pillContainer {
@@ -116,6 +120,7 @@
 .subHeader {
   margin-top: 40px;
   font-size: 20px;
+  transform: translateY(-15px);
 }
 .imageGrid {
   display: grid;

@@ -10,9 +10,6 @@ import quoteImage from "@/public/static/quotes.webp";
 const About = () => {
   return (
     <div className={styles.mainContainer}>
-      <h1 className={`${styles.mainTitle} ${juliusSansOne.className}`}>
-        Welcome to AV’sds!
-      </h1>
       <div className={styles.welcome}>
         <Image
           src={profileImage}
@@ -21,6 +18,9 @@ const About = () => {
         />
 
         <div className={styles.welcomeTextContainer}>
+          <h1 className={`${styles.mainTitle} ${juliusSansOne.className}`}>
+            Welcome to AV’sds!
+          </h1>
           <p className={styles.welcomeText}>
             I’m Avani Vaidya, founder and principal designer of the studio. With
             a Bachelor&apos;s in Architecture from Mumbai and a Master&apos;s in
@@ -29,7 +29,7 @@ const About = () => {
             understanding how people live, move, and thrive in their
             environments.
           </p>
-          <br />
+
           <p className={styles.welcomeText}>
             For me, design is not just about aesthetics; it&apos;s about
             creating spaces that resonate with your lifestyle and daily
@@ -37,7 +37,6 @@ const About = () => {
             clients, making the design process as smooth and enjoyable as
             possible.
           </p>
-          <br />
 
           <p className={styles.welcomeText}>
             At AVsds, it&apos;s all about you and your unique style. I&apos;m

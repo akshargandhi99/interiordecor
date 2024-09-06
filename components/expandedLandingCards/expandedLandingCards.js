@@ -39,6 +39,8 @@ const ExpandedCard = (props) => {
   const { projectName } = props;
   const [isCardOpen, setCardOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(1);
+  const [isLeftArrow, setIsLeftArrow] = useState(false);
+  const [isRightArrow, setIsRightArrow] = useState(true);
 
   const fullImageContainer = useRef(null);
   const { dispatch, state } = useContext(StoreContext);
@@ -188,6 +190,22 @@ const ExpandedCard = (props) => {
     };
   }, []);
 
+  useEffect(() => {
+    if (homeTitle === 0) {
+      setCardOpen(false);
+    }
+  }, [homeTitle]);
+
+  useEffect(() => {
+    if (currentIndex === totalImages) {
+      setIsLeftArrow(true);
+      setIsRightArrow(false);
+    } else if (currentIndex === 1) {
+      setIsLeftArrow(false);
+      setIsRightArrow(true);
+    }
+  }, [currentIndex, totalImages]);
+
   const verticalScroll = (refCard) => {
     setTimeout(() => {
       // First, scroll the card into view vertically
@@ -228,11 +246,19 @@ const ExpandedCard = (props) => {
   };
 
   const addToHomeTitle = () => {
+    // dispatch({
+    //   type: ACTION_TYPES.SET_HOME_TITLE,
+    //   payload: { homeTitle: 0 },
+    // });
+    // setTimeout(() => {
     dispatch({
       type: ACTION_TYPES.SET_HOME_TITLE,
-      payload: { homeTitle: homeTitle + 1 },
+      payload: { homeTitle: 1 },
     });
+    setCardOpen(true);
+    // }, 1000);
   };
+
   // const subtractFromHomeTitle = () => {
   //   dispatch({
   //     type: ACTION_TYPES.SET_HOME_TITLE,
@@ -246,32 +272,43 @@ const ExpandedCard = (props) => {
       ref={fullImageContainer}
     >
       <div className={styles.innerFlexContainer}>
-        <span
-          className={`${styles.resetCard} ${display}`}
-          onClick={() => {
-            scrollMainCardToView(refsArray, 0, mainCardContainer, true);
-          }}
-        >
-          🡠 GO BACK
-        </span>
-        <Image
-          className={`${styles.rightArrow} ${display}`}
-          src={rightArrow}
-          alt="Go to next Image"
-          onClick={() => {
-            const nextImageNumber =
-              Number(currentIndex) < totalImages - 1
-                ? Number(currentIndex)
-                : Number(totalImages - 1);
-            console.log(nextImageNumber);
-            scrollMainCardToView(
-              refsArray,
-              nextImageNumber,
-              mainCardContainer,
-              true
-            );
-          }}
-        />
+        {isRightArrow && (
+          <Image
+            className={`${styles.rightArrow} ${display}`}
+            src={rightArrow}
+            alt="Go to next Image"
+            onClick={() => {
+              const nextImageNumber =
+                Number(currentIndex) < totalImages - 1
+                  ? Number(currentIndex)
+                  : Number(totalImages) - 1;
+
+              scrollMainCardToView(
+                refsArray,
+                nextImageNumber,
+                mainCardContainer,
+                true
+              );
+            }}
+          />
+        )}
+        {isLeftArrow && (
+          <Image
+            className={`${styles.leftArrow} ${display}`}
+            src={rightArrow}
+            alt="Go to previous Image"
+            onClick={() => {
+              const previousImageNumber =
+                Number(currentIndex) > 1 ? Number(currentIndex) - 2 : 0;
+              scrollMainCardToView(
+                refsArray,
+                previousImageNumber,
+                mainCardContainer,
+                true
+              );
+            }}
+          />
+        )}
         <div
           className={`${styles.innerExpandedContainer} ${justify}`}
           ref={mainCardContainer}
