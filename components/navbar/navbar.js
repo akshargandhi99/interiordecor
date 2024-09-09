@@ -24,6 +24,15 @@ const NavBar = () => {
       navbarUnderline = "projects";
       navbarColor = "normal";
       break;
+    case "/about":
+      navbarUnderline = "about";
+      navbarColor = "normal";
+      break;
+
+    case "/contact":
+      navbarUnderline = "contact";
+      navbarColor = "white";
+      break;
 
     default:
       navbarUnderline = "main";
@@ -58,10 +67,18 @@ const NavBar = () => {
           SPATIAL DESIGN
         </span>
         {/* </Link> */}
-        <Link href="/about" className={styles.navLink}>
-          <span className={`${styles.navbarItem} ${juliusSansOne.className}`}>
-            ABOUT US
-          </span>
+        <Link
+          href="/about"
+          className={
+            navbarUnderline === "about" ? styles.navLinkNoHover : styles.navLink
+          }
+        >
+          <div className={styles.navItemContainer}>
+            <span className={`${styles.navbarItem} ${juliusSansOne.className}`}>
+              ABOUT US
+            </span>
+            {navbarUnderline === "about" && <hr className={styles.selected} />}
+          </div>
         </Link>
 
         <div>
@@ -98,9 +115,23 @@ const NavBar = () => {
             </div>
           </div>
         </div>
-        <span className={`${styles.navbarItem} ${juliusSansOne.className}`}>
-          CONTACT
-        </span>
+        <Link
+          href="/contact"
+          className={
+            navbarUnderline === "contact"
+              ? styles.navLinkNoHover
+              : styles.navLink
+          }
+        >
+          <div className={styles.navItemContainer}>
+            <span className={`${styles.navbarItem} ${juliusSansOne.className}`}>
+              CONTACT
+            </span>
+            {navbarUnderline === "contact" && (
+              <hr className={styles.selected} />
+            )}
+          </div>
+        </Link>
       </div>
     </nav>
   );

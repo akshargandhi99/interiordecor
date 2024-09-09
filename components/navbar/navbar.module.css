@@ -73,6 +73,11 @@
   color: #000000;
 }
 
+.navLinkNoHover {
+  text-decoration: none;
+  color: #000000;
+}
+
 .navLink:hover {
   text-decoration: underline;
 }

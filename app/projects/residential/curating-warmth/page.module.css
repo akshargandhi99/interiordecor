@@ -91,7 +91,7 @@
   line-height: 25px;
   margin-bottom: 10px;
   text-align: justify;
-  color: rgba(132, 128, 119, 1);
+  color: var(--text-color);
   font-family: "Century Gothic";
   transform: translateY(-15px);
 }

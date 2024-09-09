@@ -39,6 +39,32 @@ const ExpandedCard = (props) => {
   const { projectName } = props;
   const [isCardOpen, setCardOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(1);
+  const scrollContainerRef = useRef(null);
+  const maxScrollLeft = 300; // Define the maximum scrollable distance horizontally
+  const [isHovered, setIsHovered] = useState(false);
+  const leaveTimeout = useRef(null); // To keep track of the timeout ID
+
+  // const handleMouseEnter = (index) => {
+  //   if (leaveTimeout.current) {
+  //     clearTimeout(leaveTimeout.current);
+  //     leaveTimeout.current = null;
+  //     setIsHovered(true);
+  //     setCardOpen(true);
+  //     scrollMainCardToView(refsArray, index, mainCardContainer, false); // Don't scroll immediately, since we need time for the previous function to get the container into view first
+  //     verticalScroll(fullImageContainer);
+  //     addToHomeTitle();
+  //   }
+  //   // setTimeout(() => {
+  //   // }, 1000);
+  // };
+
+  // const handleMouseLeave = () => {
+  //   setIsHovered(false);
+  //   setTimeout(() => {
+  //     goBack();
+  //   }, 1000);
+  // };
+
   const [isLeftArrow, setIsLeftArrow] = useState(false);
   const [isRightArrow, setIsRightArrow] = useState(true);
 
@@ -173,6 +199,22 @@ const ExpandedCard = (props) => {
       }
     });
   };
+  useEffect(() => {
+    const scrollContainer = fullImageContainer.current;
+
+    const handleScroll = (event) => {
+      if (scrollContainer.scrollLeft > maxScrollLeft) {
+        scrollContainer.scrollLeft = maxScrollLeft; // Stop scrolling beyond maxScrollLeft
+      }
+    };
+
+    scrollContainer.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      scrollContainer.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const container = mainCardContainer.current;
@@ -258,6 +300,12 @@ const ExpandedCard = (props) => {
     setCardOpen(true);
     // }, 1000);
   };
+  const goBack = () => {
+    dispatch({
+      type: ACTION_TYPES.SET_HOME_TITLE,
+      payload: { homeTitle: 0 },
+    });
+  };
 
   // const subtractFromHomeTitle = () => {
   //   dispatch({
@@ -270,6 +318,7 @@ const ExpandedCard = (props) => {
     <div
       className={`${styles.expandedContainer} ${marginBottom}`}
       ref={fullImageContainer}
+      // onMouseLeave={handleMouseLeave}
     >
       <div className={styles.innerFlexContainer}>
         {isRightArrow && (
@@ -389,6 +438,7 @@ const ExpandedCard = (props) => {
                         }
                       : null
                   }
+                  // onMouseEnter={() => handleMouseEnter(index)}
                   ref={(el) => (refsArray.current[index] = el)}
                 />
 

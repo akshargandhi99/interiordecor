@@ -40,7 +40,7 @@
 }
 
 .welcomeText {
-  color: rgba(132, 130, 130, 1);
+  color: var(--text-color);
   text-align: left;
   font-family: "Century Gothic";
   margin-top: 0;
@@ -62,12 +62,9 @@
   width: 450px;
   height: 350px;
   margin: 25px 25px 0 25px;
-  background: linear-gradient(
-    142.13deg,
-    rgba(255, 255, 255, 0.58) 1.8%,
-    #80859f 99.75%
-  );
-  border-radius: 16px;
+  background: linear-gradient(309.34deg, #d1bbae 20.97%, #ffffff 91.76%);
+
+  border-radius: 40px;
 }
 
 .quotes {
@@ -83,20 +80,211 @@
   margin-right: 50px;
 
   font-family: "Century Gothic";
-  color: rgba(59, 59, 59, 1);
+  color: var(--text-color);
 }
 
 .clientName {
   display: flex;
   margin-top: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
   height: 100%;
   justify-content: center;
   align-items: flex-end;
-  color: rgba(81, 77, 67, 1);
+  color: var(--text-color);
   font-family: "Century Gothic";
 }
-.carouselContainer {
+
+.carouselContainer1 {
+  position: relative;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  width: 500vw;
+  height: 1000px;
+  overflow-x: hidden;
+}
+
+.largeImage1,
+.largeImage2,
+.largeImage3,
+.largeImage4,
+.largeImage5,
+.largeImage6,
+.largeImage7 {
+  position: relative;
+  height: 364px;
+  width: 364px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.mediumImage1,
+.mediumImage2,
+.mediumImage3,
+.mediumImage4,
+.mediumImage5,
+.mediumImage6,
+.mediumImage7,
+.mediumImage8 {
+  position: relative;
+  height: 272px;
+  width: 272px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.smallImage1,
+.smallImage2,
+.smallImage3,
+.smallImage4,
+.smallImage5,
+.smallImage6,
+.smallImage7,
+.smallImage8,
+.smallImage9,
+.smallImage10 {
+  position: relative;
+  height: 165px;
+  width: 165px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.largeImage1 {
+  top: 100px;
+  margin-left: 300px;
+}
+
+.largeImage2 {
+  top: 0;
+  left: 100px;
+}
+
+.largeImage3 {
+  top: 100px;
+  left: 200px;
+}
+
+.largeImage4 {
+  top: 100px;
+  left: 200px;
+}
+
+.largeImage5 {
+  top: 250px;
+  left: 300px;
+}
+
+.largeImage6 {
+  top: 100px;
+  left: 175px;
+}
+
+.largeImage7 {
+  top: 0;
+  left: 200px;
+}
+
+.mediumImage1 {
+  top: 0;
+  left: 125px;
+}
+
+.mediumImage2 {
+  top: 400px;
+  right: 150px;
+}
+
+.mediumImage2 {
+  top: 200px;
+  left: 50px;
+}
+
+.mediumImage3 {
+  top: 250px;
+  left: 150px;
+}
+
+.mediumImage4 {
+  top: 0;
+  left: 250px;
+}
+
+.mediumImage5 {
+  top: 0;
+  left: 250px;
+}
+
+.mediumImage6 {
+  top: 0;
+  left: 250px;
+}
+
+.mediumImage7 {
+  top: 0;
+  left: 250px;
+}
+
+.mediumImage8 {
+  top: 150px;
+  left: 200px;
+}
+
+.smallImage1 {
+  top: 250px;
+  right: 250px;
+}
+
+.smallImage2 {
+  top: 0;
+  right: 0;
+}
+
+.smallImage3 {
+  top: 0;
+  left: 150px;
+}
+
+.smallImage4 {
+  top: 0;
+  left: 270px;
+}
+
+.smallImage5 {
+  top: 200px;
+  left: 170px;
+}
+
+.smallImage6 {
+  top: -50px;
+  left: 200px;
+}
+
+.smallImage7 {
+  top: 300px;
+  left: 100px;
+}
+
+.smallImage8 {
+  top: 250px;
+  left: 150px;
+}
+
+.smallImage9 {
+  top: 50px;
+  left: 250px;
+}
+
+.smallImage10 {
+  top: 250px;
+  left: 250px;
+}
+
+.header3 {
+  margin-top: 300px;
+}
+
+.carouselContainer2 {
   /* display: flex;
   align-items: center;
   justify-content: center; */

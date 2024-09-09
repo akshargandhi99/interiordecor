@@ -75,7 +75,8 @@
 .goBack {
   position: fixed;
   cursor: pointer;
-  top: 110px;
+  color: #514d43;
+  top: 135px;
   left: 50px;
 }
 

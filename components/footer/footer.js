@@ -1,5 +1,6 @@
 import styles from "./footer.module.css";
 import Image from "next/image";
+import Link from "next/link";
 import { juliusSansOne } from "@/app/fonts";
 import arrow from "@/public/static/squareWithDiagonalArrow.webp";
 
@@ -17,9 +18,11 @@ const Footer = () => {
           CONTACT <b className={styles.plus}>+</b>
         </span>
         <div className={styles.whatsappContainer}>
-          <span className={`${styles.whatsapp} ${juliusSansOne.className}`}>
-            CHAT ON WHATSAPP
-          </span>
+          <Link href="https://wa.me/919930999329" target="_blank">
+            <span className={`${styles.whatsapp} ${juliusSansOne.className}`}>
+              CHAT ON WHATSAPP
+            </span>
+          </Link>
           <Image
             src={arrow}
             className={styles.arrow}
