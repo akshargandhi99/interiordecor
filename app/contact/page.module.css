@@ -1,9 +1,6 @@
 .fullContainer {
   position: fixed;
-  background-image: linear-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 1)
-  );
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
   top: 0;
   left: 0;
   background-position: cover;
@@ -11,6 +8,7 @@
   width: 100vw;
   display: flex;
   justify-content: center;
+  overflow-y: scroll;
 }
 
 .formContainer {
@@ -18,7 +16,9 @@
   flex-direction: column;
   align-items: center;
   width: 80vw;
+  height: 1100px;
   margin-top: 150px;
+  margin-bottom: 150px;
   border: 1px solid var(--text-color);
   border-radius: 20px 20px 0px 0px;
 }
@@ -32,6 +32,7 @@
 }
 
 .formImage {
+  margin: 0;
   width: 400px;
   height: 100%;
 }
@@ -43,4 +44,89 @@
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
+  margin: 0;
+}
+
+.mainContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  margin: 50px 0 0 50px;
+}
+
+.formInputContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.formInput1,
+.formInput2,
+.formInput3 {
+  border: 4px solid #ede8df;
+  border-radius: 16px;
+  height: 35px;
+}
+
+.formInput1 {
+  width: 285px;
+}
+
+.formInput2 {
+  width: 333px;
+}
+
+.formInput3 {
+  width: 656px;
+}
+
+.doubleSpan {
+  grid-column: span 2;
+}
+
+.label {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.radioLabels {
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+.radioBtnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.radioOptionContainer {
+  display: flex;
+}
+
+.radioInput[type="radio"] {
+  height: 23px;
+  width: 23px;
+  /* accent-color: #ede8df; */
+  border-color: aqua;
+}
+
+.submit {
+  background: linear-gradient(
+    to right,
+    rgba(21, 21, 21, 0.7),
+    rgba(21, 21, 21, 0.2)
+  );
+
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px 10px 20px;
+  border: 1px;
+  letter-spacing: 1px;
+  width: 163px;
+  cursor: pointer;
+}
+.emptyDiv {
+  height: 200px;
+  width: 200px;
 }
