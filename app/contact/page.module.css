@@ -1,4 +1,5 @@
 .fullContainer {
+  z-index: 1;
   position: fixed;
   background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
   top: 0;
@@ -31,10 +32,33 @@
   height: 100%;
 }
 
+.formLeft,
 .formImage {
   margin: 0;
   width: 400px;
   height: 100%;
+}
+
+.decorativeText {
+  font-family: "Brown Sugar";
+  font-size: 18px;
+  width: 280px;
+  letter-spacing: 3px;
+  color: white;
+  text-align: left;
+  transform: translate(50px, -200px);
+}
+
+.socialContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+}
+
+.socialMediaImage {
+  height: 50px;
+  width: 50px;
+  transform: translate(50px, -200px);
 }
 
 .mainHeader {
@@ -69,14 +93,17 @@
 
 .formInput1 {
   width: 285px;
+  font-family: "Century Gothic";
 }
 
 .formInput2 {
   width: 333px;
+  font-family: "Century Gothic";
 }
 
 .formInput3 {
   width: 656px;
+  font-family: "Century Gothic";
 }
 
 .doubleSpan {
@@ -104,11 +131,50 @@
   display: flex;
 }
 
-.radioInput[type="radio"] {
+.radioInput {
+  -webkit-appearance: none; /* Safari and Chrome */
+  -moz-appearance: none; /* Firefox */
+  appearance: none; /* General appearance property */
   height: 23px;
   width: 23px;
-  /* accent-color: #ede8df; */
-  border-color: aqua;
+  border: 3px solid #ede8df;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative; /* Important for positioning the dot inside */
+}
+
+/* Unchecked state outline */
+.radioInput:not(:checked) {
+  border-color: #ede8df;
+}
+
+/* Checked state outline: ensure the border remains #777 */
+.radioInput:checked {
+  border-color: #b3b0aa; /* Keep the #777 color after checking */
+}
+
+/* Change border color on hover */
+.radioInput:hover {
+  border-color: #b3b0aa;
+}
+
+/* Inner dot for checked state */
+.radioInput:checked::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #b3b0aa; /* This colors the inside of the dot */
+}
+
+/* Unchecked state: optional, can also leave it empty */
+.radioInput:not(:checked)::before {
+  content: "";
+  background-color: transparent; /* No color for unchecked state */
 }
 
 .submit {

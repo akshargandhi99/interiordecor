@@ -1,11 +1,17 @@
 import styles from "./page.module.css";
 import { juliusSansOne } from "@/app/fonts";
 import Image from "next/image";
+import { Fragment } from "react";
 import Marquee from "react-fast-marquee";
 import testimonials from "@/data/testimonials.json";
 
 import profileImage from "@/public/static/profile image.webp";
 import quoteImage from "@/public/static/quotes.webp";
+
+import blogImage1 from "@/public/static/blog 1.webp";
+import blogImage2 from "@/public/static/blog 2.webp";
+import blogImage3 from "@/public/static/blog 3.webp";
+import blogImage4 from "@/public/static/blog 4.webp";
 
 import largeImage1 from "@/public/aboutUsMarqueeImages/364-1.webp";
 import largeImage2 from "@/public/aboutUsMarqueeImages/364-2.webp";
@@ -36,32 +42,33 @@ import smallImage9 from "@/public/aboutUsMarqueeImages/165-9.webp";
 import smallImage10 from "@/public/aboutUsMarqueeImages/165-10.webp";
 
 const About = () => {
-  const imageArray = [
-    largeImage1,
-    mediumImage1,
-    smallImage1,
-    smallImage2,
-    mediumImage2,
-    largeImage2,
-    smallImage3,
-    mediumImage3,
-    largeImage3,
-    mediumImage4,
-    smallImage4,
-    smallImage5,
-    largeImage4,
-    mediumImage5,
-    largeImage5,
-    smallImage6,
-    mediumImage6,
-    mediumImage7,
-    largeImage6,
-    smallImage7,
-    largeImage7,
-    mediumImage8,
-    smallImage8,
-    smallImage9,
-    smallImage10,
+  const blogImages = [blogImage1, blogImage2, blogImage3, blogImage4];
+  const imagesCarouselArray = [
+    [largeImage1, styles.largeImage1],
+    [mediumImage1, styles.mediumImage1],
+    [smallImage1, styles.smallImage1],
+    [smallImage2, styles.smallImage2],
+    [mediumImage2, styles.mediumImage2],
+    [largeImage2, styles.largeImage2],
+    [smallImage3, styles.smallImage3],
+    [mediumImage3, styles.mediumImage3],
+    [largeImage3, styles.largeImage3],
+    [mediumImage4, styles.mediumImage4],
+    [smallImage4, styles.smallImage4],
+    [smallImage5, styles.smallImage5],
+    [largeImage4, styles.largeImage4],
+    [mediumImage5, styles.mediumImage5],
+    [largeImage5, styles.largeImage5],
+    [smallImage6, styles.smallImage6],
+    [mediumImage6, styles.mediumImage6],
+    [smallImage7, styles.smallImage7],
+    [largeImage6, styles.largeImage6],
+    [largeImage7, styles.largeImage7],
+    [mediumImage7, styles.mediumImage7],
+    [smallImage8, styles.smallImage8],
+    [mediumImage8, styles.mediumImage8],
+    [smallImage9, styles.smallImage9],
+    [smallImage10, styles.smallImage10],
   ];
   return (
     <div className={styles.mainContainer}>
@@ -116,67 +123,16 @@ const About = () => {
         speed={90}
         style={{ overflowX: "visible" }}
       >
-        <Image src={largeImage1} className={styles.largeImage1} alt="image1" />
-        <Image
-          src={mediumImage1}
-          className={styles.mediumImage1}
-          alt="image2"
-        />
-        <Image src={smallImage1} className={styles.smallImage1} alt="image3" />
-        <Image src={smallImage2} className={styles.smallImage2} alt="image4" />
-        <Image
-          src={mediumImage2}
-          className={styles.mediumImage2}
-          alt="image5"
-        />
-        <Image src={largeImage2} className={styles.largeImage2} alt="image6" />
-        <Image src={smallImage3} className={styles.smallImage3} alt="image7" />
-        <Image
-          src={mediumImage3}
-          className={styles.mediumImage3}
-          alt="image8"
-        />
-        <Image src={largeImage3} className={styles.largeImage3} alt="image9" />
-        <Image
-          src={mediumImage4}
-          className={styles.mediumImage4}
-          alt="image9"
-        />
-        <Image src={smallImage4} className={styles.smallImage4} alt="image10" />
-        <Image src={smallImage5} className={styles.smallImage5} alt="image11" />
-        <Image src={largeImage4} className={styles.largeImage4} alt="image12" />
-        <Image
-          src={mediumImage5}
-          className={styles.mediumImage5}
-          alt="image13"
-        />
-        <Image src={largeImage5} className={styles.largeImage5} alt="image14" />
-        <Image src={smallImage6} className={styles.smallImage6} alt="image15" />
-        <Image
-          src={mediumImage6}
-          className={styles.mediumImage6}
-          alt="image16"
-        />
-        <Image src={smallImage7} className={styles.smallImage7} alt="image16" />
-        <Image src={largeImage6} className={styles.largeImage6} alt="image17" />
-        <Image src={largeImage7} className={styles.largeImage7} alt="image18" />
-        <Image
-          src={mediumImage7}
-          className={styles.mediumImage7}
-          alt="image19"
-        />
-        <Image src={smallImage8} className={styles.smallImage8} alt="image20" />
-        <Image
-          src={mediumImage8}
-          className={styles.mediumImage8}
-          alt="image21"
-        />
-        <Image src={smallImage9} className={styles.smallImage9} alt="image22" />
-        <Image
-          src={smallImage10}
-          className={styles.smallImage10}
-          alt="image23"
-        />
+        {imagesCarouselArray.map((image, index) => {
+          return (
+            <Image
+              src={image[0]}
+              className={image[1]}
+              key={`About Page Carousel Image ${index + 1}`}
+              alt={`image${index + 1}`}
+            />
+          );
+        })}
       </Marquee>
       <h2 className={`${styles.header3} ${juliusSansOne.className}`}>
         HEAR FROM OUR CLIENTS
@@ -212,7 +168,24 @@ const About = () => {
       <h2 className={`${styles.header2} ${juliusSansOne.className}`}>
         LATEST BLOGS
       </h2>
-      <div className={styles.blogContainer}></div>
+      <div className={styles.blogFullContainer}>
+        <div className={styles.blogContainer}>
+          {blogImages.map((image, index) => {
+            return (
+              <Fragment key={`About Page Blog Image ${index + 1}`}>
+                <div className={styles.blogItem}>
+                  <Image
+                    src={image}
+                    className={styles.blogImage}
+                    alt={`Blog image ${index + 1}`}
+                  />
+                  <div className={styles.glassDescription}>TESTING</div>
+                </div>
+              </Fragment>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };

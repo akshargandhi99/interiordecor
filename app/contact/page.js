@@ -1,8 +1,15 @@
 import styles from "./page.module.css";
 import { juliusSansOne } from "@/app/fonts";
 import Image from "next/image";
+import Link from "next/link";
+import IntegerInput from "./integerInput"; // Importing due to use client
+import SqftInput from "./sqftInput"; //  Importing due to use client
 
 import formImage from "@/public/static/aboutFormImage.webp";
+import XImage from "@/public/static/X.webp";
+import facebookImage from "@/public/static/facebook.webp";
+import instagramImage from "@/public/static/instagram.webp";
+import emailImage from "@/public/static/email.webp";
 
 const Contact = () => {
   return (
@@ -12,11 +19,40 @@ const Contact = () => {
           CONTACT US
         </h1>
         <div className={styles.formBodyContainer}>
-          <Image
-            src={formImage}
-            className={styles.formImage}
-            alt="Form Decoration Image"
-          />
+          <div className={styles.formLeft}>
+            <Image
+              src={formImage}
+              className={styles.formImage}
+              alt="Form Decoration Image"
+            />
+            <p className={styles.decorativeText}>
+              Design that rhymes with your lifestyle!
+            </p>
+            <div className={styles.socialContainer}>
+              <Image
+                src={XImage}
+                className={styles.socialMediaImage}
+                alt="Twitter Link"
+              />
+              <Image
+                src={facebookImage}
+                className={styles.socialMediaImage}
+                alt="Facebook Link"
+              />
+              <Image
+                src={instagramImage}
+                className={styles.socialMediaImage}
+                alt="Instagram Link"
+              />
+              <Link href="mailto:info@avsds.in">
+                <Image
+                  src={emailImage}
+                  className={styles.socialMediaImage}
+                  alt="Email Link"
+                />
+              </Link>
+            </div>
+          </div>
 
           <form className={styles.mainContainer}>
             {/* Name */}
@@ -58,12 +94,7 @@ const Contact = () => {
               >
                 TOTAL FAMILY MEMBERS
               </label>
-              <input
-                type="text"
-                id="totalFamilyMembers"
-                name="totalFamilyMembers"
-                className={styles.formInput1}
-              />
+              <IntegerInput />
             </div>
             {/* CURRENT ADDRESS */}
             <div className={styles.formInputContainer}>
@@ -105,12 +136,7 @@ const Contact = () => {
               >
                 AREA IN SQFT
               </label>
-              <input
-                type="text"
-                id="areaInSqft"
-                name="areaInSqft"
-                className={styles.formInput1}
-              />
+              <SqftInput />
             </div>
             {/* POSSESSION */}
             <div className={styles.formInputContainer}>
@@ -139,6 +165,7 @@ const Contact = () => {
                   <input
                     type="radio"
                     id="vastuYes"
+                    value="vastuYes"
                     name="vastu"
                     className={styles.radioInput}
                   />
@@ -153,6 +180,7 @@ const Contact = () => {
                   <input
                     type="radio"
                     id="vastuNo"
+                    value="vastuNo"
                     name="vastu"
                     className={styles.radioInput}
                   />
@@ -167,6 +195,7 @@ const Contact = () => {
                   <input
                     type="radio"
                     id="vastuMaybe"
+                    value="vastuMaybe"
                     name="vastu"
                     className={styles.radioInput}
                   />

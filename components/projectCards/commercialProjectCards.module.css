@@ -6,7 +6,7 @@
   display: grid;
   column-gap: 20px;
   row-gap: 50px;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   overflow-y: visible;
