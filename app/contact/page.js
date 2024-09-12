@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./page.module.css";
 import { juliusSansOne } from "@/app/fonts";
 import Image from "next/image";
@@ -12,6 +14,47 @@ import instagramImage from "@/public/static/instagram.webp";
 import emailImage from "@/public/static/email.webp";
 
 const Contact = () => {
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = {
+      name: form.name.value,
+      email: form.email.value,
+      totalFamilyMembers: form.totalFamilyMembers.value,
+      currentAddress: form.currentAddress.value,
+      projectAddress: form.projectAddress.value,
+      areaInSqft: form.areaInSqft.value,
+      possession: form.possession.value,
+      vastu: form.vastu.value,
+      budgetConsideration: form.budgetConsideration.value,
+      comments: form.comments.value,
+    };
+
+    // setLoading(true);
+    // setSuccessMessage('');
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        // setSuccessMessage('Thank you for contacting us!');
+        form.reset();
+      } else {
+        throw new Error("Failed to send email");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred while sending your message");
+    } finally {
+      // setLoading(false);
+    }
+  };
+
   return (
     <div className={styles.fullContainer}>
       <div className={styles.formContainer}>
@@ -54,11 +97,11 @@ const Contact = () => {
             </div>
           </div>
 
-          <form className={styles.mainContainer}>
+          <form onSubmit={onSubmit} className={styles.mainContainer}>
             {/* Name */}
             <div className={styles.formInputContainer}>
               <label
-                for="name"
+                htmlFor="name"
                 className={`${styles.label} ${juliusSansOne.className}`}
               >
                 NAME
@@ -73,7 +116,7 @@ const Contact = () => {
             {/* Email */}
             <div className={styles.formInputContainer}>
               <label
-                for="email"
+                htmlFor="email"
                 className={`${styles.label} ${juliusSansOne.className}`}
               >
                 EMAIL
@@ -89,7 +132,7 @@ const Contact = () => {
             {/* TOTAL FAMILY MEMBERS */}
             <div className={styles.formInputContainer}>
               <label
-                for="totalFamilyMembers"
+                htmlFor="totalFamilyMembers"
                 className={`${styles.label} ${juliusSansOne.className}`}
               >
                 TOTAL FAMILY MEMBERS
@@ -99,7 +142,7 @@ const Contact = () => {
             {/* CURRENT ADDRESS */}
             <div className={styles.formInputContainer}>
               <label
-                for="currentAddress"
+                htmlFor="currentAddress"
                 className={`${styles.label} ${juliusSansOne.className}`}
               >
                 CURRENT ADDRESS
@@ -116,7 +159,7 @@ const Contact = () => {
               className={`${styles.formInputContainer} ${styles.doubleSpan}`}
             >
               <label
-                for="projectAddress"
+                htmlFor="projectAddress"
                 className={`${styles.label} ${juliusSansOne.className}`}
               >
                 PROJECT ADDRESS
@@ -131,7 +174,7 @@ const Contact = () => {
             {/* AREA IN SQFT */}
             <div className={styles.formInputContainer}>
               <label
-                for="areaInSqft"
+                htmlFor="areaInSqft"
                 className={`${styles.label} ${juliusSansOne.className}`}
               >
                 AREA IN SQFT
@@ -141,7 +184,7 @@ const Contact = () => {
             {/* POSSESSION */}
             <div className={styles.formInputContainer}>
               <label
-                for="possession"
+                htmlFor="possession"
                 className={`${styles.label} ${juliusSansOne.className}`}
               >
                 POSSESSION
@@ -165,12 +208,12 @@ const Contact = () => {
                   <input
                     type="radio"
                     id="vastuYes"
-                    value="vastuYes"
+                    value="Yes"
                     name="vastu"
                     className={styles.radioInput}
                   />
                   <label
-                    for="vastuYes"
+                    htmlFor="vastuYes"
                     className={`${styles.radioLabels} ${juliusSansOne.className}`}
                   >
                     YES
@@ -180,12 +223,12 @@ const Contact = () => {
                   <input
                     type="radio"
                     id="vastuNo"
-                    value="vastuNo"
+                    value="No"
                     name="vastu"
                     className={styles.radioInput}
                   />
                   <label
-                    for="vastuNo"
+                    htmlFor="vastuNo"
                     className={`${styles.radioLabels} ${juliusSansOne.className}`}
                   >
                     NO
@@ -195,12 +238,12 @@ const Contact = () => {
                   <input
                     type="radio"
                     id="vastuMaybe"
-                    value="vastuMaybe"
+                    value="Maybe"
                     name="vastu"
                     className={styles.radioInput}
                   />
                   <label
-                    for="vastuMaybe"
+                    htmlFor="vastuMaybe"
                     className={`${styles.radioLabels} ${juliusSansOne.className}`}
                   >
                     MAYBE
@@ -213,7 +256,7 @@ const Contact = () => {
               className={`${styles.formInputContainer} ${styles.doubleSpan}`}
             >
               <label
-                for="budgetConsideration"
+                htmlFor="budgetConsideration"
                 className={`${styles.label} ${juliusSansOne.className}`}
               >
                 BUDGET CONSIDERATION
@@ -230,7 +273,7 @@ const Contact = () => {
               className={`${styles.formInputContainer} ${styles.doubleSpan}`}
             >
               <label
-                for="comments"
+                htmlFor="comments"
                 className={`${styles.label} ${juliusSansOne.className}`}
               >
                 COMMENTS

@@ -86,9 +86,19 @@
 .formInput1,
 .formInput2,
 .formInput3 {
-  border: 4px solid #ede8df;
+  border: 2px solid #ede8df;
   border-radius: 16px;
   height: 35px;
+  font-size: 18px;
+  padding-left: 15px;
+  outline: none;
+  transition: border-color 0.3s ease; /* Smooth transition */
+}
+
+.formInput1:focus,
+.formInput2:focus,
+.formInput3:focus {
+  border-color: #b3b0aa;
 }
 
 .formInput1 {
@@ -149,9 +159,9 @@
   border-color: #ede8df;
 }
 
-/* Checked state outline: ensure the border remains #777 */
+/* Checked state outline: ensure the border remains ##b3b0aa */
 .radioInput:checked {
-  border-color: #b3b0aa; /* Keep the #777 color after checking */
+  border-color: #b3b0aa; /* Keep the ##b3b0aa color after checking */
 }
 
 /* Change border color on hover */
@@ -191,6 +201,7 @@
   letter-spacing: 1px;
   width: 163px;
   cursor: pointer;
+  transform: translateY(-10px);
 }
 .emptyDiv {
   height: 200px;

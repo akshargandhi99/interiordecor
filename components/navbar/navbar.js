@@ -24,6 +24,9 @@ const NavBar = () => {
       navbarUnderline = "projects";
       navbarColor = "normal";
       break;
+    case "spatial-design":
+      navbarUnderline = "spatial-design";
+      navbarColor = "normal";
     case "/about":
       navbarUnderline = "about";
       navbarColor = "normal";
@@ -59,14 +62,22 @@ const NavBar = () => {
       </Link>
       <hr className={styles.horizontalLine} />
       <div className={styles.navbarItemContainer}>
-        {/* <Link
-          href="/"
-          className={`${styles.navbarItem} ${styles.navItemContainer}`}
-        > */}
-        <span className={`${styles.navbarItem} ${juliusSansOne.className}`}>
-          SPATIAL DESIGN
-        </span>
-        {/* </Link> */}
+        <Link
+          href="/spatial-design"
+          className={
+            navbarUnderline === "spatial-design"
+              ? styles.navLinkNoHover
+              : styles.navLink
+          }
+        >
+          <span className={`${styles.navbarItem} ${juliusSansOne.className}`}>
+            SPATIAL DESIGN
+          </span>
+          {navbarUnderline === "spatial-design" && (
+            <hr className={styles.selected} />
+          )}
+        </Link>
+
         <Link
           href="/about"
           className={
