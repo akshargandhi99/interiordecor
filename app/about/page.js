@@ -43,6 +43,12 @@ import smallImage10 from "@/public/aboutUsMarqueeImages/165-10.webp";
 
 const About = () => {
   const blogImages = [blogImage1, blogImage2, blogImage3, blogImage4];
+  const blogDescriptions = [
+    "Sustainable Interior Design: Materials and Practices",
+    "The Art of Open-Concept Living: Balancing Privacy and Space",
+    "Biophilic Design: Bringing Nature Indoors",
+    "Colour Psychology & amp; Feng Shui: Space perception",
+  ];
   const imagesCarouselArray = [
     [largeImage1, styles.largeImage1],
     [mediumImage1, styles.mediumImage1],
@@ -179,7 +185,9 @@ const About = () => {
                     className={styles.blogImage}
                     alt={`Blog image ${index + 1}`}
                   />
-                  <div className={styles.glassDescription}>TESTING</div>
+                  <div className={styles.glassDescription}>
+                    {blogDescriptions[index]}
+                  </div>
                 </div>
               </Fragment>
             );

@@ -43,8 +43,8 @@ const OthersProjectCards = () => {
     "Peach Fuzz Colour of the Year Sofa Design with Metal accent side table.",
     "A floor touch sofa with piping perfect for a conversational pit.",
     "Leather + Brass Coffee Table",
-    "Single Armchair with Wooden coffee table - minimalism",
-    "Single Armchair with Wooden coffee table - minimalism",
+    "Single Armchair with Wooden coffee table - minimalism Ⅰ",
+    "Single Armchair with Wooden coffee table - minimalism Ⅱ",
     "Peach fuzz colour of the year armchair and pouf side table.",
     "Minimal furniture collection",
     "Minimal Armchair",
@@ -65,13 +65,11 @@ const OthersProjectCards = () => {
         return (
           <div className={styles.projectImageContainer} key={key}>
             <div className={styles.projectImageOverlayContainer}>
-              <Link href={cardLinks[key]} className={styles.projectLink}>
-                <Image
-                  src={card}
-                  alt={`Other Project ${key}`}
-                  className={styles.projectImage}
-                />
-              </Link>
+              <Image
+                src={card}
+                alt={`Other Project ${key}`}
+                className={styles.projectImage}
+              />
 
               {cardDescriptions[key] !== null &&
                 cardDescriptions[key] !== undefined &&

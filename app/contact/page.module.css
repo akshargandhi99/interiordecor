@@ -131,6 +131,7 @@
 }
 
 .radioBtnContainer {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -139,6 +140,9 @@
 
 .radioOptionContainer {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .radioInput {
@@ -148,10 +152,13 @@
   height: 23px;
   width: 23px;
   border: 3px solid #ede8df;
-  border-radius: 50%;
+  border-radius: 50px;
   outline: none;
   cursor: pointer;
   position: relative; /* Important for positioning the dot inside */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Unchecked state outline */
@@ -172,12 +179,12 @@
 /* Inner dot for checked state */
 .radioInput:checked::before {
   content: "";
-  position: absolute;
-  top: 4px;
-  left: 4px;
+  /* position: absolute;
+  top: 0;
+  left: 0; */
   width: 10px;
   height: 10px;
-  border-radius: 50%;
+  border-radius: 50px;
   background-color: #b3b0aa; /* This colors the inside of the dot */
 }
 

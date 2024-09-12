@@ -65,18 +65,18 @@
   font-size: 14px;
   text-transform: uppercase;
   text-decoration: none;
-  color: #000000;
+  color: var(--text-color);
   cursor: pointer;
 }
 
 .navLink {
   text-decoration: none;
-  color: #000000;
+  color: var(--text-color);
 }
 
 .navLinkNoHover {
   text-decoration: none;
-  color: #000000;
+  color: var(--text-color);
 }
 
 .navLink:hover {
@@ -118,7 +118,7 @@
 
 .subNavLinks {
   text-decoration: none;
-  color: rgba(0, 0, 0, 1);
+  color: var(--text-color);
   font-size: 14px;
   margin-left: 15px;
 }

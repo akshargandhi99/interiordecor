@@ -32,7 +32,7 @@
 }
 
 .projectTitle {
-  color: rgba(0, 0, 0, 1);
+  color: var(--text-color);
   width: 300px;
   text-wrap: wrap;
 }
@@ -86,21 +86,15 @@
   width: 300px;
   border-radius: 10px;
   object-fit: cover;
-  cursor: pointer;
   overflow: hidden;
   position: relative;
 }
 
-.projectLink {
-  text-decoration: none;
-  color: black;
-}
-
-.projectLink:hover {
+.projectImage:hover {
   text-decoration: underline;
 }
 
-.projectLink:hover ~ .glassDescription {
+.projectImage:hover ~ .glassDescription {
   opacity: 1;
   top: 60%;
 }
