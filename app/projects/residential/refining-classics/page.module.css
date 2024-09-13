@@ -130,7 +130,7 @@
 .imageGrid {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: 1fr 1.5fr 1fr 1.5fr;
+  grid-template-rows: 1fr 1.5fr 1fr;
   gap: 10px;
   width: 35vw;
   margin-top: 100px;
@@ -141,8 +141,7 @@
 .gridImage2,
 .gridImage3,
 .gridImage4,
-.gridImage5,
-.gridImage6 {
+.gridImage5 {
   background-size: cover;
   background-position: center;
   object-fit: cover;
@@ -168,11 +167,6 @@
 .gridImage4,
 .gridImage5 {
   grid-column: span 5;
-  grid-row: span 1;
-}
-
-.gridImage6 {
-  grid-column: span 10;
   grid-row: span 1;
 }
 

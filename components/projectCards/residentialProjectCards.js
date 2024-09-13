@@ -41,11 +41,11 @@ const ResidentialProjectCards = () => {
   ];
   const cardLinks = [
     "/projects/residential/curating-warmth",
-    "",
-    "",
-    "",
-    "",
-    "",
+    "/projects/residential/chasing-red",
+    "/projects/residential/blissful-blues",
+    "/projects/residential/crafting-a-farmhouse",
+    "/projects/residential/refining-classics",
+    "/projects/residential/monochromic-house",
   ];
   return (
     <div className={styles.gridContainer}>

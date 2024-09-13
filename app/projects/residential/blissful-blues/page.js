@@ -2,16 +2,16 @@ import styles from "./page.module.css";
 import { juliusSansOne } from "@/app/fonts";
 import Link from "next/link";
 import Image from "next/image";
-import image1 from "@/public/curating-warmth/1.webp";
-import image2 from "@/public/curating-warmth/2.webp";
-import image3 from "@/public/curating-warmth/3.webp";
-import image4 from "@/public/curating-warmth/4.webp";
-import image5 from "@/public/curating-warmth/5.webp";
-import image6 from "@/public/curating-warmth/6.webp";
+import image1 from "@/public/blissful-blues/1.webp";
+import image2 from "@/public/blissful-blues/2.webp";
+import image3 from "@/public/blissful-blues/3.webp";
+import image4 from "@/public/blissful-blues/4.webp";
+import image5 from "@/public/blissful-blues/5.webp";
+import image6 from "@/public/blissful-blues/6.webp";
 import detailedData from "@/data/detailedPages.json";
 
-const CuratingWarmth = () => {
-  const projectName = "Curating Warmth";
+const BlissfulBlues = () => {
+  const projectName = "Blissful Blues";
   const imageArray = [
     [image1, styles.gridImage1],
     [image2, styles.gridImage2],
@@ -124,4 +124,4 @@ const CuratingWarmth = () => {
   );
 };
 
-export default CuratingWarmth;
+export default BlissfulBlues;

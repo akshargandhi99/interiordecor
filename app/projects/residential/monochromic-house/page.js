@@ -2,23 +2,19 @@ import styles from "./page.module.css";
 import { juliusSansOne } from "@/app/fonts";
 import Link from "next/link";
 import Image from "next/image";
-import image1 from "@/public/curating-warmth/1.webp";
-import image2 from "@/public/curating-warmth/2.webp";
-import image3 from "@/public/curating-warmth/3.webp";
-import image4 from "@/public/curating-warmth/4.webp";
-import image5 from "@/public/curating-warmth/5.webp";
-import image6 from "@/public/curating-warmth/6.webp";
+import image1 from "@/public/monochromic-house/1.webp";
+import image2 from "@/public/monochromic-house/2.webp";
+import image3 from "@/public/monochromic-house/3.webp";
+import image4 from "@/public/monochromic-house/4.webp";
 import detailedData from "@/data/detailedPages.json";
 
-const CuratingWarmth = () => {
-  const projectName = "Curating Warmth";
+const MonochromicHouse = () => {
+  const projectName = "Monochromic House";
   const imageArray = [
     [image1, styles.gridImage1],
     [image2, styles.gridImage2],
     [image3, styles.gridImage3],
     [image4, styles.gridImage4],
-    [image5, styles.gridImage5],
-    [image6, styles.gridImage6],
   ];
 
   const type = detailedData[projectName].type;
@@ -124,4 +120,4 @@ const CuratingWarmth = () => {
   );
 };
 
-export default CuratingWarmth;
+export default MonochromicHouse;
