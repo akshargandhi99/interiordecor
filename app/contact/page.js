@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import { juliusSansOne } from "@/app/fonts";
 import Image from "next/image";
 import Link from "next/link";
+import GoBack from "@/components/goBack/goBack";
 import IntegerInput from "./integerInput"; // Importing due to use client
 import SqftInput from "./sqftInput"; //  Importing due to use client
 
@@ -57,6 +58,7 @@ const Contact = () => {
 
   return (
     <div className={styles.fullContainer}>
+      <GoBack href="/" />
       <div className={styles.formContainer}>
         <h1 className={`${styles.mainHeader} ${juliusSansOne.className}`}>
           CONTACT US

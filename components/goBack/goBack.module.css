@@ -1,0 +1,12 @@
+.goBack {
+  position: fixed;
+  cursor: pointer;
+  color: #514d43;
+  top: 135px;
+  left: 50px;
+  z-index: 3;
+}
+
+.goBack:hover {
+  text-decoration: underline;
+}

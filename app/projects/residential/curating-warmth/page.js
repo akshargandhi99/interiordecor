@@ -2,6 +2,7 @@ import styles from "./page.module.css";
 import { juliusSansOne } from "@/app/fonts";
 import Link from "next/link";
 import Image from "next/image";
+import GoBack from "@/components/goBack/goBack";
 import image1 from "@/public/curating-warmth/1.webp";
 import image2 from "@/public/curating-warmth/2.webp";
 import image3 from "@/public/curating-warmth/3.webp";
@@ -32,6 +33,7 @@ const CuratingWarmth = () => {
 
   return (
     <div className={styles.fullContainer}>
+      <GoBack href={`/projects/${type}`} />
       <div className={styles.topContainer}>
         <div className={styles.bodyContainer}>
           <main className={styles.mainContainer}>

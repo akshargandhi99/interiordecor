@@ -2,6 +2,7 @@ import styles from "./page.module.css";
 import { juliusSansOne } from "@/app/fonts";
 import Image from "next/image";
 import { Fragment } from "react";
+import GoBack from "@/components/goBack/goBack";
 import Marquee from "react-fast-marquee";
 import testimonials from "@/data/testimonials.json";
 
@@ -78,6 +79,7 @@ const About = () => {
   ];
   return (
     <div className={styles.mainContainer}>
+      <GoBack href="/" />
       <div className={styles.welcome}>
         <Image
           src={profileImage}

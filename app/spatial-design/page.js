@@ -2,6 +2,7 @@ import { juliusSansOne } from "../fonts";
 import styles from "./page.module.css";
 import { Fragment } from "react";
 import Image from "next/image";
+import GoBack from "@/components/goBack/goBack";
 
 import blogImage1 from "@/public/static/spatial blog 1.webp";
 import blogImage2 from "@/public/static/spatial blog 2.webp";
@@ -33,27 +34,28 @@ const SpatialDesign = () => {
     "Maximising Spaces: Design Solutions Mumbai Apartments",
     "Child-Friendly Interiors: Designing Safe and Fun Spaces for Kids",
   ];
-  const iconArray = [
-    [icon1, "User Centric Approach", styles.icon1],
-    [icon2, "Efficient Use of Square Footage", styles.icon2],
-    [icon3, "Maximising Client Involvement", styles.icon3],
-    [icon4, "Vastu & Other Cultural Aspects", styles.icon4],
-    [icon5, "Budget Management", styles.icon5],
-    [
-      icon6,
-      "Detailed Planning of Layouts Space Flexibility & Adaptability",
-      styles.icon6,
-    ],
-    [icon7, "Daily Routines Study", styles.icon7],
-    [icon8, "Informal Approach", styles.icon8],
-    [icon9, "Detailed Movement & Flow Study", styles.icon9],
-    [icon10, "Professional Collaborations", styles.icon10],
-    [icon11, "Eco Conscious", styles.icon11],
-    [icon12, "Style & Aesthetic Integration", styles.icon12],
-    [icon13, "Feedback Loop", styles.icon13],
-  ];
+  // const iconArray = [
+  //   [icon1, "User Centric Approach", styles.icon1],
+  //   [icon2, "Efficient Use of Square Footage", styles.icon2],
+  //   [icon3, "Maximising Client Involvement", styles.icon3],
+  //   [icon4, "Vastu & Other Cultural Aspects", styles.icon4],
+  //   [icon5, "Budget Management", styles.icon5],
+  //   [
+  //     icon6,
+  //     "Detailed Planning of Layouts Space Flexibility & Adaptability",
+  //     styles.icon6,
+  //   ],
+  //   [icon7, "Daily Routines Study", styles.icon7],
+  //   [icon8, "Informal Approach", styles.icon8],
+  //   [icon9, "Detailed Movement & Flow Study", styles.icon9],
+  //   [icon10, "Professional Collaborations", styles.icon10],
+  //   [icon11, "Eco Conscious", styles.icon11],
+  //   [icon12, "Style & Aesthetic Integration", styles.icon12],
+  //   [icon13, "Feedback Loop", styles.icon13],
+  // ];
   return (
     <div className={styles.fullContainer}>
+      <GoBack href="/" />
       <h2 className={`${styles.header1} ${juliusSansOne.className}`}>
         WHAT IS SPATIAL DESIGN
       </h2>
