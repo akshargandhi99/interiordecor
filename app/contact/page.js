@@ -58,7 +58,7 @@ const Contact = () => {
 
   return (
     <div className={styles.fullContainer}>
-      <GoBack href="/" />
+      <GoBack href="/" top={135} left={50} />
       <div className={styles.formContainer}>
         <h1 className={`${styles.mainHeader} ${juliusSansOne.className}`}>
           CONTACT US

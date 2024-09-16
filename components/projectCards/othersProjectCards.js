@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import GoBack from "@/components/goBack/goBack";
 import card1 from "@/public/others/tiny homes.webp";
 import card2 from "@/public/others/dystopian.webp";
 import card3 from "@/public/others/peach fuzz.webp";
@@ -60,31 +61,34 @@ const OthersProjectCards = () => {
   //   ];
   const cardLinks = ["", "", "", "", "", "", "", "", "", ""];
   return (
-    <div className={styles.gridContainer}>
-      {cards.map((card, key) => {
-        return (
-          <div className={styles.projectImageContainer} key={key}>
-            <div className={styles.projectImageOverlayContainer}>
-              <Image
-                src={card}
-                alt={`Other Project ${key}`}
-                className={styles.projectImage}
-              />
+    <div className={styles.fullContainer}>
+      <GoBack href="/" top={135} left={50} />
+      <div className={styles.gridContainer}>
+        {cards.map((card, key) => {
+          return (
+            <div className={styles.projectImageContainer} key={key}>
+              <div className={styles.projectImageOverlayContainer}>
+                <Image
+                  src={card}
+                  alt={`Other Project ${key}`}
+                  className={styles.projectImage}
+                />
 
-              {cardDescriptions[key] !== null &&
-                cardDescriptions[key] !== undefined &&
-                cardDescriptions[key] !== "" && (
-                  <div className={styles.glassDescription}>
-                    {cardDescriptions[key]}
-                  </div>
-                )}
+                {cardDescriptions[key] !== null &&
+                  cardDescriptions[key] !== undefined &&
+                  cardDescriptions[key] !== "" && (
+                    <div className={styles.glassDescription}>
+                      {cardDescriptions[key]}
+                    </div>
+                  )}
+              </div>
             </div>
-          </div>
-        );
-      })}
-      <div className={styles.emptyDiv} />
-      <div className={styles.emptyDiv} />
-      <div className={styles.emptyDiv} />
+          );
+        })}
+        <div className={styles.emptyDiv} />
+        <div className={styles.emptyDiv} />
+        <div className={styles.emptyDiv} />
+      </div>
     </div>
   );
 };

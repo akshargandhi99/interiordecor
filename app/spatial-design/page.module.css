@@ -20,7 +20,7 @@
 
 .header1,
 .headers {
-  font-size: 36px;
+  font-size: 26px;
 }
 .header1 {
   margin-top: 200px;
@@ -31,7 +31,7 @@
 }
 
 .paragraph {
-  font-size: 24px;
+  font-size: 18px;
   font-family: "Century Gothic";
   color: var(--text-color);
   width: 80vw;
@@ -67,14 +67,14 @@
 }
 
 .industryTitle {
-  font-size: 36px;
+  font-size: 26px;
   font-family: "Brown Sugar";
   letter-spacing: 6px;
   color: var(--text-color);
 }
 
 .industrySubTitle {
-  font-size: 24px;
+  font-size: 20px;
   letter-spacing: 1px;
   color: var(--text-color);
 }
@@ -113,7 +113,7 @@
 /* Our Principles */
 
 .ourPrinciplesImage {
-  width: 95vw;
+  width: 85vw;
   margin: 150px 50px 0 50px;
 }
 

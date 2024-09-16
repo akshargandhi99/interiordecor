@@ -55,7 +55,7 @@ const SpatialDesign = () => {
   // ];
   return (
     <div className={styles.fullContainer}>
-      <GoBack href="/" />
+      <GoBack href="/" top={135} left={50} />
       <h2 className={`${styles.header1} ${juliusSansOne.className}`}>
         WHAT IS SPATIAL DESIGN
       </h2>

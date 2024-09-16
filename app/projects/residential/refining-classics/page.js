@@ -31,8 +31,8 @@ const RefiningClassics = () => {
 
   return (
     <div className={styles.fullContainer}>
-      <GoBack href={`/projects/${type}`} />
       <div className={styles.topContainer}>
+        <GoBack href={`/projects/${type}`} top={10} left={50} />
         <div className={styles.bodyContainer}>
           <main className={styles.mainContainer}>
             <div

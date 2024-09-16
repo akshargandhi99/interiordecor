@@ -79,7 +79,7 @@ const About = () => {
   ];
   return (
     <div className={styles.mainContainer}>
-      <GoBack href="/" />
+      <GoBack href="/" top={135} left={50} />
       <div className={styles.welcome}>
         <Image
           src={profileImage}

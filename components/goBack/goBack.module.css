@@ -1,5 +1,5 @@
 .goBack {
-  position: fixed;
+  position: absolute;
   cursor: pointer;
   color: #514d43;
   top: 135px;

@@ -5,7 +5,6 @@ import OthersProjectCards from "@/components/projectCards/othersProjectCards";
 const Others = () => {
   return (
     <div className={styles.projectContainer}>
-      <GoBack href="/" />
       <OthersProjectCards />`
     </div>
   );
