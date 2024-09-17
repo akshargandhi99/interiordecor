@@ -1,4 +1,5 @@
-.footerContainer {
+.footerContainer,
+.footerContainerExpanded {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -8,8 +9,13 @@
   align-items: center;
   height: 30px;
   background-color: rgba(237, 232, 223, 1);
-
+  transition: all 0.4s ease-in-out;
   z-index: 2;
+}
+
+.footerContainerExpanded {
+  height: 140px;
+  align-items: flex-start;
 }
 
 .innerFooterContainer {
@@ -17,32 +23,72 @@
   width: 60%;
   display: flex;
   justify-content: space-evenly;
+  align-items: flex-start;
 }
 
-.footerItems {
+.footerItems,
+.footerItemsExpanded {
   display: flex;
-  align-items: center;
-  color: rgba(60, 35, 28, 1);
-  cursor: pointer;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: var(--text-color);
   font-size: 14px;
 }
 
+.footerItemsExpanded {
+  margin-top: 15px;
+}
+
+.footerItemInnerContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
 .plus {
-  color: rgba(60, 35, 28, 1);
+  color: var(--text-color);
   margin-left: 5px;
   font-size: 25px;
 }
 
-.whatsappContainer {
+.email {
+  font-size: 12px;
+  font-family: "Century Gothic";
+  text-transform: lowercase;
+  margin-top: 15px;
+  text-decoration: underline;
+}
+
+.social {
+  font-size: 12px;
+  margin-top: 10px;
+  text-decoration: underline;
+  font-family: "Century Gothic";
+  cursor: pointer;
+}
+
+.whatsappContainer,
+.whatsappContainerExpanded {
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
 .whatsapp {
-  color: rgba(60, 35, 28, 1);
+  color: var(--text-color);
   cursor: pointer;
   font-size: 14px;
   text-decoration: underline;
+  cursor: pointer;
+}
+
+.whatsappContainerExpanded {
+  margin-top: 15px;
+  align-items: flex-start;
+}
+
+.link {
+  color: var(--text-color);
 }
 
 .arrow {

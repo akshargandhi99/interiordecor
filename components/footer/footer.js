@@ -1,24 +1,69 @@
+"use client";
+
 import styles from "./footer.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { juliusSansOne } from "@/app/fonts";
 import arrow from "@/public/static/squareWithDiagonalArrow.webp";
+import { Fragment, useState } from "react";
 
 const Footer = () => {
+  const [expanded, setExpanded] = useState(false);
+
+  const footerContainer = expanded
+    ? styles.footerContainerExpanded
+    : styles.footerContainer;
+
+  const footerItems = expanded
+    ? styles.footerItemsExpanded
+    : styles.footerItems;
+
+  const whatsappContainer = expanded
+    ? styles.whatsappContainerExpanded
+    : styles.whatsappContainer;
   return (
-    <footer className={styles.footerContainer}>
+    <footer className={footerContainer}>
       <div className={styles.innerFooterContainer}>
-        <span className={`${styles.footerItems} ${juliusSansOne.className}`}>
-          EMAIL <b className={styles.plus}>+</b>
+        <span className={`${footerItems} ${juliusSansOne.className}`}>
+          <span
+            className={styles.footerItemInnerContainer}
+            onClick={() => setExpanded(!expanded)}
+          >
+            EMAIL <b className={styles.plus}>+</b>
+          </span>
+
+          {expanded && <span className={styles.email}>info@avsds.in</span>}
         </span>
-        <span className={`${styles.footerItems} ${juliusSansOne.className}`}>
-          SOCIAL <b className={styles.plus}>+</b>
+        <span className={`${footerItems} ${juliusSansOne.className}`}>
+          <span
+            className={styles.footerItemInnerContainer}
+            onClick={() => setExpanded(!expanded)}
+          >
+            SOCIAL <b className={styles.plus}>+</b>
+          </span>
+          {expanded && (
+            <Fragment>
+              <span className={styles.social}>Instagram</span>
+              <span className={styles.social}>Facebook</span>
+              <span className={styles.social}>Twitter</span>
+            </Fragment>
+          )}
         </span>
-        <span className={`${styles.footerItems} ${juliusSansOne.className}`}>
-          CONTACT <b className={styles.plus}>+</b>
+        <span className={`${footerItems} ${juliusSansOne.className}`}>
+          <span
+            className={styles.footerItemInnerContainer}
+            onClick={() => setExpanded(!expanded)}
+          >
+            CONTACT <b className={styles.plus}>+</b>
+          </span>
+          {expanded && <span className={styles.email}>+91 9930999329</span>}
         </span>
-        <div className={styles.whatsappContainer}>
-          <Link href="https://wa.me/919930999329" target="_blank">
+        <div className={whatsappContainer}>
+          <Link
+            className={styles.link}
+            href="https://wa.me/919930999329"
+            target="_blank"
+          >
             <span className={`${styles.whatsapp} ${juliusSansOne.className}`}>
               CHAT ON WHATSAPP
             </span>

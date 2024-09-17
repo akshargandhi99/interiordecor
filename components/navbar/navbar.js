@@ -16,6 +16,10 @@ const NavBar = () => {
       navbarUnderline = "main";
       navbarColor = "normal";
       break;
+    case "/projects":
+      navbarUnderline = "projects";
+      navbarColor = "normal";
+      break;
     case "/projects/residential":
       navbarUnderline = "projects";
       navbarColor = "normal";
@@ -94,11 +98,20 @@ const NavBar = () => {
 
         <div>
           <div className={styles.navItemContainer}>
-            <span
-              className={`${styles.projects} ${styles.navbarItem} ${juliusSansOne.className}`}
+            <Link
+              href={"/projects"}
+              className={
+                navbarUnderline === "projects"
+                  ? styles.navLinkNoHover
+                  : styles.navLink
+              }
             >
-              PROJECTS
-            </span>
+              <span
+                className={`${styles.projects} ${styles.navbarItem} ${juliusSansOne.className}`}
+              >
+                PROJECTS
+              </span>
+            </Link>
             {navbarUnderline === "projects" && (
               <hr className={styles.selected} />
             )}
