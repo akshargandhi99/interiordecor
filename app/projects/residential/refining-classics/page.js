@@ -41,7 +41,10 @@ const RefiningClassics = () => {
               <Link href="/" className={styles.breadCrumbLink}>
                 HOME
               </Link>{" "}
-              <span className={styles.breadCrumbArrow}>▶</span> PROJECTS{" "}
+              <span className={styles.breadCrumbArrow}>▶</span>{" "}
+              <Link href="/projects" className={styles.breadCrumbLink}>
+                PROJECTS{" "}
+              </Link>
               <span className={styles.breadCrumbArrow}>▶</span>{" "}
               <Link
                 href={`/projects/${type}`}

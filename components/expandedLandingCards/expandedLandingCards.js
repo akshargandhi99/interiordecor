@@ -117,6 +117,7 @@ const ExpandedCard = (props) => {
         "Each corner of the home is designed to inspire creativity, with flexible spaces that can easily adapt as the family grows and evolves.",
         "The design includes areas specifically crafted for family bonding and relaxation, supporting their lifestyle and need for quality time together.",
       ];
+      projectLink = "/projects/residential/blissful-blues";
       break;
     case "chasingRed":
       title = "Chasing Red";
@@ -129,6 +130,7 @@ const ExpandedCard = (props) => {
         "Deep red accents are incorporated strategically to create a warm and inviting atmosphere throughout the home.",
         "Flexible zones accommodate the younger couple’s varied routines, with communal spaces that foster family interaction and private areas for quiet moments.",
       ];
+      projectLink = "/projects/residential/chasing-red";
       break;
     case "craftingFarmhouse":
       title = "Crafting a Farmhouse";
@@ -141,6 +143,7 @@ const ExpandedCard = (props) => {
         "Use of large windows,balconies and sliding doors to create visual and physical connections with the surrounding landscape. ",
         "Selecting sustainable materials such as reclaimed wood, bamboo flooring, and low-VOC paints to promote eco-friendly living.",
       ];
+      projectLink = "/projects/residential/crafting-a-farmhouse";
       break;
     case "refiningClassics":
       title = "Refining Classics";
@@ -153,6 +156,7 @@ const ExpandedCard = (props) => {
         "Opting for a serene, neutral colour palette with accents in richer tones or metallics to maintain a sophisticated, minimalist look.",
         "Decor that reflect both classic and modern styles, keeping the decor minimal and purposeful to enhance the serene, refined atmosphere.",
       ];
+      projectLink = "/projects/residential/refining-classics";
       break;
 
     case "monochromic":
@@ -166,6 +170,7 @@ const ExpandedCard = (props) => {
         "Combining different finishes and textures while maintaining a consistent design language. Ensuring smooth transitions between the living, kitchen, and bedroom areas.",
         "Utilisation of natural light and complement with strategic artificial lighting. Includes adjustable lighting options to set different moods.",
       ];
+      projectLink = "/projects/residential/monochromic-house";
       break;
     default:
       throw new Error("Invalid Project name");
