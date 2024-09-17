@@ -21,7 +21,7 @@ const CommercialProjectCards = () => {
   const cardLinks = ["", "", ""];
   return (
     <div className={styles.fullContainer}>
-      <GoBack href="/" top={135} left={50} />
+      <GoBack href="/projects" top={135} left={50} />
       <div className={styles.gridContainer}>
         {cards.map((card, key) => {
           return (
