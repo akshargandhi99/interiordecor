@@ -70,9 +70,8 @@ const Contact = () => {
               className={styles.formImage}
               alt="Form Decoration Image"
             />
-            <p className={styles.decorativeText}>
-              Design that rhymes with your lifestyle!
-            </p>
+            <p className={styles.decorativeText1}>Design that rhymes</p>
+            <p className={styles.decorativeText2}>with your lifestyle!</p>
             <div className={styles.socialContainer}>
               <Image
                 src={XImage}

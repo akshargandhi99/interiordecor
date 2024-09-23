@@ -134,7 +134,7 @@ const NavBar = () => {
                 href="/projects/others"
                 className={`${styles.subNavLinks} ${juliusSansOne.className}`}
               >
-                OTHERS
+                Projects & More
               </Link>
             </div>
           </div>

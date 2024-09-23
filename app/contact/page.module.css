@@ -39,14 +39,19 @@
   height: 100%;
 }
 
-.decorativeText {
+.decorativeText1,
+.decorativeText2 {
   font-family: "Brown Sugar";
   font-size: 18px;
   width: 280px;
   letter-spacing: 3px;
   color: white;
   text-align: left;
-  transform: translate(50px, -200px);
+  transform: translate(55px, -200px);
+}
+
+.decorativeText2 {
+  transform: translate(54px, -210px);
 }
 
 .socialContainer {

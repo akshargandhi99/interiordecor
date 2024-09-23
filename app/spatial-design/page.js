@@ -57,7 +57,7 @@ const SpatialDesign = () => {
     <div className={styles.fullContainer}>
       <GoBack href="/" top={135} left={50} />
       <h2 className={`${styles.header1} ${juliusSansOne.className}`}>
-        WHAT IS SPATIAL DESIGN
+        WHAT IS SPATIAL DESIGN?
       </h2>
       <p className={styles.paragraph}>
         We all have heard many interior designers talking about the
@@ -77,16 +77,72 @@ const SpatialDesign = () => {
         WHAT IS AV’SDS ALL ABOUT?
       </h2>
       <p className={styles.paragraph}>
-        It is vital to know each member’s circulation patterns in their private
-        space as well as the shared spaces. This ensures ease in circulation and
-        ease in usage. Each space, nook and wall will be thoughtfully designed,
-        which in turn will help deliver value to a space. This will ensure a
-        positive influence on the client’s day to day life. Other than this, it
-        is also important to understand how their needs and wants can evolve in
-        the future ensuring the design can be accommodative.
+        For us, it is vital to understand each end user’s circulation patterns
+        in their private space as well as the shared spaces. We believe in
+        thoughtfully designing each space, nook and wall, which in turn helps us
+        delivery value to any space. This ensures a positive influence on the
+        client’s day to day life. Other than this, it is also important to
+        understand how their needs and wants can evolve in the future, ensuring
+        us to design a space that can be accommodative.
       </p>
 
-      <h2 className={`${styles.headers} ${juliusSansOne.className}`}>
+      {/* Our Principles */}
+      <Image
+        src={ourPrinciples}
+        className={styles.ourPrinciplesImage}
+        alt="Our Principles"
+      />
+      {/* <div className={styles.iconGrid}>
+        <div className={styles.invisibleContainer}>
+          <div className={styles.principleContainer}>
+            <h2
+              className={`${styles.principleHeader} ${juliusSansOne.className}`}
+            >
+              OUR PRINCIPLES
+            </h2>
+            <p className={styles.principleParagraph}>
+              Our design principles are rooted in the belief that spaces should
+              be not merely functional but also evocative, reflecting the unique
+              personality and aspirations of our clients, where every line,
+              curve, and texture tells a story of opulence and refinement,
+              transforming houses into homes that are not just aesthetically
+              pleasing but also emotionally resonant and functionally efficient.
+            </p>
+          </div>
+          <div className={styles.emptyDiv1} />
+        </div>
+        {iconArray.map((iconElement, index) => {
+          if (index === 8) {
+            return (
+              <Fragment key={`Spatial Design Icon ${index}`}>
+                <div className={styles.iconContainer}>
+                  <div className={styles.emptyDiv2}></div>
+                </div>
+
+                <div className={styles.iconContainer}>
+                  <Image
+                    src={iconElement[0]}
+                    className={styles.icon}
+                    alt="Icon"
+                  />
+                  <p className={styles.iconText}>{iconElement[1]}</p>
+                </div>
+              </Fragment>
+            );
+          }
+          return (
+            <div
+              key={`Spatial Design Icon ${index}`}
+              className={styles.iconContainer}
+            >
+              <Image src={iconElement[0]} className={styles.icon} alt="Icon" />
+              <p className={styles.iconText}>{iconElement[1]}</p>
+            </div>
+          );
+        })}
+      </div> */}
+
+      {/* <h2 className={`${styles.headers} ${juliusSansOne.className}`}>
         INDUSTRY HIGHLIGHTS
       </h2>
       <div className={styles.industryContainer}>
@@ -153,7 +209,7 @@ const SpatialDesign = () => {
             </span>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <h2 className={`${styles.headers} ${juliusSansOne.className}`}>
         OUR PHILOSOPHY
@@ -161,10 +217,10 @@ const SpatialDesign = () => {
       <p className={styles.paragraph}>
         All the above will be done with the help the family members the space is
         intended for. Yes, all clients want to be involved in the design
-        process, and we designers hesitate to give them the reins. But at AVsds,
-        we ensure that the role played by the client is of the highest value,
-        allowing them to open themselves to us by sharing their desires, wants
-        and needs and not just their requirements.
+        process, and we designers hesitate to give them the reins. But at
+        AV&apos;SDS, we ensure that the role played by the client is of the
+        highest value, allowing them to open themselves to us by sharing their
+        desires, wants and needs and not just their requirements.
       </p>
       <p className={styles.paragraph}>
         The same will not be done through an interview or endless meetings, but
@@ -186,61 +242,7 @@ const SpatialDesign = () => {
         />
         <span className={styles.designProcessTitle}>DESIGN PROCESS</span>
       </div>
-      {/* Our Principles */}
-      <Image
-        src={ourPrinciples}
-        className={styles.ourPrinciplesImage}
-        alt="Our Principles"
-      />
-      {/* <div className={styles.iconGrid}>
-        <div className={styles.invisibleContainer}>
-          <div className={styles.principleContainer}>
-            <h2
-              className={`${styles.principleHeader} ${juliusSansOne.className}`}
-            >
-              OUR PRINCIPLES
-            </h2>
-            <p className={styles.principleParagraph}>
-              Our design principles are rooted in the belief that spaces should
-              be not merely functional but also evocative, reflecting the unique
-              personality and aspirations of our clients, where every line,
-              curve, and texture tells a story of opulence and refinement,
-              transforming houses into homes that are not just aesthetically
-              pleasing but also emotionally resonant and functionally efficient.
-            </p>
-          </div>
-          <div className={styles.emptyDiv1} />
-        </div>
-        {iconArray.map((iconElement, index) => {
-          if (index === 8) {
-            return (
-              <Fragment key={`Spatial Design Icon ${index}`}>
-                <div className={styles.iconContainer}>
-                  <div className={styles.emptyDiv2}></div>
-                </div>
 
-                <div className={styles.iconContainer}>
-                  <Image
-                    src={iconElement[0]}
-                    className={styles.icon}
-                    alt="Icon"
-                  />
-                  <p className={styles.iconText}>{iconElement[1]}</p>
-                </div>
-              </Fragment>
-            );
-          }
-          return (
-            <div
-              key={`Spatial Design Icon ${index}`}
-              className={styles.iconContainer}
-            >
-              <Image src={iconElement[0]} className={styles.icon} alt="Icon" />
-              <p className={styles.iconText}>{iconElement[1]}</p>
-            </div>
-          );
-        })}
-      </div> */}
       <h2 className={`${styles.headers} ${juliusSansOne.className}`}>
         LATEST BLOGS
       </h2>

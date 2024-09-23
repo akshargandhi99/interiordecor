@@ -18,12 +18,16 @@ const Footer = () => {
     ? styles.footerItemsExpanded
     : styles.footerItems;
 
+  const innerFooterContainer = expanded
+    ? styles.innerFooterContainerExpanded
+    : styles.innerFooterContainer;
+
   const whatsappContainer = expanded
     ? styles.whatsappContainerExpanded
     : styles.whatsappContainer;
   return (
     <footer className={footerContainer}>
-      <div className={styles.innerFooterContainer}>
+      <div className={innerFooterContainer}>
         <span className={`${footerItems} ${juliusSansOne.className}`}>
           <span
             className={styles.footerItemInnerContainer}

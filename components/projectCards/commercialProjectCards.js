@@ -52,7 +52,7 @@ const CommercialProjectCards = () => {
                   {cardTitles[key]}
                 </h2>
               </Link>
-              <p className={styles.projectDescription}>{cardSubtitles[key]}</p>
+              {/* <p className={styles.projectDescription}>{cardSubtitles[key]}</p> */}
             </div>
           );
         })}

@@ -1,5 +1,7 @@
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import GoBack from "@/components/goBack/goBack";
 import card1 from "@/public/others/tiny homes.webp";
 import card2 from "@/public/others/dystopian.webp";
@@ -12,10 +14,10 @@ import card8 from "@/public/others/peach fuzz 2.webp";
 import card9 from "@/public/others/furniture.webp";
 import card10 from "@/public/others/minimal armchair.webp";
 
-// import { juliusSansOne } from "@/app/fonts";
 import styles from "./othersProjectCards.module.css";
 
 const OthersProjectCards = () => {
+  const [zoomedImage, setZoomedImage] = useState(null); // State to track the zoomed image
   const cards = [
     card1,
     card2,
@@ -28,15 +30,6 @@ const OthersProjectCards = () => {
     card9,
     card10,
   ];
-
-  //   const cardTitles = [
-  //     "Curating Warmth",
-  //     "Chasing Red",
-  //     "Blissful Blues",
-  //     "Crafting a Farmhouse",
-  //     "Refining Classics",
-  //     "Monochromic House",
-  //   ];
 
   const cardDescriptions = [
     "Tiny Homes: A competition project for the design of a tiny home while using every inch of the space.",
@@ -51,22 +44,25 @@ const OthersProjectCards = () => {
     "Minimal Armchair",
   ];
 
-  //   const cardSubtitles = [
-  //     "Living/Dining Room",
-  //     "Master Bedroom",
-  //     "Living Room",
-  //     "Bedroom",
-  //     "Living Room",
-  //     "Monochromic Bathroom",
-  //   ];
-  const cardLinks = ["", "", "", "", "", "", "", "", "", ""];
+  const handleImageClick = (card) => {
+    setZoomedImage(card); // Set the clicked image as the zoomed image
+  };
+
+  const closeZoom = () => {
+    setZoomedImage(null); // Close the zoomed view
+  };
+
   return (
     <div className={styles.fullContainer}>
       <GoBack href="/projects" top={135} left={50} />
       <div className={styles.gridContainer}>
         {cards.map((card, key) => {
           return (
-            <div className={styles.projectImageContainer} key={key}>
+            <div
+              className={styles.projectImageContainer}
+              key={key}
+              onClick={() => handleImageClick(card)} // Click event to zoom in
+            >
               <div className={styles.projectImageOverlayContainer}>
                 <Image
                   src={card}
@@ -89,6 +85,18 @@ const OthersProjectCards = () => {
         <div className={styles.emptyDiv} />
         <div className={styles.emptyDiv} />
       </div>
+
+      {zoomedImage && (
+        <div className={styles.fullscreenOverlay} onClick={closeZoom}>
+          <div className={styles.fullscreenImageContainer}>
+            <Image
+              src={zoomedImage}
+              alt="Zoomed Image"
+              className={styles.fullscreenImage}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

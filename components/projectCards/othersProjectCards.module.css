@@ -89,6 +89,7 @@
   opacity: 1;
   display: flex;
   top: 60%;
+  cursor: pointer;
 }
 
 .projectImage {
@@ -98,6 +99,7 @@
   object-fit: cover;
   overflow: hidden;
   position: relative;
+  cursor: pointer;
 }
 
 .projectImage:hover {
@@ -111,6 +113,40 @@
 .emptyDiv {
   height: 100px;
   width: 100px;
+}
+
+/* Fullscreen Overlay */
+.fullscreenOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  cursor: zoom-out; /* Changes cursor to indicate you can click to exit */
+}
+
+.fullscreenImageContainer {
+  max-width: 90%; /* Limit the size of the image */
+  max-height: 90%; /* Limit the size of the image */
+  overflow: hidden;
+}
+
+.fullscreenImage {
+  margin-top: 70px;
+  width: auto;
+  height: 60vh;
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 50%;
+  min-height: 50%;
+  object-fit: contain;
+  border-radius: 10px;
+  transition: all 0.6s ease-in-out;
 }
 
 /* Less than 1100px */

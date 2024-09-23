@@ -14,7 +14,7 @@ const ProjectsMain = () => {
   const cardTitles = [
     "RESIDENTIAL PROJECTS",
     "COMMERCIAL PROJECTS",
-    "OTHER PROJECTS",
+    "PROJECTS & MORE",
   ];
 
   const cardDescriptions = [
@@ -25,7 +25,7 @@ const ProjectsMain = () => {
   const cardLinks = [
     "/projects/residential",
     "/projects/commercial",
-    "/projects/others",
+    "/projects/projects-and-more",
   ];
   return (
     <div className={styles.fullContainer}>

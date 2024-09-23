@@ -48,7 +48,7 @@ const About = () => {
     "Sustainable Interior Design: Materials and Practices",
     "The Art of Open-Concept Living: Balancing Privacy and Space",
     "Biophilic Design: Bringing Nature Indoors",
-    "Colour Psychology & amp; Feng Shui: Space perception",
+    "Colour Psychology & Feng Shui: Space perception",
   ];
   const imagesCarouselArray = [
     [largeImage1, styles.largeImage1],
@@ -109,26 +109,26 @@ const About = () => {
           </p>
 
           <p className={styles.welcomeText}>
-            At AVsds, it&apos;s all about you and your unique style. I&apos;m
-            passionate about helping you uncover the comfort and bliss that
-            already exists within your walls. Let&apos;s connect to bring out
-            the best in your space, ensuring it reflects who you are and how you
-            live. Together, we&apos;ll transform spaces into reflections of your
-            life and personality, and to ensure daily life feels effortless for
-            the family.
+            At AV&apos;SDS, it&apos;s all about you and your unique style.
+            I&apos;m passionate about helping you uncover the comfort and bliss
+            that already exists within your walls. Let&apos;s connect to bring
+            out the best in your space, ensuring it reflects who you are and how
+            you live. Together, we&apos;ll transform spaces into reflections of
+            your life and personality, and to ensure daily life feels effortless
+            for the family.
           </p>
         </div>
       </div>
 
       <h2 className={`${styles.header2} ${juliusSansOne.className}`}>
-        EXPLORE THE WORLD THROUGH DESIGN
+        EXPLORE THE WORLD OF DETAILS THROUGH OUR EYES!
       </h2>
       <Marquee
         className={styles.carouselContainer2}
         pauseOnClick={false}
         pauseOnHover={false}
         autoFill={true}
-        speed={90}
+        speed={50}
         style={{ overflowX: "visible" }}
       >
         {imagesCarouselArray.map((image, index) => {
