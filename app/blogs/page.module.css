@@ -1,0 +1,95 @@
+.mainContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: white;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.header {
+  align-self: center;
+  margin-top: 200px;
+}
+
+.blogFullContainer {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+.blogContainer {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 75px;
+  gap: 50px;
+}
+
+.blogImage {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.blogItem {
+  position: relative; /* Each item now has its own positioning context */
+  display: inline-block;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(168, 167, 167, 1);
+}
+
+.glassDescription {
+  position: absolute;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  opacity: 1; /* Initially hidden */
+  top: 60%;
+  left: 0%;
+  z-index: 1;
+  /* transform: translate(-1px, 15px); */
+  color: rgba(255, 255, 255, 1);
+  font-weight: 300;
+  background: rgba(255, 255, 255, 0.5); /* Transparent background */
+  font-family: "Century Gothic";
+  backdrop-filter: blur(10px); /* Apply blur */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  color: var(--text-color);
+  width: 260px;
+  text-wrap: wrap;
+  height: 120px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: all 0.6s ease-in-out;
+  cursor: pointer;
+}
+
+@media (max-width: 1350px) {
+  .blogContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1050px) {
+  .blogContainer {
+    gap: 50px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .blogContainer {
+    gap: 50px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

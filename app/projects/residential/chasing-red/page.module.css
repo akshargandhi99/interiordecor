@@ -28,6 +28,10 @@
   display: none;
 }
 
+.topContainerMobile {
+  display: none;
+}
+
 .goBack {
   position: absolute;
   top: 135px;
@@ -200,7 +204,74 @@
 }
 
 @media (max-width: 1150px) {
-  .imageGrid {
-    width: 50vw;
+  .topContainer {
+    display: none;
+  }
+  .topContainerMobile {
+    display: block;
+    position: fixed;
+    top: 100px;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .mainContainer {
+    margin-right: 20px;
+    margin-left: 20px;
+    width: 95vw;
+  }
+
+  .location {
+    margin-bottom: 50px;
+  }
+
+  .breadCrumbMenu {
+    transform: translateX(-12px);
+  }
+
+  .mainHeader {
+    transform: translateX(-2px);
+  }
+
+  .imageGrid1,
+  .imageGrid2,
+  .imageGrid3 {
+    margin: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 1fr;
+    gap: 10px;
+    margin-bottom: 50px;
+  }
+
+  .imageGrid2 {
+    grid-template-rows: 1.5fr;
+  }
+
+  .imageGrid3 {
+    grid-template-rows: 1fr 1.5fr;
+  }
+
+  .subHeader {
+    margin-top: 0;
+    font-size: 16px;
+  }
+
+  .olMobile {
+    padding-left: 17px;
+  }
+
+  .pill {
+    font-size: 12px;
+  }
+
+  .goBack {
+    left: 17px;
+    font-size: 12px;
   }
 }

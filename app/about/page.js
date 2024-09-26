@@ -1,18 +1,12 @@
 import styles from "./page.module.css";
 import { juliusSansOne } from "@/app/fonts";
 import Image from "next/image";
-import { Fragment } from "react";
-import GoBack from "@/components/goBack/goBack";
+import Link from "next/link";
 import Marquee from "react-fast-marquee";
 import testimonials from "@/data/testimonials.json";
 
 import profileImage from "@/public/static/profile image.webp";
 import quoteImage from "@/public/static/quotes.webp";
-
-import blogImage1 from "@/public/static/blog 1.webp";
-import blogImage2 from "@/public/static/blog 2.webp";
-import blogImage3 from "@/public/static/blog 3.webp";
-import blogImage4 from "@/public/static/blog 4.webp";
 
 import largeImage1 from "@/public/aboutUsMarqueeImages/364-1.webp";
 import largeImage2 from "@/public/aboutUsMarqueeImages/364-2.webp";
@@ -43,13 +37,6 @@ import smallImage9 from "@/public/aboutUsMarqueeImages/165-9.webp";
 import smallImage10 from "@/public/aboutUsMarqueeImages/165-10.webp";
 
 const About = () => {
-  const blogImages = [blogImage1, blogImage2, blogImage3, blogImage4];
-  const blogDescriptions = [
-    "Sustainable Interior Design: Materials and Practices",
-    "The Art of Open-Concept Living: Balancing Privacy and Space",
-    "Biophilic Design: Bringing Nature Indoors",
-    "Colour Psychology & Feng Shui: Space perception",
-  ];
   const imagesCarouselArray = [
     [largeImage1, styles.largeImage1],
     [mediumImage1, styles.mediumImage1],
@@ -77,9 +64,14 @@ const About = () => {
     [smallImage9, styles.smallImage9],
     [smallImage10, styles.smallImage10],
   ];
+  // Mobile Responsive
   return (
     <div className={styles.mainContainer}>
-      <GoBack href="/" top={135} left={50} />
+      <Link href="/">
+        <span className={`${styles.goBack} ${juliusSansOne.className}`}>
+          🡠 GO BACK
+        </span>
+      </Link>
       <div className={styles.welcome}>
         <Image
           src={profileImage}
@@ -172,30 +164,6 @@ const About = () => {
           );
         })}
       </Marquee>
-
-      <h2 className={`${styles.header2} ${juliusSansOne.className}`}>
-        LATEST BLOGS
-      </h2>
-      <div className={styles.blogFullContainer}>
-        <div className={styles.blogContainer}>
-          {blogImages.map((image, index) => {
-            return (
-              <Fragment key={`About Page Blog Image ${index + 1}`}>
-                <div className={styles.blogItem}>
-                  <Image
-                    src={image}
-                    className={styles.blogImage}
-                    alt={`Blog image ${index + 1}`}
-                  />
-                  <div className={styles.glassDescription}>
-                    {blogDescriptions[index]}
-                  </div>
-                </div>
-              </Fragment>
-            );
-          })}
-        </div>
-      </div>
     </div>
   );
 };

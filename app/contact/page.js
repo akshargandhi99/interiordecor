@@ -7,7 +7,7 @@ import Link from "next/link";
 import GoBack from "@/components/goBack/goBack";
 import IntegerInput from "./integerInput"; // Importing due to use client
 import SqftInput from "./sqftInput"; //  Importing due to use client
-
+import useWindowDimensions from "@/hooks/windowDimensions";
 import formImage from "@/public/static/aboutFormImage.webp";
 import XImage from "@/public/static/X.webp";
 import facebookImage from "@/public/static/facebook.webp";
@@ -56,9 +56,17 @@ const Contact = () => {
     }
   };
 
+  // Responsive
+  const { height, width } = useWindowDimensions();
+  const isMobile = width <= 1240 ? true : false;
   return (
     <div className={styles.fullContainer}>
-      <GoBack href="/" top={135} left={50} />
+      <Link href="/">
+        <span className={`${styles.goBack} ${juliusSansOne.className}`}>
+          🡠 GO BACK
+        </span>
+      </Link>
+
       <div className={styles.formContainer}>
         <h1 className={`${styles.mainHeader} ${juliusSansOne.className}`}>
           CONTACT US
@@ -100,7 +108,11 @@ const Contact = () => {
 
           <form onSubmit={onSubmit} className={styles.mainContainer}>
             {/* Name */}
-            <div className={styles.formInputContainer}>
+            <div
+              className={`${styles.formInputContainer} ${
+                isMobile && styles.doubleSpan
+              }`}
+            >
               <label
                 htmlFor="name"
                 className={`${styles.label} ${juliusSansOne.className}`}
@@ -115,7 +127,11 @@ const Contact = () => {
               />
             </div>
             {/* Email */}
-            <div className={styles.formInputContainer}>
+            <div
+              className={`${styles.formInputContainer} ${
+                isMobile && styles.doubleSpan
+              }`}
+            >
               <label
                 htmlFor="email"
                 className={`${styles.label} ${juliusSansOne.className}`}
@@ -131,7 +147,11 @@ const Contact = () => {
             </div>
 
             {/* TOTAL FAMILY MEMBERS */}
-            <div className={styles.formInputContainer}>
+            <div
+              className={`${styles.formInputContainer} ${
+                isMobile && styles.doubleSpan
+              }`}
+            >
               <label
                 htmlFor="totalFamilyMembers"
                 className={`${styles.label} ${juliusSansOne.className}`}
@@ -141,7 +161,11 @@ const Contact = () => {
               <IntegerInput />
             </div>
             {/* CURRENT ADDRESS */}
-            <div className={styles.formInputContainer}>
+            <div
+              className={`${styles.formInputContainer} ${
+                isMobile && styles.doubleSpan
+              }`}
+            >
               <label
                 htmlFor="currentAddress"
                 className={`${styles.label} ${juliusSansOne.className}`}
@@ -173,7 +197,11 @@ const Contact = () => {
               />
             </div>
             {/* AREA IN SQFT */}
-            <div className={styles.formInputContainer}>
+            <div
+              className={`${styles.formInputContainer} ${
+                isMobile && styles.doubleSpan
+              }`}
+            >
               <label
                 htmlFor="areaInSqft"
                 className={`${styles.label} ${juliusSansOne.className}`}
@@ -183,7 +211,11 @@ const Contact = () => {
               <SqftInput />
             </div>
             {/* POSSESSION */}
-            <div className={styles.formInputContainer}>
+            <div
+              className={`${styles.formInputContainer} ${
+                isMobile && styles.doubleSpan
+              }`}
+            >
               <label
                 htmlFor="possession"
                 className={`${styles.label} ${juliusSansOne.className}`}

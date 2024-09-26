@@ -70,7 +70,7 @@ const ExpandedCard = (props) => {
 
   const fullImageContainer = useRef(null);
   const { dispatch, state } = useContext(StoreContext);
-  const { homeTitle } = state;
+  const { expanded } = state;
 
   const cardStyle = isCardOpen ? styles.expandedImage : styles.smallImage;
   const display = isCardOpen ? styles.display : styles.noDisplay;
@@ -238,10 +238,10 @@ const ExpandedCard = (props) => {
   }, []);
 
   useEffect(() => {
-    if (homeTitle === 0) {
+    if (expanded[projectName] === 0) {
       setCardOpen(false);
     }
-  }, [homeTitle]);
+  }, [expanded, projectName]);
 
   useEffect(() => {
     if (currentIndex === totalImages) {
@@ -256,7 +256,10 @@ const ExpandedCard = (props) => {
   const verticalScroll = (refCard) => {
     setTimeout(() => {
       // First, scroll the card into view vertically
-      refCard.current.scrollIntoView({ behavior: "smooth", block: "end" });
+      refCard.current.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+      });
     });
   };
 
@@ -292,32 +295,32 @@ const ExpandedCard = (props) => {
     }
   };
 
-  const addToHomeTitle = () => {
-    // dispatch({
-    //   type: ACTION_TYPES.SET_HOME_TITLE,
-    //   payload: { homeTitle: 0 },
-    // });
-    // setTimeout(() => {
+  const addToHomeTitle = (category) => {
+    // Reset all and close any open cards
+    const allZero = Object.keys(expanded).reduce((acc, key) => {
+      acc[key] = 0;
+      return acc;
+    }, {});
+    // Open only the relevant card, closing all others
     dispatch({
-      type: ACTION_TYPES.SET_HOME_TITLE,
-      payload: { homeTitle: 1 },
+      type: ACTION_TYPES.SET_EXPANDED,
+      payload: { expanded: { ...allZero, [category]: 1 } },
     });
     setCardOpen(true);
-    // }, 1000);
-  };
-  const goBack = () => {
-    dispatch({
-      type: ACTION_TYPES.SET_HOME_TITLE,
-      payload: { homeTitle: 0 },
-    });
   };
 
-  // const subtractFromHomeTitle = () => {
-  //   dispatch({
-  //     type: ACTION_TYPES.SET_HOME_TITLE,
-  //     payload: { homeTitle: homeTitle - 1},
-  //   });
-  // }
+  const goBack = () => {
+    // Reset all and close any open cards
+    const allZero = Object.keys(expanded).reduce((acc, key) => {
+      acc[key] = 0;
+      return acc;
+    }, {});
+
+    dispatch({
+      type: ACTION_TYPES.SET_EXPANDED,
+      payload: { expanded: allZero },
+    });
+  };
 
   return (
     <div
@@ -432,6 +435,7 @@ const ExpandedCard = (props) => {
                     index === 0
                       ? () => {
                           setCardOpen(true);
+                          // verticalScroll(fullImageContainer);
                           verticalScroll(fullImageContainer);
                           scrollMainCardToView(
                             refsArray,
@@ -439,7 +443,7 @@ const ExpandedCard = (props) => {
                             mainCardContainer,
                             false
                           ); // Don't scroll immediately, since we need time for the previous function to get the container into view first
-                          addToHomeTitle();
+                          addToHomeTitle(projectName);
                         }
                       : null
                   }

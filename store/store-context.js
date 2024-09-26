@@ -4,13 +4,13 @@ import { createContext, useReducer } from "react";
 export const StoreContext = createContext();
 
 export const ACTION_TYPES = {
-  SET_HOME_TITLE: "SET_HOME_TITLE", // Can be "main" or "projects" add more here...
+  SET_EXPANDED: "SET_EXPANDED", // Can be "main" or "projects" add more here...
 };
 
 const storeReducer = (state, action) => {
   switch (action.type) {
-    case ACTION_TYPES.SET_HOME_TITLE: {
-      return { ...state, homeTitle: action.payload.homeTitle };
+    case ACTION_TYPES.SET_EXPANDED: {
+      return { ...state, expanded: action.payload.expanded };
     }
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
@@ -19,7 +19,14 @@ const storeReducer = (state, action) => {
 
 const StoreProvider = ({ children }) => {
   const initialState = {
-    homeTitle: 0,
+    expanded: {
+      blissfulBlues: 0,
+      chasingRed: 0,
+      craftingFarmhouse: 0,
+      curatingWarmth: 0,
+      monochromic: 0,
+      refiningClassics: 0,
+    },
   };
 
   const [state, dispatch] = useReducer(storeReducer, initialState);

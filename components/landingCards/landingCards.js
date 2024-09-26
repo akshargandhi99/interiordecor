@@ -11,21 +11,40 @@ import { juliusSansOne } from "@/app/fonts";
 
 const LandingCard = () => {
   const { dispatch, state } = useContext(StoreContext);
-  const { homeTitle } = state;
+  const { expanded } = state;
+
+  let hasValueOne = false;
+  if (expanded) {
+    hasValueOne = Object.values(expanded).some((value) => value === 1);
+  } else {
+    hasValueOne = false;
+  }
   const pathname = usePathname();
 
   const goBack = () => {
+    // Reset all and close any open cards
+    const allZero = Object.keys(expanded).reduce((acc, key) => {
+      acc[key] = 0;
+      return acc;
+    }, {});
+
     dispatch({
-      type: ACTION_TYPES.SET_HOME_TITLE,
-      payload: { homeTitle: 0 },
+      type: ACTION_TYPES.SET_EXPANDED,
+      payload: { expanded: allZero },
     });
   };
 
   useEffect(() => {
     if (pathname === "/") {
+      // Reset all and close any open cards
+      const allZero = Object.keys(expanded).reduce((acc, key) => {
+        acc[key] = 0;
+        return acc;
+      }, {});
+
       dispatch({
-        type: ACTION_TYPES.SET_HOME_TITLE,
-        payload: { homeTitle: 0 },
+        type: ACTION_TYPES.SET_EXPANDED,
+        payload: { expanded: allZero },
       });
     }
   }, [pathname, dispatch]);
@@ -34,7 +53,7 @@ const LandingCard = () => {
       {/* {homeTitle !== 0 && <div className={styles.fade} />} */}
 
       <div className={styles.pageHeaderContainer}>
-        {homeTitle > 0 && (
+        {hasValueOne && (
           <span
             className={`${styles.goBack} ${juliusSansOne.className}`}
             onClick={() => goBack()}
@@ -42,7 +61,7 @@ const LandingCard = () => {
             🡠 GO BACK
           </span>
         )}
-        {homeTitle === 0 && (
+        {!hasValueOne && (
           <Fragment>
             <div className={styles.titleContainer}>
               <span className={`${styles.spatial} ${juliusSansOne.className}`}>
@@ -71,6 +90,8 @@ const LandingCard = () => {
         <ExpandedCard projectName={"monochromic"} />
         <ExpandedCard projectName={"refiningClassics"} />
 
+        <div className={styles.emptyDiv} />
+        <div className={styles.emptyDiv} />
         <div className={styles.emptyDiv} />
         <div className={styles.emptyDiv} />
       </div>

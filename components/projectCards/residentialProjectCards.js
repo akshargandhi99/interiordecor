@@ -50,7 +50,11 @@ const ResidentialProjectCards = () => {
   ];
   return (
     <div className={styles.fullContainer}>
-      <GoBack href="/projects" top={135} left={50} />
+      <Link href="/projects">
+        <span className={`${styles.goBack} ${juliusSansOne.className}`}>
+          🡠 GO BACK
+        </span>
+      </Link>
       <div className={styles.gridContainer}>
         {cards.map((card, key) => {
           return (

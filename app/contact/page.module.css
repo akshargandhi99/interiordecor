@@ -219,3 +219,73 @@
   height: 200px;
   width: 200px;
 }
+
+.goBack {
+  position: absolute;
+  cursor: pointer;
+  color: #514d43;
+  top: 135px;
+  left: 50px;
+  z-index: 3;
+}
+
+.goBack:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1240px) {
+  .formContainer {
+    width: 95vw;
+    height: 1400px;
+    margin-bottom: 0;
+  }
+
+  .formLeft,
+  .formImage {
+    height: 100%;
+    width: 20vw;
+  }
+
+  .socialMediaImage {
+    transform: translate(25px, -200px);
+  }
+
+  .decorativeText1 {
+    transform: translate(30px, -200px);
+  }
+  .decorativeText2 {
+    transform: translate(29px, -210px);
+  }
+
+  .mainContainer {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+
+  .formInputContainer {
+    width: 90%;
+  }
+
+  .formInput1,
+  .formInput2,
+  .formInput3 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 740px) {
+  .label,
+  .radioLabels {
+    font-size: 12px;
+  }
+  .decorativeText1,
+  .decorativeText2,
+  .socialMediaImage {
+    visibility: hidden;
+  }
+  .goBack {
+    left: 15px;
+    font-size: 12px;
+  }
+}

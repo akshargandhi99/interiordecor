@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import card1 from "@/public/commercial/Clothing Boutique.webp";
 import card2 from "@/public/commercial/Tropical Cafe.webp";
-import GoBack from "@/components/goBack/goBack";
 
 import { juliusSansOne } from "@/app/fonts";
 import styles from "./commercialProjectCards.module.css";
@@ -21,7 +20,11 @@ const CommercialProjectCards = () => {
   const cardLinks = ["", "", ""];
   return (
     <div className={styles.fullContainer}>
-      <GoBack href="/projects" top={135} left={50} />
+      <Link href="/projects">
+        <span className={`${styles.goBack} ${juliusSansOne.className}`}>
+          🡠 GO BACK
+        </span>
+      </Link>
       <div className={styles.gridContainer}>
         {cards.map((card, key) => {
           return (

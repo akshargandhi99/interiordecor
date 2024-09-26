@@ -4,11 +4,6 @@ import { Fragment } from "react";
 import Image from "next/image";
 import GoBack from "@/components/goBack/goBack";
 
-import blogImage1 from "@/public/static/spatial blog 1.webp";
-import blogImage2 from "@/public/static/spatial blog 2.webp";
-import blogImage3 from "@/public/static/spatial blog 3.webp";
-import blogImage4 from "@/public/static/spatial blog 4.webp";
-
 import icon1 from "@/public/spatial-design/1.webp";
 import icon2 from "@/public/spatial-design/2.webp";
 import icon3 from "@/public/spatial-design/3.webp";
@@ -27,13 +22,6 @@ import designProcessSVG from "@/public/spatial-design/designProcess.svg";
 import ourPrinciples from "@/public/spatial-design/Our Principals.svg";
 
 const SpatialDesign = () => {
-  const blogImages = [blogImage1, blogImage2, blogImage3, blogImage4];
-  const blogDescriptions = [
-    "Cultural Influences in Interior Design: Global Styles and Trends",
-    "Adaptive Reuse: Transforming Old Spaces into Modern Homes",
-    "Maximising Spaces: Design Solutions Mumbai Apartments",
-    "Child-Friendly Interiors: Designing Safe and Fun Spaces for Kids",
-  ];
   // const iconArray = [
   //   [icon1, "User Centric Approach", styles.icon1],
   //   [icon2, "Efficient Use of Square Footage", styles.icon2],
@@ -241,30 +229,6 @@ const SpatialDesign = () => {
           alt="Design Process"
         />
         <span className={styles.designProcessTitle}>DESIGN PROCESS</span>
-      </div>
-
-      <h2 className={`${styles.headers} ${juliusSansOne.className}`}>
-        LATEST BLOGS
-      </h2>
-      <div className={styles.blogFullContainer}>
-        <div className={styles.blogContainer}>
-          {blogImages.map((image, index) => {
-            return (
-              <Fragment key={`About Page Blog Image ${index + 1}`}>
-                <div className={styles.blogItem}>
-                  <Image
-                    src={image}
-                    className={styles.blogImage}
-                    alt={`Blog image ${index + 1}`}
-                  />
-                  <div className={styles.glassDescription}>
-                    {blogDescriptions[index]}
-                  </div>
-                </div>
-              </Fragment>
-            );
-          })}
-        </div>
       </div>
     </div>
   );

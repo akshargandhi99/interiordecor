@@ -21,6 +21,7 @@
 .header1,
 .headers {
   font-size: 26px;
+  margin: 0;
 }
 .header1 {
   margin-top: 200px;
@@ -31,6 +32,7 @@
 }
 
 .paragraph {
+  margin-top: 15px;
   font-size: 18px;
   font-family: "Century Gothic";
   color: var(--text-color);
@@ -87,6 +89,7 @@
 
 /* Design Process */
 .designProcessContainer {
+  margin-top: 25px;
   position: relative;
   display: flex;
   justify-content: flex-end;
@@ -105,7 +108,7 @@
   letter-spacing: 2px;
   color: #c1a798;
   font-size: 70px;
-  width: 1000px;
+  width: 800px;
   top: 150px;
   left: 115%;
 }
@@ -216,82 +219,4 @@
   height: 45px;
   width: auto;
   grid-area: span 1;
-}
-
-/* Blog */
-
-.blogFullContainer {
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-}
-.blogContainer {
-  display: grid;
-  position: relative;
-  grid-template-columns: repeat(4, 1fr);
-  margin-bottom: 75px;
-  gap: 50px;
-}
-
-.blogImage {
-  height: 300px;
-  width: 300px;
-  object-fit: cover;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.blogItem {
-  position: relative; /* Each item now has its own positioning context */
-  display: inline-block;
-  border-radius: 10px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(168, 167, 167, 1);
-}
-
-.glassDescription {
-  position: absolute;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  opacity: 1; /* Initially hidden */
-  top: 60%;
-  left: 0%;
-  z-index: 1;
-  /* transform: translate(-1px, 15px); */
-  letter-spacing: 1px;
-  font-weight: 300;
-  background: rgba(255, 255, 255, 0.5); /* Transparent background */
-  font-family: "Century Gothic";
-  backdrop-filter: blur(10px); /* Apply blur */
-  -webkit-backdrop-filter: blur(10px); /* For Safari */
-  color: var(--text-color);
-  width: 260px;
-  text-wrap: wrap;
-  height: 120px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  transition: all 0.6s ease-in-out;
-  cursor: pointer;
-}
-
-@media (max-width: 1350px) {
-  .blogContainer {
-    gap: 25px;
-  }
-}
-
-@media (max-width: 1280px) {
-  .blogContainer {
-    gap: 10px;
-  }
-}
-
-@media (max-width: 1250px) {
-  .blogContainer {
-    gap: 50px;
-    grid-template-columns: repeat(2, 1fr);
-  }
 }

@@ -54,7 +54,7 @@
 
 .pageCount {
   margin-top: 15px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   align-self: center;
 }
 
@@ -197,7 +197,7 @@
 }
 
 /* Less than 1200px */
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
   .expandedImage {
     height: 300px;
     width: 300px;
@@ -209,4 +209,4 @@
     height: 250px;
     width: 250px;
   }
-}
+} */

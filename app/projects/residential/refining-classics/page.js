@@ -123,6 +123,127 @@ const RefiningClassics = () => {
           </div>
         </div>
       </div>
+      {/* Mobile View */}
+      <div className={styles.topContainerMobile}>
+        <Link href={`/projects/${type}`}>
+          <span className={`${styles.goBack} ${juliusSansOne.className}`}>
+            🡠 GO BACK
+          </span>
+        </Link>
+        <div className={styles.bodyContainer}>
+          <main className={styles.mainContainer}>
+            <div
+              className={`${styles.breadCrumbMenu} ${juliusSansOne.className}`}
+            >
+              <Link href="/" className={styles.breadCrumbLink}>
+                HOME
+              </Link>{" "}
+              <span className={styles.breadCrumbArrow}>▶</span>{" "}
+              <Link href="/projects" className={styles.breadCrumbLink}>
+                PROJECTS{" "}
+              </Link>
+              <span className={styles.breadCrumbArrow}>▶</span>{" "}
+              <Link
+                href={`/projects/${type}`}
+                className={styles.breadCrumbLink}
+              >
+                {type}
+              </Link>
+              <span className={styles.breadCrumbArrow}>▶</span>{" "}
+              <span className={styles.active}>{projectName}</span>
+            </div>
+            <h1 className={`${styles.mainHeader} ${juliusSansOne.className}`}>
+              {projectName}
+            </h1>
+            <p className={`${styles.location} ${juliusSansOne.className}`}>
+              <span className={styles.locationText}>{location}</span>
+              <span className={styles.locationText}>{configuration}</span>
+              <span className={styles.locationText}>{area}</span>
+            </p>
+            <p className={styles.paragraph}>{mainParagraph}</p>
+            <div className={styles.imageGrid1}>
+              {imageArray.slice(0, 2).map((imageElement, index) => {
+                return (
+                  <Image
+                    src={imageElement[0]}
+                    className={imageElement[1]}
+                    key={`${projectName} Image ${Number(index) + 1}`}
+                    alt={`${projectName} Image ${Number(index) + 1}`}
+                  />
+                );
+              })}
+            </div>
+            <h2 className={`${styles.subHeader} ${juliusSansOne.className}`}>
+              DESIGN ASPECTS & KEY CONSIDERATIONS
+            </h2>
+            <ol className={styles.olMobile}>
+              {designAspects.map((aspect, index) => {
+                return (
+                  <li
+                    className={styles.paragraph}
+                    key={`${projectName} Design Aspect ${Number(index) + 1}`}
+                  >
+                    {aspect}
+                  </li>
+                );
+              })}
+            </ol>
+            <div className={styles.imageGrid2}>
+              {imageArray.slice(2, 3).map((imageElement, index) => {
+                return (
+                  <Image
+                    src={imageElement[0]}
+                    className={imageElement[1]}
+                    key={`${projectName} Image ${Number(index) + 1}`}
+                    alt={`${projectName} Image ${Number(index) + 1}`}
+                  />
+                );
+              })}
+            </div>
+            <h2 className={`${styles.subHeader} ${juliusSansOne.className}`}>
+              SPATIAL DESIGN
+            </h2>
+
+            {spatialDesignText.map((text, index) => {
+              return (
+                <p
+                  className={styles.paragraph}
+                  key={`${projectName} Spatial Design Text ${
+                    Number(index) + 1
+                  }`}
+                >
+                  {text}
+                </p>
+              );
+            })}
+            <div className={styles.imageGrid3}>
+              {imageArray.slice(3, 5).map((imageElement, index) => {
+                return (
+                  <Image
+                    src={imageElement[0]}
+                    className={imageElement[1]}
+                    key={`${projectName} Image ${Number(index) + 1}`}
+                    alt={`${projectName} Image ${Number(index) + 1}`}
+                  />
+                );
+              })}
+            </div>
+
+            {/* Pills/Tags */}
+            {pillArray.map((pillText, index) => {
+              return (
+                <span
+                  className={`${styles.pill} ${styles.nobreak} ${juliusSansOne.className}`}
+                  key={`${projectName} Pill Text ${Number(index) + 1}`}
+                >
+                  {pillText}
+                </span>
+              );
+            })}
+            <div className={styles.emptyDiv} />
+          </main>
+        </div>
+      </div>
     </div>
   );
 };
