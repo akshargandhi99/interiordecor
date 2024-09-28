@@ -7,7 +7,6 @@ import card4 from "@/public/residential/CF Bedroom.webp";
 import card5 from "@/public/residential/RC Living Room.webp";
 import card6 from "@/public/residential/MH Bathroom.webp";
 import GoBack from "@/components/goBack/goBack";
-
 import { juliusSansOne } from "@/app/fonts";
 import styles from "./residentialProjectCards.module.css";
 
@@ -53,6 +52,11 @@ const ResidentialProjectCards = () => {
       <Link href="/projects">
         <span className={`${styles.goBack} ${juliusSansOne.className}`}>
           🡠 GO BACK
+        </span>
+      </Link>
+      <Link href="/projects">
+        <span className={`${styles.goBackMobile} ${juliusSansOne.className}`}>
+          🡠
         </span>
       </Link>
       <div className={styles.gridContainer}>

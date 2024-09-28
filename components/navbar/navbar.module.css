@@ -102,7 +102,7 @@
 @media (max-width: 600px) {
   .mainContainer,
   .mainContainerWhite {
-    height: 50px;
+    height: 60px;
     flex-direction: row;
     justify-content: center;
   }
@@ -113,10 +113,14 @@
     display: none;
   }
 
+  .logo {
+    margin-top: 15px;
+  }
+
   .hamburger {
     display: block;
     position: absolute;
-    top: 0;
+    top: 9px;
     left: 10px;
   }
 

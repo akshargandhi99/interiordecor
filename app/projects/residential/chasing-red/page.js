@@ -133,7 +133,7 @@ const ChasingRed = () => {
       <div className={styles.topContainerMobile}>
         <Link href={`/projects/${type}`}>
           <span className={`${styles.goBack} ${juliusSansOne.className}`}>
-            🡠 GO BACK
+            🡠
           </span>
         </Link>
         <div className={styles.bodyContainer}>

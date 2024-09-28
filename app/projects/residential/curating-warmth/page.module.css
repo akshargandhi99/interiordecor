@@ -185,6 +185,19 @@
   width: 200px;
 }
 
+.goBack {
+  position: absolute;
+  cursor: pointer;
+  color: #514d43;
+  top: 10px;
+  left: 50px;
+  z-index: 3;
+}
+
+.goBack:hover {
+  text-decoration: underline;
+}
+
 /* Less than 1100px */
 @media (max-width: 1300px) {
   .imageGrid {
@@ -199,7 +212,7 @@
   .topContainerMobile {
     display: block;
     position: fixed;
-    top: 100px;
+    top: 70px;
     flex-direction: column;
     width: 100vw;
     height: 100vh;
@@ -243,6 +256,7 @@
   }
 
   .imageGrid3 {
+    margin-bottom: 15px;
     grid-template-rows: 1fr 1.5fr;
   }
 
@@ -260,7 +274,8 @@
   }
 
   .goBack {
-    left: 17px;
-    font-size: 12px;
+    top: 0;
+    left: 15px;
+    font-size: 16px;
   }
 }

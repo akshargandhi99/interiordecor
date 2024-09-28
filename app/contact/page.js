@@ -9,7 +9,7 @@ import IntegerInput from "./integerInput"; // Importing due to use client
 import SqftInput from "./sqftInput"; //  Importing due to use client
 import useWindowDimensions from "@/hooks/windowDimensions";
 import formImage from "@/public/static/aboutFormImage.webp";
-import XImage from "@/public/static/X.webp";
+import whatsappImage from "@/public/static/whatsapp.webp";
 import facebookImage from "@/public/static/facebook.webp";
 import instagramImage from "@/public/static/instagram.webp";
 import emailImage from "@/public/static/email.webp";
@@ -65,6 +65,9 @@ const Contact = () => {
         <span className={`${styles.goBack} ${juliusSansOne.className}`}>
           🡠 GO BACK
         </span>
+        <span className={`${styles.goBackMobile} ${juliusSansOne.className}`}>
+          🡠
+        </span>
       </Link>
 
       <div className={styles.formContainer}>
@@ -81,11 +84,17 @@ const Contact = () => {
             <p className={styles.decorativeText1}>Design that rhymes</p>
             <p className={styles.decorativeText2}>with your lifestyle!</p>
             <div className={styles.socialContainer}>
-              <Image
-                src={XImage}
-                className={styles.socialMediaImage}
-                alt="Twitter Link"
-              />
+              <Link
+                className={styles.link}
+                href="https://wa.me/919930999329"
+                target="_blank"
+              >
+                <Image
+                  src={whatsappImage}
+                  className={styles.socialMediaImage}
+                  alt="Whatsapp Link"
+                />
+              </Link>
               <Image
                 src={facebookImage}
                 className={styles.socialMediaImage}

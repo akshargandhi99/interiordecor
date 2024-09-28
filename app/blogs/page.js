@@ -2,7 +2,7 @@ import styles from "./page.module.css";
 
 import { Fragment } from "react";
 import { juliusSansOne } from "@/app/fonts";
-import GoBack from "@/components/goBack/goBack";
+import Link from "next/link";
 import Image from "next/image";
 
 import blogImage1 from "@/public/static/blog 1.webp";
@@ -37,7 +37,14 @@ const Blog = () => {
   ];
   return (
     <div className={styles.mainContainer}>
-      <GoBack href="/" top={135} left={50} />
+      <Link href="/">
+        <span className={`${styles.goBack} ${juliusSansOne.className}`}>
+          🡠 GO BACK
+        </span>
+        <span className={`${styles.goBackMobile} ${juliusSansOne.className}`}>
+          🡠
+        </span>
+      </Link>
       <h2 className={`${styles.header} ${juliusSansOne.className}`}>
         LATEST BLOGS
       </h2>

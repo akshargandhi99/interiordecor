@@ -90,14 +90,20 @@
 /* Design Process */
 .designProcessContainer {
   margin-top: 25px;
+  margin-bottom: 25px;
   position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 .designProcessSVG {
+  display: block;
   width: 900px;
   height: auto;
+}
+
+.designProcessMobileSVG {
+  display: none;
 }
 
 .designProcessTitle {
@@ -116,8 +122,13 @@
 /* Our Principles */
 
 .ourPrinciplesImage {
+  display: block;
   width: 85vw;
   margin: 75px 50px 0 50px;
+}
+
+.ourPrinciplesMobileImage {
+  display: none;
 }
 
 .iconGrid {
@@ -219,4 +230,89 @@
   height: 45px;
   width: auto;
   grid-area: span 1;
+}
+
+.goBack,
+.goBackMobile {
+  position: absolute;
+  cursor: pointer;
+  color: #514d43;
+  top: 135px;
+  left: 50px;
+  z-index: 3;
+}
+
+.goBack:hover {
+  text-decoration: underline;
+}
+
+.goBackMobile {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .designProcessContainer,
+  .designProcessSVG {
+    width: 95vw;
+  }
+}
+
+@media (max-width: 700px) {
+  .header1,
+  .headers {
+    font-size: 22px;
+  }
+
+  .header1 {
+    margin-top: 150px;
+  }
+
+  .paragraph {
+    text-align: justify;
+  }
+
+  .ourPrinciplesImage {
+    display: none;
+  }
+
+  .mobilePrincipleContainer {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ourPrinciplesMobileImage {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    transform: translateX(-15px);
+    /* margin: 75px 50px 0 50px; */
+  }
+
+  .designProcessContainer {
+    justify-content: center;
+  }
+
+  .designProcessSVG {
+    display: none;
+  }
+
+  .designProcessMobileSVG {
+    display: block;
+  }
+
+  .goBack {
+    display: none;
+  }
+
+  .goBackMobile {
+    display: block;
+    top: 95px;
+    left: 15px;
+    font-size: 20px;
+  }
 }

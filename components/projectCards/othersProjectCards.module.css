@@ -149,7 +149,8 @@
   transition: all 0.6s ease-in-out;
 }
 
-.goBack {
+.goBack,
+.goBackMobile {
   position: absolute;
   cursor: pointer;
   color: #514d43;
@@ -160,6 +161,10 @@
 
 .goBack:hover {
   text-decoration: underline;
+}
+
+.goBackMobile {
+  display: none;
 }
 
 /* Less than 1100px */
@@ -174,6 +179,13 @@
     grid-template-columns: 1fr;
   }
   .goBack {
-    left: 15px;
+    display: none;
+  }
+
+  .goBackMobile {
+    display: block;
+    top: 100px;
+    left: 25px;
+    font-size: 20px;
   }
 }

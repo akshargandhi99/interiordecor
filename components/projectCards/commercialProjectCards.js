@@ -25,6 +25,11 @@ const CommercialProjectCards = () => {
           🡠 GO BACK
         </span>
       </Link>
+      <Link href="/projects">
+        <span className={`${styles.goBackMobile} ${juliusSansOne.className}`}>
+          🡠
+        </span>
+      </Link>
       <div className={styles.gridContainer}>
         {cards.map((card, key) => {
           return (

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import card1 from "@/public/residential/CR Master Bedroom.webp";
+import card1 from "@/public/monochromic-house/8.webp";
 import card2 from "@/public/commercial/Clothing Boutique.webp";
-import card3 from "@/public/others/armchair.webp";
+import card3 from "@/public/others/sofa_with_geometric_accen.webp";
 
 import { juliusSansOne } from "@/app/fonts";
 import styles from "./projectsMain.module.css";
@@ -31,6 +31,11 @@ const ProjectsMain = () => {
       <Link href="/">
         <span className={`${styles.goBack} ${juliusSansOne.className}`}>
           🡠 GO BACK
+        </span>
+      </Link>
+      <Link href="/">
+        <span className={`${styles.goBackMobile} ${juliusSansOne.className}`}>
+          🡠
         </span>
       </Link>
       <div className={styles.gridContainer}>
@@ -65,8 +70,7 @@ const ProjectsMain = () => {
             </div>
           );
         })}
-        <div className={styles.emptyDiv} />
-        <div className={styles.emptyDiv} />
+
         <div className={styles.emptyDiv} />
       </div>
     </div>

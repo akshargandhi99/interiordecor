@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
 import testimonials from "@/data/testimonials.json";
+import MobileFooter from "@/components/mobileFooter/mobileFooter";
 
 import profileImage from "@/public/static/profile image.webp";
 import quoteImage from "@/public/static/quotes.webp";
@@ -70,6 +71,9 @@ const About = () => {
       <Link href="/">
         <span className={`${styles.goBack} ${juliusSansOne.className}`}>
           🡠 GO BACK
+        </span>
+        <span className={`${styles.goBackMobile} ${juliusSansOne.className}`}>
+          🡠
         </span>
       </Link>
       <div className={styles.welcome}>
@@ -164,6 +168,7 @@ const About = () => {
           );
         })}
       </Marquee>
+      <MobileFooter />
     </div>
   );
 };

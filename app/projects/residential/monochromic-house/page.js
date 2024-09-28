@@ -2,7 +2,6 @@ import styles from "./page.module.css";
 import { juliusSansOne } from "@/app/fonts";
 import Link from "next/link";
 import Image from "next/image";
-import GoBack from "@/components/goBack/goBack";
 import image1 from "@/public/monochromic-house/1.webp";
 import image2 from "@/public/monochromic-house/2.webp";
 import image3 from "@/public/monochromic-house/3.webp";
@@ -30,7 +29,11 @@ const MonochromicHouse = () => {
   return (
     <div className={styles.fullContainer}>
       <div className={styles.topContainer}>
-        <GoBack href={`/projects/${type}`} top={10} left={50} />
+        <Link href={`/projects/${type}`}>
+          <span className={`${styles.goBack} ${juliusSansOne.className}`}>
+            🡠 GO BACK
+          </span>
+        </Link>
         <div className={styles.bodyContainer}>
           <main className={styles.mainContainer}>
             <div
@@ -125,7 +128,7 @@ const MonochromicHouse = () => {
       <div className={styles.topContainerMobile}>
         <Link href={`/projects/${type}`}>
           <span className={`${styles.goBack} ${juliusSansOne.className}`}>
-            🡠 GO BACK
+            🡠
           </span>
         </Link>
         <div className={styles.bodyContainer}>

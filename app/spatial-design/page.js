@@ -1,7 +1,8 @@
 import { juliusSansOne } from "../fonts";
 import styles from "./page.module.css";
-import { Fragment } from "react";
+import Link from "next/link";
 import Image from "next/image";
+import MobileFooter from "@/components/mobileFooter/mobileFooter";
 import GoBack from "@/components/goBack/goBack";
 
 import icon1 from "@/public/spatial-design/1.webp";
@@ -19,7 +20,9 @@ import icon12 from "@/public/spatial-design/12.webp";
 import icon13 from "@/public/spatial-design/13.webp";
 
 import designProcessSVG from "@/public/spatial-design/designProcess.svg";
-import ourPrinciples from "@/public/spatial-design/Our Principals.svg";
+import designProcessMobileSVG from "@/public/spatial-design/designProcessMobile.svg";
+import ourPrinciples from "@/public/spatial-design/Our Principles.svg";
+import ourPrinciplesMobile from "@/public/spatial-design/Our Principles Mobile.svg";
 
 const SpatialDesign = () => {
   // const iconArray = [
@@ -43,7 +46,14 @@ const SpatialDesign = () => {
   // ];
   return (
     <div className={styles.fullContainer}>
-      <GoBack href="/" top={135} left={50} />
+      <Link href="/">
+        <span className={`${styles.goBack} ${juliusSansOne.className}`}>
+          🡠 GO BACK
+        </span>
+        <span className={`${styles.goBackMobile} ${juliusSansOne.className}`}>
+          🡠
+        </span>
+      </Link>
       <h2 className={`${styles.header1} ${juliusSansOne.className}`}>
         WHAT IS SPATIAL DESIGN?
       </h2>
@@ -80,6 +90,27 @@ const SpatialDesign = () => {
         className={styles.ourPrinciplesImage}
         alt="Our Principles"
       />
+
+      <h2 className={`${styles.headers} ${juliusSansOne.className}`}>
+        OUR PRINCIPLES
+      </h2>
+      <p className={styles.paragraph}>
+        Our design principles are rooted in the belief that spaces should be not
+        merely functional but also evocative, reflecting the unique personality
+        and aspirations of our clients, where every line, curve, and texture
+        tells a story of opulence and refinement, transforming houses into homes
+        that are not just aesthetically pleasing but also emotionally resonant
+        and functionally efficient.
+      </p>
+      <div
+        className={`${styles.mobilePrincipleContainer} ${styles.ourPrinciplesMobileImage}`}
+      >
+        <Image
+          src={ourPrinciplesMobile}
+          className={styles.ourPrinciplesMobileImage}
+          alt="Our Principles"
+        />
+      </div>
       {/* <div className={styles.iconGrid}>
         <div className={styles.invisibleContainer}>
           <div className={styles.principleContainer}>
@@ -228,8 +259,14 @@ const SpatialDesign = () => {
           className={styles.designProcessSVG}
           alt="Design Process"
         />
-        <span className={styles.designProcessTitle}>DESIGN PROCESS</span>
+        <Image
+          src={designProcessMobileSVG}
+          className={styles.designProcessMobileSVG}
+          alt="Design Process Mobile"
+        />
+        {/* <span className={styles.designProcessTitle}>DESIGN PROCESS</span> */}
       </div>
+      <MobileFooter />
     </div>
   );
 };

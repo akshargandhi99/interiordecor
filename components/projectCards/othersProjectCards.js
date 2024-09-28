@@ -5,10 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import card1 from "@/public/others/peach fuzz.webp";
 import card2 from "@/public/others/floor touch sofa.webp";
-import card3 from "@/public/others/coffee table.webp";
+import card3 from "@/public/others/peach fuzz 2.webp";
 import card4 from "@/public/others/armchair.webp";
 import card5 from "@/public/others/armchair 1.webp";
-import card6 from "@/public/others/peach fuzz 2.webp";
+import card6 from "@/public/others/coffee table.webp";
 import card7 from "@/public/others/furniture.webp";
 import card8 from "@/public/others/minimal armchair.webp";
 import card9 from "@/public/others/coffee_table_with_organic.webp";
@@ -47,10 +47,10 @@ const OthersProjectCards = () => {
   const cardDescriptions = [
     "Peach Fuzz Colour of the Year Sofa Design with Metal accent side table.",
     "A floor touch sofa with piping perfect for a conversational pit.",
-    "Leather + Brass Coffee Table",
+    "Peach fuzz colour of the year armchair and pouf side table.",
     "Single Armchair with Wooden coffee table - minimalism Ⅰ",
     "Single Armchair with Wooden coffee table - minimalism Ⅱ",
-    "Peach fuzz colour of the year armchair and pouf side table.",
+    "Leather + Brass Coffee Table",
     "Minimal furniture collection",
     "Minimal Armchair",
     "",
@@ -76,6 +76,11 @@ const OthersProjectCards = () => {
       <Link href="/projects">
         <span className={`${styles.goBack} ${juliusSansOne.className}`}>
           🡠 GO BACK
+        </span>
+      </Link>
+      <Link href="/projects">
+        <span className={`${styles.goBackMobile} ${juliusSansOne.className}`}>
+          🡠
         </span>
       </Link>
       <div className={styles.gridContainer}>

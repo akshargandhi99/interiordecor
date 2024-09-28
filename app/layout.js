@@ -16,8 +16,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <NavBar />
+
         <StoreProvider>{children}</StoreProvider>
         <Footer />
+
         <Image
           src="/static/Glass effect 1.webp"
           alt="Glass Effect Background"

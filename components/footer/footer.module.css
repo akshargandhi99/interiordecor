@@ -104,3 +104,13 @@
   width: 12px;
   cursor: pointer;
 }
+
+/* Existing styles remain the same */
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+  .footerContainer,
+  .footerContainerExpanded {
+    display: none;
+  }
+}

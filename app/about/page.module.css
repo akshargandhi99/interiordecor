@@ -48,7 +48,7 @@
 
 .profileImage {
   width: auto;
-  height: 316px;
+  height: 280px;
   transform: translateY(99px);
   border-radius: 20px;
 }
@@ -292,7 +292,8 @@
   margin-bottom: 100px;
 }
 
-.goBack {
+.goBack,
+.goBackMobile {
   position: absolute;
   cursor: pointer;
   color: #514d43;
@@ -305,13 +306,19 @@
   text-decoration: underline;
 }
 
+.goBackMobile {
+  display: none;
+}
+
 @media (max-width: 930px) {
   .welcome {
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 30px;
   }
 
   .mainTitle {
+    margin-top: 130px;
+    margin-bottom: 10px;
     font-size: 20px;
   }
 
@@ -322,11 +329,15 @@
     width: 95vw;
   }
   .welcomeText {
-    text-align: center;
+    text-align: justify;
     font-size: 14px;
+    margin-left: 15px;
+    margin-right: 15px;
   }
   .header2 {
-    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-size: 20px;
     text-align: center;
   }
 
@@ -507,17 +518,22 @@
   }
 
   .header3 {
-    margin-top: 50px;
+    margin-top: 30px;
     font-size: 20px;
   }
+
+  .carouselContainer2 {
+    margin-top: 5px;
+  }
+
   .testimonialContainer {
     display: flex;
     flex-direction: column;
     width: 225px;
-    height: 175px;
-    margin: 25px 25px 0 25px;
+    height: 300px;
+    margin: 5px 25px 0 25px;
 
-    border-radius: 40px;
+    border-radius: 20px;
   }
 
   .quotes {
@@ -531,18 +547,24 @@
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
-    font-size: 9px;
+    font-size: 12px;
   }
 
   .clientName {
     margin-top: 10px;
     margin-bottom: 20px;
     height: 100%;
-    font-size: 9px;
+    font-size: 12px;
   }
 
   .goBack {
+    display: none;
+  }
+
+  .goBackMobile {
+    display: block;
+    top: 80px;
     left: 15px;
-    font-size: 14px;
+    font-size: 20px;
   }
 }
