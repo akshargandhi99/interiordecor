@@ -8,7 +8,7 @@ import StoreProvider from "@/store/store-context";
 export const metadata = {
   title: "Avani Vaidya",
   description:
-    "Welcome to AV'SDS! I’m Avani Vaidya, founder and principal designer of the studio. With a Bachelor's in Architecture from Mumbai and a Master's in Interior Design from Italy, I've dedicated myself to specialising in Spatial Interior Design, focusing deeply on understanding how people live, move, and thrive in their environments.",
+    "Welcome to AVSDS! I’m Avani Vaidya, founder and principal designer of the studio. With a Bachelor's in Architecture from Mumbai and a Master's in Interior Design from Italy, I've dedicated myself to specialising in Spatial Interior Design, focusing deeply on understanding how people live, move, and thrive in their environments.",
 };
 
 export default function RootLayout({ children }) {

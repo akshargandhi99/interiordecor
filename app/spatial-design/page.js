@@ -72,7 +72,7 @@ const SpatialDesign = () => {
       </p>
 
       <h2 className={`${styles.headers} ${juliusSansOne.className}`}>
-        WHAT IS AV’SDS ALL ABOUT?
+        WHAT IS AVSDS ALL ABOUT?
       </h2>
       <p className={styles.paragraph}>
         For us, it is vital to understand each end user’s circulation patterns
@@ -91,10 +91,12 @@ const SpatialDesign = () => {
         alt="Our Principles"
       />
 
-      <h2 className={`${styles.headers} ${juliusSansOne.className}`}>
+      <h2
+        className={`${styles.headers} ${styles.mobilePrincipleContainer} ${juliusSansOne.className}`}
+      >
         OUR PRINCIPLES
       </h2>
-      <p className={styles.paragraph}>
+      <p className={`${styles.paragraph} ${styles.mobilePrinciplePara}`}>
         Our design principles are rooted in the belief that spaces should be not
         merely functional but also evocative, reflecting the unique personality
         and aspirations of our clients, where every line, curve, and texture
@@ -236,10 +238,10 @@ const SpatialDesign = () => {
       <p className={styles.paragraph}>
         All the above will be done with the help the family members the space is
         intended for. Yes, all clients want to be involved in the design
-        process, and we designers hesitate to give them the reins. But at
-        AV&apos;SDS, we ensure that the role played by the client is of the
-        highest value, allowing them to open themselves to us by sharing their
-        desires, wants and needs and not just their requirements.
+        process, and we designers hesitate to give them the reins. But at AVSDS,
+        we ensure that the role played by the client is of the highest value,
+        allowing them to open themselves to us by sharing their desires, wants
+        and needs and not just their requirements.
       </p>
       <p className={styles.paragraph}>
         The same will not be done through an interview or endless meetings, but

@@ -85,7 +85,7 @@ const About = () => {
 
         <div className={styles.welcomeTextContainer}>
           <h1 className={`${styles.mainTitle} ${juliusSansOne.className}`}>
-            Welcome to AV’sds!
+            Welcome to AVSDS!
           </h1>
           <p className={styles.welcomeText}>
             I’m Avani Vaidya, founder and principal designer of the studio. With
@@ -105,13 +105,13 @@ const About = () => {
           </p>
 
           <p className={styles.welcomeText}>
-            At AV&apos;SDS, it&apos;s all about you and your unique style.
-            I&apos;m passionate about helping you uncover the comfort and bliss
-            that already exists within your walls. Let&apos;s connect to bring
-            out the best in your space, ensuring it reflects who you are and how
-            you live. Together, we&apos;ll transform spaces into reflections of
-            your life and personality, and to ensure daily life feels effortless
-            for the family.
+            At AVSDS, it&apos;s all about you and your unique style. I&apos;m
+            passionate about helping you uncover the comfort and bliss that
+            already exists within your walls. Let&apos;s connect to bring out
+            the best in your space, ensuring it reflects who you are and how you
+            live. Together, we&apos;ll transform spaces into reflections of your
+            life and personality, and to ensure daily life feels effortless for
+            the family.
           </p>
         </div>
       </div>

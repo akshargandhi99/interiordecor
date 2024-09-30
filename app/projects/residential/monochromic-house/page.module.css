@@ -10,6 +10,7 @@
   background-position: cover;
   height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
 }
 
 .topContainer {
@@ -34,6 +35,7 @@
 .bodyContainer {
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
 }
 
 .breadCrumbMenu {
@@ -77,6 +79,7 @@
   overflow-x: auto;
   margin-right: 50px;
   width: 35vw;
+  overflow-x: hidden;
 }
 
 .location {
@@ -134,7 +137,7 @@
 .imageGrid {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: 0.8fr 1fr 0.65fr;
+  grid-template-rows: 1fr 0.5fr 0.5fr;
   gap: 10px;
   width: 35vw;
   margin-top: 100px;
@@ -144,7 +147,8 @@
 .gridImage1,
 .gridImage2,
 .gridImage3,
-.gridImage4 {
+.gridImage4,
+.gridImage5 {
   background-size: cover;
   background-position: center;
   object-fit: cover;
@@ -158,13 +162,14 @@
   grid-row: span 1;
 }
 
-.gridImage2 {
-  grid-column: span 10;
+.gridImage2,
+.gridImage3 {
+  grid-column: span 5;
   grid-row: span 1;
 }
 
-.gridImage3,
-.gridImage4 {
+.gridImage4,
+.gridImage5 {
   grid-column: span 5;
   grid-row: span 1;
 }
@@ -249,7 +254,7 @@
   }
 
   .imageGrid3 {
-    grid-template-rows: 1fr 1.5fr;
+    grid-template-rows: 1fr;
   }
 
   .subHeader {

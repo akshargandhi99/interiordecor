@@ -18,7 +18,6 @@ import card12 from "@/public/others/L_shape_sofa_with_geometr (2).webp";
 import card13 from "@/public/others/sectional_sofa_with_geome.webp";
 import card14 from "@/public/others/sofa_with_geometric_accen.webp";
 import card15 from "@/public/others/comfortable_3-seater_sofa_with_plush_c.webp";
-import card16 from "@/public/others/IMG_2993.webp";
 
 import { juliusSansOne } from "@/app/fonts";
 import styles from "./othersProjectCards.module.css";
@@ -41,7 +40,6 @@ const OthersProjectCards = () => {
     card13,
     card14,
     card15,
-    card16,
   ];
 
   const cardDescriptions = [
@@ -53,7 +51,6 @@ const OthersProjectCards = () => {
     "Leather + Brass Coffee Table",
     "Minimal furniture collection",
     "Minimal Armchair",
-    "",
     "",
     "",
     "",

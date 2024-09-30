@@ -3,9 +3,10 @@ import { juliusSansOne } from "@/app/fonts";
 import Link from "next/link";
 import Image from "next/image";
 import image1 from "@/public/monochromic-house/1.webp";
-import image2 from "@/public/monochromic-house/2.webp";
-import image3 from "@/public/monochromic-house/3.webp";
-import image4 from "@/public/monochromic-house/4.webp";
+import image2 from "@/public/monochromic-house/5.webp";
+import image3 from "@/public/monochromic-house/6.webp";
+import image4 from "@/public/monochromic-house/8.webp";
+import image5 from "@/public/monochromic-house/7.webp";
 import detailedData from "@/data/detailedPages.json";
 
 const MonochromicHouse = () => {
@@ -15,6 +16,7 @@ const MonochromicHouse = () => {
     [image2, styles.gridImage2],
     [image3, styles.gridImage3],
     [image4, styles.gridImage4],
+    [image5, styles.gridImage5],
   ];
 
   const type = detailedData[projectName].type;
@@ -189,8 +191,8 @@ const MonochromicHouse = () => {
                 );
               })}
             </ol>
-            <div className={styles.imageGrid2}>
-              {imageArray.slice(1, 2).map((imageElement, index) => {
+            <div className={styles.imageGrid3}>
+              {imageArray.slice(1, 3).map((imageElement, index) => {
                 return (
                   <Image
                     src={imageElement[0]}
@@ -218,7 +220,7 @@ const MonochromicHouse = () => {
               );
             })}
             <div className={styles.imageGrid1}>
-              {imageArray.slice(2, 4).map((imageElement, index) => {
+              {imageArray.slice(3, 5).map((imageElement, index) => {
                 return (
                   <Image
                     src={imageElement[0]}

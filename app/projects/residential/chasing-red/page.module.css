@@ -84,6 +84,7 @@
   overflow-x: auto;
   margin-right: 50px;
   width: 35vw;
+  overflow-x: hidden;
 }
 
 .location {

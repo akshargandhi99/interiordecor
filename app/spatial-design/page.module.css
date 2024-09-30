@@ -127,7 +127,15 @@
   margin: 75px 50px 0 50px;
 }
 
+.mobilePrincipleContainer {
+  display: none;
+}
+
 .ourPrinciplesMobileImage {
+  display: none;
+}
+
+.mobilePrinciplePara {
   display: none;
 }
 
@@ -276,6 +284,7 @@
   }
 
   .mobilePrincipleContainer {
+    display: block;
     width: 100%;
     padding: 0;
     margin: 0;
@@ -291,6 +300,10 @@
     margin: 0;
     transform: translateX(-15px);
     /* margin: 75px 50px 0 50px; */
+  }
+
+  .mobilePrinciplePara {
+    display: block;
   }
 
   .designProcessContainer {
