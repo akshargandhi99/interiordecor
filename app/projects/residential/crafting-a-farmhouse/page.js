@@ -6,6 +6,7 @@ import image1 from "@/public/crafting-a-farmhouse/1.webp";
 import image2 from "@/public/crafting-a-farmhouse/2.webp";
 import image3 from "@/public/crafting-a-farmhouse/3.webp";
 import image4 from "@/public/crafting-a-farmhouse/4.webp";
+import MobileFooter from "@/components/mobileFooter/mobileFooter";
 import detailedData from "@/data/detailedPages.json";
 
 const CraftingFarmhouse = () => {
@@ -28,6 +29,7 @@ const CraftingFarmhouse = () => {
 
   return (
     <div className={styles.fullContainer}>
+      <div className={styles.emptyDiv} />
       <div className={styles.topContainer}>
         <Link href={`/projects/${type}`}>
           <span className={`${styles.goBack} ${juliusSansOne.className}`}>
@@ -108,6 +110,7 @@ const CraftingFarmhouse = () => {
                 </span>
               );
             })}
+            <div className={styles.emptyDiv} />
             <div className={styles.emptyDiv} />
           </main>
           <div className={styles.imageGrid}>
@@ -244,6 +247,7 @@ const CraftingFarmhouse = () => {
             <div className={styles.emptyDiv} />
           </main>
         </div>
+        <MobileFooter />
       </div>
     </div>
   );

@@ -92,7 +92,7 @@ const SpatialDesign = () => {
       />
 
       <h2
-        className={`${styles.headers} ${styles.mobilePrincipleContainer} ${juliusSansOne.className}`}
+        className={` ${styles.mobilePrincipleContainer} ${styles.headers}  ${juliusSansOne.className}`}
       >
         OUR PRINCIPLES
       </h2>
@@ -113,124 +113,6 @@ const SpatialDesign = () => {
           alt="Our Principles"
         />
       </div>
-      {/* <div className={styles.iconGrid}>
-        <div className={styles.invisibleContainer}>
-          <div className={styles.principleContainer}>
-            <h2
-              className={`${styles.principleHeader} ${juliusSansOne.className}`}
-            >
-              OUR PRINCIPLES
-            </h2>
-            <p className={styles.principleParagraph}>
-              Our design principles are rooted in the belief that spaces should
-              be not merely functional but also evocative, reflecting the unique
-              personality and aspirations of our clients, where every line,
-              curve, and texture tells a story of opulence and refinement,
-              transforming houses into homes that are not just aesthetically
-              pleasing but also emotionally resonant and functionally efficient.
-            </p>
-          </div>
-          <div className={styles.emptyDiv1} />
-        </div>
-        {iconArray.map((iconElement, index) => {
-          if (index === 8) {
-            return (
-              <Fragment key={`Spatial Design Icon ${index}`}>
-                <div className={styles.iconContainer}>
-                  <div className={styles.emptyDiv2}></div>
-                </div>
-
-                <div className={styles.iconContainer}>
-                  <Image
-                    src={iconElement[0]}
-                    className={styles.icon}
-                    alt="Icon"
-                  />
-                  <p className={styles.iconText}>{iconElement[1]}</p>
-                </div>
-              </Fragment>
-            );
-          }
-          return (
-            <div
-              key={`Spatial Design Icon ${index}`}
-              className={styles.iconContainer}
-            >
-              <Image src={iconElement[0]} className={styles.icon} alt="Icon" />
-              <p className={styles.iconText}>{iconElement[1]}</p>
-            </div>
-          );
-        })}
-      </div> */}
-
-      {/* <h2 className={`${styles.headers} ${juliusSansOne.className}`}>
-        INDUSTRY HIGHLIGHTS
-      </h2>
-      <div className={styles.industryContainer}>
-        <div className={styles.threePoints}>
-          <div className={styles.industryPoint}>
-            <hr className={styles.pointLine} />
-            <span className={styles.industryTitle}>20+</span>
-            <span
-              className={`${styles.industrySubTitle} ${juliusSansOne.className}`}
-            >
-              CLIENTS
-            </span>
-          </div>
-          <div className={styles.industryPoint}>
-            <hr className={styles.pointLine} />
-            <span className={styles.industryTitle}>
-              BACHELORS IN ARCHITECTURE
-            </span>
-            <span
-              className={`${styles.industrySubTitle} ${juliusSansOne.className}`}
-            >
-              INDIA
-            </span>
-          </div>
-          <div className={styles.industryPoint}>
-            <hr className={styles.pointLine} />
-            <span className={styles.industryTitle}>
-              MASTERS IN INTERIOR DESIGN
-            </span>
-            <span
-              className={`${styles.industrySubTitle} ${juliusSansOne.className}`}
-            >
-              ITALY
-            </span>
-          </div>
-        </div>
-        <div className={styles.verticalLine} />
-        <div className={styles.threePoints}>
-          <div className={styles.industryPoint}>
-            <hr className={styles.pointLine} />
-            <span className={styles.industryTitle}>YOUNG & DRIVEN</span>
-            <span
-              className={`${styles.industrySubTitle} ${juliusSansOne.className}`}
-            >
-              ARCHITECT & INTERIOR DESIGNER
-            </span>
-          </div>
-          <div className={styles.industryPoint}>
-            <hr className={styles.pointLine} />
-            <span className={styles.industryTitle}>USER CENTRIC</span>
-            <span
-              className={`${styles.industrySubTitle} ${juliusSansOne.className}`}
-            >
-              PUTTING PEOPLE AT THE HEART OF DESIGN
-            </span>
-          </div>
-          <div className={styles.industryPoint}>
-            <div className={styles.pointLine} />
-            <span className={styles.industryTitle}>MULTIPLE PARTNERSHIPS</span>
-            <span
-              className={`${styles.industrySubTitle} ${juliusSansOne.className}`}
-            >
-              VENDORS & COLLABORATORS
-            </span>
-          </div>
-        </div>
-      </div> */}
 
       <h2 className={`${styles.headers} ${juliusSansOne.className}`}>
         OUR PHILOSOPHY

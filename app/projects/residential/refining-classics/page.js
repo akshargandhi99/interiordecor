@@ -7,6 +7,7 @@ import image2 from "@/public/refining-classics/2.webp";
 import image3 from "@/public/refining-classics/3.webp";
 import image4 from "@/public/refining-classics/4.webp";
 import image5 from "@/public/refining-classics/5.webp";
+import MobileFooter from "@/components/mobileFooter/mobileFooter";
 import detailedData from "@/data/detailedPages.json";
 
 const RefiningClassics = () => {
@@ -30,6 +31,7 @@ const RefiningClassics = () => {
 
   return (
     <div className={styles.fullContainer}>
+      <div className={styles.emptyDiv} />
       <div className={styles.topContainer}>
         <Link href={`/projects/${type}`}>
           <span className={`${styles.goBack} ${juliusSansOne.className}`}>
@@ -110,6 +112,7 @@ const RefiningClassics = () => {
                 </span>
               );
             })}
+            <div className={styles.emptyDiv} />
             <div className={styles.emptyDiv} />
           </main>
           <div className={styles.imageGrid}>
@@ -246,6 +249,7 @@ const RefiningClassics = () => {
             <div className={styles.emptyDiv} />
           </main>
         </div>
+        <MobileFooter />
       </div>
     </div>
   );

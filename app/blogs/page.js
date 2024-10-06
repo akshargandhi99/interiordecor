@@ -4,6 +4,7 @@ import { Fragment } from "react";
 import { juliusSansOne } from "@/app/fonts";
 import Link from "next/link";
 import Image from "next/image";
+import MobileFooter from "@/components/mobileFooter/mobileFooter";
 
 import blogImage1 from "@/public/static/blog 1.webp";
 import blogImage2 from "@/public/static/blog 2.webp";
@@ -25,6 +26,18 @@ const Blog = () => {
     blogImage7,
     blogImage8,
   ];
+
+  const blogLinks = [
+    "/blogs/sustainable-interior-design-materials-and-practices",
+    "/blogs/the-art-of-open-concept-living-balancing-privacy-and-space",
+    "/blogs/biophilic-design-bringing-nature-indoors",
+    "/blogs/colour-psychology-feng-shui-space-perception",
+    "/blogs/cultural-influences-in-interior-design-global-styles-and-trends",
+    "/blogs/adaptive-reuse-transforming-old-spaces-into-modern-home",
+    "/blogs/maximising-spaces-design-solutions-mumbai-apartments",
+    "/blogs/child-friendly-interiors-designing-safe-and-fun-spaces-for-kids",
+  ];
+
   const blogDescriptions = [
     "Sustainable Interior Design: Materials and Practices",
     "The Art of Open-Concept Living: Balancing Privacy and Space",
@@ -48,25 +61,28 @@ const Blog = () => {
       <h2 className={`${styles.header} ${juliusSansOne.className}`}>
         LATEST BLOGS
       </h2>
-      <div className={styles.blogFullContainer}>
-        <div className={styles.blogContainer}>
-          {blogImages.map((image, index) => {
-            return (
-              <Fragment key={`About Page Blog Image ${index + 1}`}>
-                <div className={styles.blogItem}>
-                  <Image
-                    src={image}
-                    className={styles.blogImage}
-                    alt={`Blog image ${index + 1}`}
-                  />
-                  <div className={styles.glassDescription}>
-                    {blogDescriptions[index]}
-                  </div>
-                </div>
-              </Fragment>
-            );
-          })}
+      <div className={styles.mobileFooterContainer}>
+        <div className={styles.blogFullContainer}>
+          <div className={styles.blogContainer}>
+            {blogImages.map((image, index) => {
+              return (
+                <Fragment key={`About Page Blog Image ${index + 1}`}>
+                  <Link href={blogLinks[index]} className={styles.blogItem}>
+                    <Image
+                      src={image}
+                      className={styles.blogImage}
+                      alt={`Blog image ${index + 1}`}
+                    />
+                    <div className={styles.glassDescription}>
+                      {blogDescriptions[index]}
+                    </div>
+                  </Link>
+                </Fragment>
+              );
+            })}
+          </div>
         </div>
+        <MobileFooter />
       </div>
     </div>
   );

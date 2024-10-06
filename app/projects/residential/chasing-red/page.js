@@ -2,7 +2,6 @@ import styles from "./page.module.css";
 import { juliusSansOne } from "@/app/fonts";
 import Link from "next/link";
 import Image from "next/image";
-import GoBack from "@/components/goBack/goBack";
 import image1 from "@/public/chasing-red/1.webp";
 import image2 from "@/public/chasing-red/2.webp";
 import image3 from "@/public/chasing-red/3.webp";
@@ -11,6 +10,7 @@ import image5 from "@/public/chasing-red/5.webp";
 import image6 from "@/public/chasing-red/6.webp";
 import image7 from "@/public/chasing-red/7.webp";
 import image8 from "@/public/chasing-red/8.webp";
+import MobileFooter from "@/components/mobileFooter/mobileFooter";
 import detailedData from "@/data/detailedPages.json";
 
 const ChasingRed = () => {
@@ -37,8 +37,13 @@ const ChasingRed = () => {
 
   return (
     <div className={styles.fullContainer}>
+      <div className={styles.emptyDiv} />
       <div className={styles.topContainer}>
-        <GoBack href={`/projects/${type}`} top={10} left={50} />
+        <Link href={`/projects/${type}`}>
+          <span className={`${styles.goBack} ${juliusSansOne.className}`}>
+            🡠 GO BACK
+          </span>
+        </Link>
         <div className={styles.bodyContainer}>
           <main className={styles.mainContainer}>
             <div
@@ -247,8 +252,10 @@ const ChasingRed = () => {
               );
             })}
             <div className={styles.emptyDiv} />
+            <div className={styles.emptyDiv} />
           </main>
         </div>
+        <MobileFooter />
       </div>
     </div>
   );

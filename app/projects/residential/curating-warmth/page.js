@@ -8,6 +8,7 @@ import image3 from "@/public/curating-warmth/3.webp";
 import image4 from "@/public/curating-warmth/4.webp";
 import image5 from "@/public/curating-warmth/5.webp";
 import image6 from "@/public/curating-warmth/6.webp";
+import MobileFooter from "@/components/mobileFooter/mobileFooter";
 import detailedData from "@/data/detailedPages.json";
 
 const CuratingWarmth = () => {
@@ -32,6 +33,7 @@ const CuratingWarmth = () => {
 
   return (
     <div className={styles.fullContainer}>
+      <div className={styles.emptyDiv} />
       <div className={styles.topContainer}>
         <Link href={`/projects/${type}`}>
           <span className={`${styles.goBack} ${juliusSansOne.className}`}>
@@ -112,6 +114,7 @@ const CuratingWarmth = () => {
                 </span>
               );
             })}
+            <div className={styles.emptyDiv} />
             <div className={styles.emptyDiv} />
           </main>
           <div className={styles.imageGrid}>
@@ -248,6 +251,8 @@ const CuratingWarmth = () => {
             <div className={styles.emptyDiv} />
           </main>
         </div>
+
+        <MobileFooter />
       </div>
     </div>
   );

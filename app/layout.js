@@ -19,13 +19,12 @@ export default function RootLayout({ children }) {
 
         <StoreProvider>{children}</StoreProvider>
         <Footer />
-
-        <Image
+        {/* <Image
           src="/static/Glass effect 1.webp"
           alt="Glass Effect Background"
           fill={true}
           className={styles.backgroundImage}
-        />
+        /> */}
       </body>
     </html>
   );

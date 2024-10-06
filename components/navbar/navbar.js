@@ -7,10 +7,14 @@ import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import logo from "@/public/static/Logo.svg";
 import hamburger from "@/public/static/Hamburger.webp";
+// import gradient from "@/public/static/MergeGradient1.webp";
 
 const NavBar = () => {
   const pathname = usePathname();
   const [isMenuOpen, setMenuOpen] = useState(false); // Hamburger Menu Mobile Only
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [navbarBackground, setNavbarBackground] = useState("rgba(0, 0, 0, 0)");
+
   const menuRef = useRef(null);
   let navbarUnderline = "";
   let navbarColor = "";
@@ -63,14 +67,17 @@ const NavBar = () => {
   } else if (pathname.includes("/projects/commercial/")) {
     navbarUnderline = "projects";
     navbarColor = "white";
+  } else if (pathname.includes("/blogs/")) {
+    navbarUnderline = "blogs";
+    navbarColor = "white";
   }
 
   const navbarColorStyle =
     navbarColor === "normal" ? styles.mainContainer : styles.mainContainerWhite;
-
-  const toggleHamburger = () => {
-    setMenuOpen(!isMenuOpen);
-  };
+  const navbarBackgroundColor =
+    navbarColor === "normal"
+      ? "linear-gradient(rgba(255, 255, 255, 1),rgba(245, 244, 239, 1))"
+      : "white";
 
   const handleClickOutside = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -78,17 +85,42 @@ const NavBar = () => {
     }
   };
 
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
+  const toggleHamburger = () => {
+    setMenuOpen(!isMenuOpen);
+  };
 
+  useEffect(() => {
+    if (scrollPosition > 0) {
+      setNavbarBackground(navbarBackgroundColor);
+    } else {
+      setNavbarBackground("rgba(0, 0, 0, 0)");
+    }
+  }, [scrollPosition]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log(window.scrollY);
+      const currentPosition = window.scrollY;
+      setScrollPosition(currentPosition);
+    };
+
+    handleScroll();
+
+    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("scroll", handleScroll);
     // Cleanup the event listener when the component is unmounted
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <nav className={navbarColorStyle}>
+    <nav
+      className={navbarColorStyle}
+      style={{ background: navbarBackground }}
+      // style={{ backgroundImage: `url(${gradient.src})` }}
+    >
       {/* Hamburger: Mobile Only*/}
       <Image
         src={hamburger}

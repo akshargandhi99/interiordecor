@@ -65,7 +65,7 @@ const LandingCard = () => {
           <Fragment>
             <div className={styles.titleContainer}>
               <span className={`${styles.spatial} ${juliusSansOne.className}`}>
-                SPATIAL
+                INTERIOR
               </span>
               <span className={`${styles.projects} ${juliusSansOne.className}`}>
                 PROJECTS

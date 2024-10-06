@@ -5,6 +5,7 @@ import Link from "next/link";
 import Marquee from "react-fast-marquee";
 import testimonials from "@/data/testimonials.json";
 import MobileFooter from "@/components/mobileFooter/mobileFooter";
+// import gradient from "@/public/static/MergeGradient1.webp";
 
 import profileImage from "@/public/static/profile image.webp";
 import quoteImage from "@/public/static/quotes.webp";
@@ -67,7 +68,10 @@ const About = () => {
   ];
   // Mobile Responsive
   return (
-    <div className={styles.mainContainer}>
+    <main
+      className={styles.mainContainer}
+      // style={{ backgroundImage: `url(${gradient.src})` }}
+    >
       <Link href="/">
         <span className={`${styles.goBack} ${juliusSansOne.className}`}>
           🡠 GO BACK
@@ -169,7 +173,7 @@ const About = () => {
         })}
       </Marquee>
       <MobileFooter />
-    </div>
+    </main>
   );
 };
 

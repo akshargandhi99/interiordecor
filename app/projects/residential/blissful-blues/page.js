@@ -9,6 +9,7 @@ import image4 from "@/public/blissful-blues/4.webp";
 import image5 from "@/public/blissful-blues/5.webp";
 import image6 from "@/public/blissful-blues/6.webp";
 import detailedData from "@/data/detailedPages.json";
+import MobileFooter from "@/components/mobileFooter/mobileFooter";
 
 const BlissfulBlues = () => {
   const projectName = "Blissful Blues";
@@ -32,6 +33,7 @@ const BlissfulBlues = () => {
 
   return (
     <div className={styles.fullContainer}>
+      <div className={styles.emptyDiv} />
       <div className={styles.topContainer}>
         <Link href={`/projects/${type}`}>
           <span className={`${styles.goBack} ${juliusSansOne.className}`}>
@@ -112,6 +114,7 @@ const BlissfulBlues = () => {
                 </span>
               );
             })}
+            <div className={styles.emptyDiv} />
             <div className={styles.emptyDiv} />
           </main>
           <div className={styles.imageGrid}>
@@ -248,6 +251,7 @@ const BlissfulBlues = () => {
             <div className={styles.emptyDiv} />
           </main>
         </div>
+        <MobileFooter />
       </div>
     </div>
   );

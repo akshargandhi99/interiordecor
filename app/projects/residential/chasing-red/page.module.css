@@ -1,27 +1,23 @@
 .fullContainer {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
+  min-height: 100vh;
+  width: 100vw;
   background-image: linear-gradient(
     rgba(255, 255, 255, 1),
     rgba(223, 219, 233, 1)
   );
   /* Overrides main background image */
   background-position: cover;
-  height: 100vh;
-  width: 100vw;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .topContainer {
-  position: fixed;
   top: 100px;
   flex-direction: column;
   width: 100vw;
-  height: 100vh;
-
   overflow-x: hidden;
-  overflow-y: scroll;
 }
 
 .topContainer::-webkit-scrollbar {
@@ -30,12 +26,6 @@
 
 .topContainerMobile {
   display: none;
-}
-
-.goBack {
-  position: absolute;
-  top: 135px;
-  left: 50px;
 }
 
 .bodyContainer {
@@ -113,12 +103,6 @@
   transform: translateY(-15px);
 }
 
-.pillContainer {
-  display: flex;
-  justify-content: space-evenly;
-  overflow: visible;
-}
-
 .pill {
   font-size: 14px;
   background: rgba(209, 187, 174, 0.5);
@@ -193,15 +177,15 @@
 }
 
 .emptyDiv {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
 }
 
 .goBack {
   position: absolute;
   cursor: pointer;
   color: #514d43;
-  top: 10px;
+  top: 100px;
   left: 50px;
   z-index: 3;
 }
@@ -222,15 +206,10 @@
     display: none;
   }
   .topContainerMobile {
-    display: block;
-    position: fixed;
-    top: 70px;
+    display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 100vh;
-
     overflow-x: hidden;
-    overflow-y: scroll;
   }
 
   .mainContainer {
@@ -286,7 +265,6 @@
   }
 
   .goBack {
-    top: 0;
     left: 15px;
     font-size: 16px;
   }

@@ -13,7 +13,7 @@ const MobileFooter = () => {
       </div>
       <div className={`${styles.mobileFooterItem} ${juliusSansOne.className}`}>
         <span>SOCIAL - </span>
-        <span className={styles.mobileFooterUnderline}>Instagram</span>,{" "}
+        <span className={styles.mobileFooterUnderline}>Instagram</span> &{" "}
         <span className={styles.mobileFooterUnderline}>Facebook</span>
       </div>
       <div className={`${styles.mobileFooterItem} ${juliusSansOne.className}`}>
