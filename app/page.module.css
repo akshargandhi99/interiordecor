@@ -4,10 +4,11 @@
   align-items: center;
   height: 100vh;
   width: 100vw;
-  overflow-y: scroll;
+  overflow-y: hidden;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   user-select: none;
+  background-image: url("/static/HiFi_Homepage.webp");
 
   /* display: flex;
   flex-direction: column;
@@ -25,9 +26,10 @@
 }
 
 .innerCardContainer {
-  position: relative;
-  top: 95px;
-  height: 100vh;
+  position: fixed;
+  top: 100px;
+
+  height: calc(100vh - 120px);
   width: auto;
   display: flex;
   flex-direction: column;
