@@ -45,7 +45,7 @@
 
 .horizontalLine {
   width: 100vw;
-  color: #d6c5b8;
+  color: white;
 }
 
 .navbarItemContainer {
@@ -81,18 +81,18 @@
   font-size: var(--font-size);
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--text-color);
+  color: white;
   cursor: pointer;
 }
 
 .navLink {
   text-decoration: none;
-  color: var(--text-color);
+  color: white;
 }
 
 .navLinkNoHover {
   text-decoration: none;
-  color: var(--text-color);
+  color: white;
 }
 
 .navLink:hover {
