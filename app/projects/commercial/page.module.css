@@ -65,7 +65,7 @@
   justify-content: left;
   align-items: center;
   font-family: "Century Gothic";
-  font-size: var(--font-size);
+  font-size: 16px;
   opacity: 0; /* Initially hidden */
   top: 60%;
   left: 0%;
@@ -161,6 +161,7 @@
 
   .glassDescription {
     opacity: 1;
+    font-size: var(--font-size);
   }
   .gridContainer {
     grid-template-columns: 1fr;

@@ -118,7 +118,7 @@
   font-family: "Century Gothic";
   width: 300px;
   color: var(--text-color);
-  font-size: var(--font-size);
+  font-size: 16px;
 }
 
 .firstTextHeader {
@@ -142,7 +142,7 @@
   font-family: "Century Gothic";
   min-width: 300px;
   color: var(--text-color);
-  font-size: var(--font-size);
+  font-size: 16px;
   align-self: center;
 }
 
@@ -196,6 +196,13 @@
 
 .emptyDiv {
   margin-right: 100px;
+}
+
+@media (max-width: 600px) {
+  .firstText,
+  .restOfText {
+    font-size: var(--font-size);
+  }
 }
 
 /* Less than 1200px */

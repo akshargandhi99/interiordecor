@@ -5,8 +5,10 @@ import { juliusSansOne } from "@/app/fonts";
 import styles from "./navbar.module.css";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
-import logo from "@/public/static/Logo.svg";
-import hamburger from "@/public/static/Hamburger.webp";
+import logoBrown from "@/public/static/LogoBrown.svg";
+import logoWhite from "@/public/static/LogoWhite.svg";
+import hamburgerBrown from "@/public/static/HamburgerBrown.svg";
+import hamburgerWhite from "@/public/static/HamburgerWhite.svg";
 // import gradient from "@/public/static/MergeGradient1.webp";
 
 const NavBar = () => {
@@ -18,11 +20,17 @@ const NavBar = () => {
   const menuRef = useRef(null);
   let navbarUnderline = "";
   let navbarColor = "";
+  let navBarTextColor = "#514d43";
+  let logo = logoBrown;
+  let hamburger = hamburgerBrown;
 
   switch (pathname) {
     case "/":
       navbarUnderline = "main";
       navbarColor = "normal";
+      navBarTextColor = "white";
+      logo = logoWhite;
+      hamburger = hamburgerWhite;
       break;
     case "/projects":
       navbarUnderline = "projects";
@@ -187,9 +195,13 @@ const NavBar = () => {
               ? styles.navLinkNoHover
               : styles.navLink
           }
+          style={{ color: navBarTextColor }}
         >
           <div className={styles.navItemContainer}>
-            <span className={`${styles.navbarItem} ${juliusSansOne.className}`}>
+            <span
+              className={`${styles.navbarItem} ${juliusSansOne.className}`}
+              style={{ color: navBarTextColor }}
+            >
               SPATIAL DESIGN
             </span>
             {navbarUnderline === "spatial-design" && (
@@ -203,9 +215,13 @@ const NavBar = () => {
           className={
             navbarUnderline === "about" ? styles.navLinkNoHover : styles.navLink
           }
+          style={{ color: navBarTextColor }}
         >
           <div className={styles.navItemContainer}>
-            <span className={`${styles.navbarItem} ${juliusSansOne.className}`}>
+            <span
+              className={`${styles.navbarItem} ${juliusSansOne.className}`}
+              style={{ color: navBarTextColor }}
+            >
               ABOUT US
             </span>
             {navbarUnderline === "about" && <hr className={styles.selected} />}
@@ -221,9 +237,11 @@ const NavBar = () => {
                   ? styles.navLinkNoHover
                   : styles.navLink
               }
+              style={{ color: navBarTextColor }}
             >
               <span
                 className={`${styles.projects} ${styles.navbarItem} ${juliusSansOne.className}`}
+                style={{ color: navBarTextColor }}
               >
                 PROJECTS
               </span>
@@ -240,9 +258,13 @@ const NavBar = () => {
               ? styles.navLinkNoHover
               : styles.navLink
           }
+          style={{ color: navBarTextColor }}
         >
           <div className={styles.navItemContainer}>
-            <span className={`${styles.navbarItem} ${juliusSansOne.className}`}>
+            <span
+              className={`${styles.navbarItem} ${juliusSansOne.className}`}
+              style={{ color: navBarTextColor }}
+            >
               CONTACT
             </span>
             {navbarUnderline === "contact" && (
@@ -255,9 +277,13 @@ const NavBar = () => {
           className={
             navbarUnderline === "blogs" ? styles.navLinkNoHover : styles.navLink
           }
+          style={{ color: navBarTextColor }}
         >
           <div className={styles.navItemContainer}>
-            <span className={`${styles.navbarItem} ${juliusSansOne.className}`}>
+            <span
+              className={`${styles.navbarItem} ${juliusSansOne.className}`}
+              style={{ color: navBarTextColor }}
+            >
               BLOGS
             </span>
             {navbarUnderline === "blogs" && <hr className={styles.selected} />}

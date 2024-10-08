@@ -32,7 +32,7 @@
 .firstPara {
   color: rgb(81, 77, 67);
   font-family: "Century Gothic";
-  font-size: var(--font-size);
+  font-size: 16px;
   text-align: justify;
   margin-bottom: 50px;
 }
@@ -71,7 +71,7 @@
 .conclusion {
   color: rgb(81, 77, 67);
   font-family: "Century Gothic";
-  font-size: var(--font-size);
+  font-size: 16px;
   text-align: justify;
 }
 
@@ -125,7 +125,7 @@
 .blogPointHeader {
   color: rgb(81, 77, 67);
   text-align: justify;
-  font-size: var(--font-size);
+  font-size: 16px;
   font-family: "Century Gothic";
 }
 
@@ -173,6 +173,13 @@
 @media (max-width: 850px) {
   .mainHeader {
     text-align: center;
+  }
+
+  .firstPara,
+  .conclusion,
+  .blogPara,
+  .blogPointHeader {
+    font-size: var(--font-size);
   }
 
   .goBack {

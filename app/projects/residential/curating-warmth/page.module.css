@@ -88,7 +88,7 @@
 }
 
 .paragraph {
-  font-size: var(--font-size);
+  font-size: 16px;
   font-weight: 400;
   line-height: 25px;
   margin-bottom: 10px;
@@ -249,6 +249,10 @@
 
   .olMobile {
     padding-left: 17px;
+  }
+
+  .paragraph {
+    font-size: var(--font-size);
   }
 
   .pill {

@@ -64,7 +64,7 @@
   font-weight: 300;
   background: rgba(255, 255, 255, 0.5); /* Transparent background */
   font-family: "Century Gothic";
-  font-size: var(--font-size);
+
   backdrop-filter: blur(10px); /* Apply blur */
   -webkit-backdrop-filter: blur(10px); /* For Safari */
   color: var(--text-color);
@@ -124,6 +124,10 @@
   .blogContainer {
     gap: 50px;
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .glassDescription {
+    font-size: var(--font-size);
   }
 
   .goBack {

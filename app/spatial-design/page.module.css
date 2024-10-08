@@ -34,7 +34,7 @@
 
 .paragraph {
   margin-top: 15px;
-  font-size: var(--font-size);
+  font-size: 18px;
   font-family: "Century Gothic";
   color: var(--text-color);
   width: 80vw;

@@ -9,7 +9,7 @@
   scrollbar-width: none; /* Firefox */
   user-select: none;
   background-image: url("/static/HiFi_Homepage.webp");
-
+  background-size: cover;
   /* display: flex;
   flex-direction: column;
   align-items: center;
@@ -167,6 +167,12 @@
 
   .projects {
     font-size: 44px;
+  }
+}
+
+@media (max-width: 600px) {
+  .innerCardContainer {
+    top: 60px;
   }
 }
 

@@ -45,7 +45,7 @@
   text-align: left;
   font-family: "Century Gothic";
   margin-top: 0;
-  font-size: var(--font-size);
+  font-size: 16px;
 }
 
 .profileImage {
@@ -81,7 +81,7 @@
   text-align: center;
   margin-left: 50px;
   margin-right: 50px;
-  font-size: var(--font-size);
+
   font-family: "Century Gothic";
   color: var(--text-color);
 }
@@ -94,7 +94,7 @@
   justify-content: center;
   align-items: flex-end;
   color: var(--text-color);
-  font-size: var(--font-size);
+
   font-family: "Century Gothic";
 }
 

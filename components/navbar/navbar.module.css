@@ -31,6 +31,7 @@
 }
 
 .logo {
+  transform: translateY(5px);
   height: 50px;
   width: 50px;
 }
@@ -81,18 +82,16 @@
   font-size: var(--font-size);
   text-transform: uppercase;
   text-decoration: none;
-  color: white;
+
   cursor: pointer;
 }
 
 .navLink {
   text-decoration: none;
-  color: white;
 }
 
 .navLinkNoHover {
   text-decoration: none;
-  color: white;
 }
 
 .navLink:hover {
@@ -114,14 +113,15 @@
   }
 
   .logo {
+    transform: translateY(0px);
     margin-top: 15px;
   }
 
   .hamburger {
     display: block;
     position: absolute;
-    top: 9px;
-    left: 10px;
+    top: 25px;
+    left: 18px;
   }
 
   .mobileMenu {
