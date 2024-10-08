@@ -3,21 +3,6 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import MobileFooter from "@/components/mobileFooter/mobileFooter";
-import GoBack from "@/components/goBack/goBack";
-
-import icon1 from "@/public/spatial-design/1.webp";
-import icon2 from "@/public/spatial-design/2.webp";
-import icon3 from "@/public/spatial-design/3.webp";
-import icon4 from "@/public/spatial-design/4.webp";
-import icon5 from "@/public/spatial-design/5.webp";
-import icon6 from "@/public/spatial-design/6.webp";
-import icon7 from "@/public/spatial-design/7.webp";
-import icon8 from "@/public/spatial-design/8.webp";
-import icon9 from "@/public/spatial-design/9.webp";
-import icon10 from "@/public/spatial-design/10.webp";
-import icon11 from "@/public/spatial-design/11.webp";
-import icon12 from "@/public/spatial-design/12.webp";
-import icon13 from "@/public/spatial-design/13.webp";
 
 import designProcessSVG from "@/public/spatial-design/designProcess.svg";
 import designProcessMobileSVG from "@/public/spatial-design/designProcessMobile.svg";
@@ -25,25 +10,6 @@ import ourPrinciples from "@/public/spatial-design/Our Principles.svg";
 import ourPrinciplesMobile from "@/public/spatial-design/Our Principles Mobile.svg";
 
 const SpatialDesign = () => {
-  // const iconArray = [
-  //   [icon1, "User Centric Approach", styles.icon1],
-  //   [icon2, "Efficient Use of Square Footage", styles.icon2],
-  //   [icon3, "Maximising Client Involvement", styles.icon3],
-  //   [icon4, "Vastu & Other Cultural Aspects", styles.icon4],
-  //   [icon5, "Budget Management", styles.icon5],
-  //   [
-  //     icon6,
-  //     "Detailed Planning of Layouts Space Flexibility & Adaptability",
-  //     styles.icon6,
-  //   ],
-  //   [icon7, "Daily Routines Study", styles.icon7],
-  //   [icon8, "Informal Approach", styles.icon8],
-  //   [icon9, "Detailed Movement & Flow Study", styles.icon9],
-  //   [icon10, "Professional Collaborations", styles.icon10],
-  //   [icon11, "Eco Conscious", styles.icon11],
-  //   [icon12, "Style & Aesthetic Integration", styles.icon12],
-  //   [icon13, "Feedback Loop", styles.icon13],
-  // ];
   return (
     <div className={styles.fullContainer}>
       <Link href="/">

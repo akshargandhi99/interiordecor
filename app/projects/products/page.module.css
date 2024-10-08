@@ -65,6 +65,7 @@
   justify-content: left;
   align-items: center;
   font-family: "Century Gothic";
+  font-size: var(--font-size);
   opacity: 0; /* Initially hidden */
   top: 60%;
   left: 0%;
@@ -135,7 +136,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 3;
+  z-index: 1001;
   cursor: zoom-out; /* Changes cursor to indicate you can click to exit */
 }
 

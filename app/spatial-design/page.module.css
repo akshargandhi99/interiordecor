@@ -34,59 +34,12 @@
 
 .paragraph {
   margin-top: 15px;
-  font-size: 18px;
+  font-size: var(--font-size);
   font-family: "Century Gothic";
   color: var(--text-color);
   width: 80vw;
   text-align: center;
 }
-
-/* Philosophy */
-
-/* .industryContainer {
-  display: flex;
-  width: 100vw;
-  justify-content: space-around;
-}
-
-.threePoints {
-  display: flex;
-  flex-direction: column;
-}
-
-.industryPoint {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  margin-top: 60px;
-}
-
-.pointLine {
-  width: 108px;
-  border: 2px solid var(--text-color);
-  margin: 0;
-  margin-bottom: 1px;
-}
-
-.industryTitle {
-  font-size: 26px;
-  font-family: "Brown Sugar";
-  letter-spacing: 6px;
-  color: var(--text-color);
-}
-
-.industrySubTitle {
-  font-size: 20px;
-  letter-spacing: 1px;
-  color: var(--text-color);
-}
-
-.verticalLine {
-  height: 450px;
-  width: 1px;
-  background: linear-gradient(transparent, var(--text-color), transparent);
-} */
 
 /* Design Process */
 .designProcessContainer {
@@ -125,7 +78,7 @@
 .ourPrinciplesImage {
   display: block;
   width: 85vw;
-  margin: 75px 50px 0 50px;
+  margin: -40px 50px -40px 50px;
 }
 
 .mobilePrincipleContainer {
@@ -138,62 +91,6 @@
 
 .mobilePrinciplePara {
   display: none;
-}
-
-.iconGrid {
-  display: grid;
-  position: relative;
-  grid-template-columns: repeat(6, 200px);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 3px;
-  background: radial-gradient(var(--text-color), transparent 80%);
-  background-origin: border-box;
-  background-clip: border-box;
-
-  margin: 150px 50px 0 50px;
-}
-
-.iconGrid::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  background-repeat: no-repeat;
-  background-size: 50% 50%;
-  pointer-events: none; /* Allows clicks to pass through */
-}
-
-.iconGrid > div {
-  background-color: white;
-  padding: 10px;
-}
-
-.invisibleContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  grid-area: 1 / 1 / span 2 / span 2;
-}
-
-.principleContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.principleHeader {
-  margin-top: 0;
-  font-size: 45px;
-}
-
-.principleParagraph {
-  font-size: 18px;
-  font-family: "Century Gothic";
-  color: var(--text-color);
-  text-align: justify;
 }
 
 .emptyDiv1 {
@@ -215,30 +112,6 @@
   border-right: 10px solid white;
   border-top: 20px solid white;
   transform: translateY(-30px);
-}
-
-.iconText {
-  font-size: 16px;
-  font-family: "Century Gothic";
-  color: var(--text-color);
-  text-align: center;
-}
-
-.iconContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  text-wrap: wrap;
-  /* border-right: 5px solid; */
-  /* border-image: linear-gradient(transparent, black 30%, black 70%, transparent)
-    1; */
-}
-
-.icon {
-  height: 45px;
-  width: auto;
-  grid-area: span 1;
 }
 
 .goBack,
@@ -263,6 +136,9 @@
   .designProcessContainer,
   .designProcessSVG {
     width: 95vw;
+  }
+  .ourPrinciplesImage {
+    margin: -125px 50px -125px 50px;
   }
 }
 

@@ -78,7 +78,7 @@
 }
 
 .navbarItem {
-  font-size: 14px;
+  font-size: var(--font-size);
   text-transform: uppercase;
   text-decoration: none;
   color: var(--text-color);

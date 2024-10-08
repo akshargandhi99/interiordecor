@@ -77,7 +77,8 @@ const NavBar = () => {
   const navbarBackgroundColor =
     navbarColor === "normal"
       ? "linear-gradient(rgba(255, 255, 255, 1),rgba(245, 244, 239, 1))"
-      : "white";
+      : //"linear-gradient(360deg, rgba(245, 244, 239, 1), rgba(255, 255, 255, 1))"
+        "white";
 
   const handleClickOutside = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {

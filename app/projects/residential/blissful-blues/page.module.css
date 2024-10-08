@@ -85,14 +85,14 @@
 .locationText {
   margin-top: 0;
   transform: translateY(-15px);
-  font-size: 14px;
+  font-size: var(--font-size);
   line-height: 20px;
   text-transform: uppercase;
   color: (81, 77, 67, 0.8);
 }
 
 .paragraph {
-  font-size: 16px;
+  font-size: var(--font-size);
   font-weight: 400;
   line-height: 25px;
   margin-bottom: 10px;
@@ -103,7 +103,7 @@
 }
 
 .pill {
-  font-size: 14px;
+  font-size: var(--font-size);
   background: rgba(209, 187, 174, 0.5);
   padding: 10px 25px 10px 25px;
   border-radius: 16px;

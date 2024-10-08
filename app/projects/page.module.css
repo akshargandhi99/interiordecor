@@ -68,7 +68,7 @@
   /* transform: translate(-1px, 15px); */
   color: rgba(0, 0, 0, 1);
   font-weight: 300;
-  font-size: 22px;
+  font-size: 18px;
   background: rgba(255, 255, 255, 0.5); /* Transparent background */
 
   backdrop-filter: blur(10px); /* Apply blur */

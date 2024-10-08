@@ -118,6 +118,7 @@
   font-family: "Century Gothic";
   width: 300px;
   color: var(--text-color);
+  font-size: var(--font-size);
 }
 
 .firstTextHeader {
@@ -141,6 +142,7 @@
   font-family: "Century Gothic";
   min-width: 300px;
   color: var(--text-color);
+  font-size: var(--font-size);
   align-self: center;
 }
 

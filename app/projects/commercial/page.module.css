@@ -65,6 +65,7 @@
   justify-content: left;
   align-items: center;
   font-family: "Century Gothic";
+  font-size: var(--font-size);
   opacity: 0; /* Initially hidden */
   top: 60%;
   left: 0%;
