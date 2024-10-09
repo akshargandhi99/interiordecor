@@ -10,6 +10,7 @@
   display: flex;
   justify-content: center;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .mobileFooterContainer {
@@ -203,6 +204,12 @@
 .radioInput:not(:checked)::before {
   content: "";
   background-color: transparent; /* No color for unchecked state */
+}
+
+.tncContainer {
+  position: absolute;
+  top: 90vh;
+  left: 222vw;
 }
 
 .submit {

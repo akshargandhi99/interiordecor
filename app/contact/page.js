@@ -30,29 +30,34 @@ const Contact = () => {
       vastu: form.vastu.value,
       budgetConsideration: form.budgetConsideration.value,
       comments: form.comments.value,
+      tnc: form.tnc.checked,
     };
 
     // setLoading(true);
     // setSuccessMessage('');
 
-    try {
-      const response = await fetch("/api/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+    if (!formData.tnc) {
+      try {
+        const response = await fetch("/api/send-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        });
 
-      if (response.ok) {
-        // setSuccessMessage('Thank you for contacting us!');
-        form.reset();
-      } else {
-        throw new Error("Failed to send email");
+        if (response.ok) {
+          // setSuccessMessage('Thank you for contacting us!');
+          form.reset();
+        } else {
+          throw new Error("Failed to send email");
+        }
+      } catch (error) {
+        console.error(error);
+        alert("An error occurred while sending your message");
+      } finally {
+        // setLoading(false);
       }
-    } catch (error) {
-      console.error(error);
-      alert("An error occurred while sending your message");
-    } finally {
-      // setLoading(false);
+    } else {
+      // Still return thank you state
     }
   };
 
@@ -326,6 +331,16 @@ const Contact = () => {
                   name="comments"
                   className={styles.formInput3}
                 />
+              </div>
+              <div className={styles.tncContainer}>
+                <label
+                  htmlFor="tnc"
+                  className={`${styles.label} ${juliusSansOne.className}`}
+                >
+                  Do you agree to the terms and conditions for using our
+                  services?
+                </label>
+                <input type="checkbox" id="tnc" name="tnc" value="tncAgree" />
               </div>
               {/* SUBMIT */}
               <div
