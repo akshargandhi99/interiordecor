@@ -49,7 +49,6 @@ const Footer = () => {
             <Fragment>
               <span className={styles.social}>Instagram</span>
               <span className={styles.social}>Facebook</span>
-              <span className={styles.social}>Twitter</span>
             </Fragment>
           )}
         </span>
