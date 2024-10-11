@@ -5,6 +5,7 @@ import { juliusSansOne } from "@/app/fonts";
 import styles from "./navbar.module.css";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
+import useWindowDimensions from "@/hooks/windowDimensions";
 import logoBrown from "@/public/static/LogoBrown.svg";
 import logoWhite from "@/public/static/LogoWhite.svg";
 import hamburgerBrown from "@/public/static/HamburgerBrown.svg";
@@ -16,8 +17,16 @@ const NavBar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false); // Hamburger Menu Mobile Only
   const [scrollPosition, setScrollPosition] = useState(0);
   const [navbarBackground, setNavbarBackground] = useState("rgba(0, 0, 0, 0)");
+  const [isMounted, setIsMounted] = useState(false);
 
   const menuRef = useRef(null);
+  const { height, width } = useWindowDimensions();
+  const isMobile = width <= 600 ? true : false;
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  console.log({ isMobile });
   let navbarUnderline = "";
   let navbarColor = "";
   let navBarTextColor = "#514d43";
@@ -29,8 +38,9 @@ const NavBar = () => {
       navbarUnderline = "main";
       navbarColor = "normal";
       navBarTextColor = "white";
-      // logo = logoWhite;
-      // hamburger = hamburgerWhite;
+      // Initially render logoBrown/hamburgerBrown, then switch once mounted
+      logo = isMounted && !isMobile ? logoWhite : logoBrown;
+      hamburger = isMounted && !isMobile ? hamburgerWhite : hamburgerBrown;
       break;
     case "/projects":
       navbarUnderline = "projects";
@@ -110,7 +120,6 @@ const NavBar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log(window.scrollY);
       const currentPosition = window.scrollY;
       setScrollPosition(currentPosition);
     };
@@ -125,6 +134,11 @@ const NavBar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // Render nothing until the component is mounted
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <nav
