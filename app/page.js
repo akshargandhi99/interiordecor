@@ -6,6 +6,7 @@ import ExpandedCard from "@/components/expandedLandingCards/expandedLandingCards
 import { Fragment, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { ACTION_TYPES, StoreContext } from "@/store/store-context";
+import MobileFooter from "@/components/mobileFooter/mobileFooter";
 import { useContext } from "react";
 import { juliusSansOne } from "@/app/fonts";
 
@@ -54,12 +55,20 @@ const LandingCard = () => {
 
       <div className={styles.pageHeaderContainer}>
         {hasValueOne && (
-          <span
-            className={`${styles.goBack} ${juliusSansOne.className}`}
-            onClick={() => goBack()}
-          >
-            🡠 GO BACK
-          </span>
+          <Fragment>
+            <span
+              className={`${styles.goBack} ${juliusSansOne.className}`}
+              onClick={() => goBack()}
+            >
+              🡠 GO BACK
+            </span>
+            <span
+              className={`${styles.goBackMobile} ${juliusSansOne.className}`}
+              onClick={() => goBack()}
+            >
+              🡠
+            </span>
+          </Fragment>
         )}
         {!hasValueOne && (
           <Fragment>
@@ -82,14 +91,33 @@ const LandingCard = () => {
       <div className={styles.innerCardContainer}>
         <div className={styles.emptyDiv} />
         <div className={styles.emptyDiv} />
-
+        <div className={styles.mobileTitleContainer}>
+          <span
+            className={`${styles.spatialMobile} ${juliusSansOne.className}`}
+          >
+            INTERIOR
+          </span>
+          <span
+            className={`${styles.projectsMobile} ${juliusSansOne.className}`}
+          >
+            PROJECTS
+          </span>
+        </div>
         <ExpandedCard projectName={"blissfulBlues"} />
         <ExpandedCard projectName={"chasingRed"} />
         <ExpandedCard projectName={"craftingFarmhouse"} />
         <ExpandedCard projectName={"curatingWarmth"} />
         <ExpandedCard projectName={"monochromic"} />
         <ExpandedCard projectName={"refiningClassics"} />
+        <div className={styles.mobileBtnContainer}>
+          <Link href="/projects/residential" className={styles.btnLink}>
+            <button type="button" className={styles.discoverMoreBtn}>
+              DISCOVER MORE
+            </button>
+          </Link>
+        </div>
 
+        <MobileFooter />
         <div className={styles.emptyDiv} />
         <div className={styles.emptyDiv} />
         <div className={styles.emptyDiv} />

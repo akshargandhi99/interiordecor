@@ -199,6 +199,15 @@
 }
 
 @media (max-width: 600px) {
+  .smallImage {
+    height: 220px;
+    width: 220px;
+  }
+  .expandedImage {
+    height: 266px;
+    width: 266px;
+  }
+
   .firstText,
   .restOfText {
     font-size: var(--font-size);
