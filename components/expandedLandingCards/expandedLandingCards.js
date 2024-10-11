@@ -2,6 +2,7 @@
 import { ACTION_TYPES, StoreContext } from "@/store/store-context";
 import { useState, useEffect, useRef, useContext } from "react";
 import { juliusSansOne } from "@/app/fonts";
+import useWindowDimensions from "@/hooks/windowDimensions";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -43,6 +44,8 @@ const ExpandedCard = (props) => {
   const maxScrollLeft = 300; // Define the maximum scrollable distance horizontally
   const [isHovered, setIsHovered] = useState(false);
   const leaveTimeout = useRef(null); // To keep track of the timeout ID
+  const { height, width } = useWindowDimensions();
+  const isMobile = width <= 600 ? true : false;
 
   // const handleMouseEnter = (index) => {
   //   if (leaveTimeout.current) {
@@ -258,7 +261,7 @@ const ExpandedCard = (props) => {
       // First, scroll the card into view vertically
       refCard.current.scrollIntoView({
         behavior: "smooth",
-        block: "end",
+        block: isMobile ? "center" : "end",
       });
     });
   };

@@ -6,9 +6,9 @@ import Link from "next/link";
 import Image from "next/image";
 import MobileFooter from "@/components/mobileFooter/mobileFooter";
 
-import blogImage1 from "@/public/static/blog 1.webp";
+import blogImage1 from "@/public/static/blogDetailed1.webp";
 import blogImage2 from "@/public/static/blog 2.webp";
-import blogImage3 from "@/public/static/blog 3.webp";
+import blogImage3 from "@/public/static/blogDetailed3.webp";
 import blogImage4 from "@/public/static/blog 4.webp";
 import blogImage5 from "@/public/static/blog 5.webp";
 import blogImage6 from "@/public/static/blog 6.webp";

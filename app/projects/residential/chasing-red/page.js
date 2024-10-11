@@ -1,7 +1,10 @@
+"use client";
+
 import styles from "./page.module.css";
 import { juliusSansOne } from "@/app/fonts";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import image1 from "@/public/chasing-red/1.webp";
 import image2 from "@/public/chasing-red/2.webp";
 import image3 from "@/public/chasing-red/3.webp";
@@ -15,6 +18,7 @@ import detailedData from "@/data/detailedPages.json";
 
 const ChasingRed = () => {
   const projectName = "Chasing Red";
+  const [zoomedImage, setZoomedImage] = useState(null); // State to track the zoomed image
   const imageArray = [
     [image1, styles.gridImage1],
     [image2, styles.gridImage2],
@@ -34,6 +38,14 @@ const ChasingRed = () => {
   const designAspects = detailedData[projectName].designAspects;
   const spatialDesignText = detailedData[projectName].spatialDesignText;
   const mainParagraph = detailedData[projectName].mainParagraph;
+
+  const handleImageClick = (card) => {
+    setZoomedImage(card); // Set the clicked image as the zoomed image
+  };
+
+  const closeZoom = () => {
+    setZoomedImage(null); // Close the zoomed view
+  };
 
   return (
     <div className={styles.fullContainer}>
@@ -128,6 +140,7 @@ const ChasingRed = () => {
                   className={imageElement[1]}
                   key={`${projectName} Image ${Number(index) + 1}`}
                   alt={`${projectName} Image ${Number(index) + 1}`}
+                  onClick={() => handleImageClick(imageElement[0])}
                 />
               );
             })}
@@ -173,16 +186,19 @@ const ChasingRed = () => {
             </p>
             <p className={styles.paragraph}>{mainParagraph}</p>
             <div className={styles.imageGrid1}>
-              {imageArray.slice(0, 2).map((imageElement, index) => {
-                return (
-                  <Image
-                    src={imageElement[0]}
-                    className={imageElement[1]}
-                    key={`${projectName} Image ${Number(index) + 1}`}
-                    alt={`${projectName} Image ${Number(index) + 1}`}
-                  />
-                );
-              })}
+              {[imageArray[0], imageArray[1], imageArray[3]].map(
+                (imageElement, index) => {
+                  return (
+                    <Image
+                      src={imageElement[0]}
+                      className={imageElement[1]}
+                      key={`${projectName} Image ${Number(index) + 1}`}
+                      alt={`${projectName} Image ${Number(index) + 1}`}
+                      onClick={() => handleImageClick(imageElement[0])}
+                    />
+                  );
+                }
+              )}
             </div>
             <h2 className={`${styles.subHeader} ${juliusSansOne.className}`}>
               DESIGN ASPECTS & KEY CONSIDERATIONS
@@ -200,13 +216,14 @@ const ChasingRed = () => {
               })}
             </ol>
             <div className={styles.imageGrid2}>
-              {imageArray.slice(2, 3).map((imageElement, index) => {
+              {[imageArray[2], imageArray[5]].map((imageElement, index) => {
                 return (
                   <Image
                     src={imageElement[0]}
                     className={imageElement[1]}
                     key={`${projectName} Image ${Number(index) + 1}`}
                     alt={`${projectName} Image ${Number(index) + 1}`}
+                    onClick={() => handleImageClick(imageElement[0])}
                   />
                 );
               })}
@@ -228,16 +245,19 @@ const ChasingRed = () => {
               );
             })}
             <div className={styles.imageGrid3}>
-              {imageArray.slice(3, 8).map((imageElement, index) => {
-                return (
-                  <Image
-                    src={imageElement[0]}
-                    className={imageElement[1]}
-                    key={`${projectName} Image ${Number(index) + 1}`}
-                    alt={`${projectName} Image ${Number(index) + 1}`}
-                  />
-                );
-              })}
+              {[imageArray[4], imageArray[6], imageArray[7]].map(
+                (imageElement, index) => {
+                  return (
+                    <Image
+                      src={imageElement[0]}
+                      className={imageElement[1]}
+                      key={`${projectName} Image ${Number(index) + 1}`}
+                      alt={`${projectName} Image ${Number(index) + 1}`}
+                      onClick={() => handleImageClick(imageElement[0])}
+                    />
+                  );
+                }
+              )}
             </div>
 
             {/* Pills/Tags */}
@@ -257,6 +277,17 @@ const ChasingRed = () => {
         </div>
         <MobileFooter />
       </div>
+      {zoomedImage && (
+        <div className={styles.fullscreenOverlay} onClick={closeZoom}>
+          <div className={styles.fullscreenImageContainer}>
+            <Image
+              src={zoomedImage}
+              alt="Zoomed Image"
+              className={styles.fullscreenImage}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

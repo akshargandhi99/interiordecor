@@ -29,8 +29,8 @@ const NavBar = () => {
       navbarUnderline = "main";
       navbarColor = "normal";
       navBarTextColor = "white";
-      logo = logoWhite;
-      hamburger = hamburgerWhite;
+      // logo = logoWhite;
+      // hamburger = hamburgerWhite;
       break;
     case "/projects":
       navbarUnderline = "projects";

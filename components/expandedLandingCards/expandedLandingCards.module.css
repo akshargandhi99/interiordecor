@@ -212,6 +212,18 @@
   .restOfText {
     font-size: var(--font-size);
   }
+
+  .rightArrow {
+    height: 25px;
+    width: 15px;
+    right: 5%;
+  }
+
+  .leftArrow {
+    height: 25px;
+    width: 15px;
+    left: 5%;
+  }
 }
 
 /* Less than 1200px */

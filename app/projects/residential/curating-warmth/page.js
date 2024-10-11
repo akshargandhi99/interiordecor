@@ -1,7 +1,10 @@
+"use client";
+
 import styles from "./page.module.css";
 import { juliusSansOne } from "@/app/fonts";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import image1 from "@/public/curating-warmth/1.webp";
 import image2 from "@/public/curating-warmth/2.webp";
 import image3 from "@/public/curating-warmth/3.webp";
@@ -13,6 +16,7 @@ import detailedData from "@/data/detailedPages.json";
 
 const CuratingWarmth = () => {
   const projectName = "Curating Warmth";
+  const [zoomedImage, setZoomedImage] = useState(null); // State to track the zoomed image
   const imageArray = [
     [image1, styles.gridImage1],
     [image2, styles.gridImage2],
@@ -30,6 +34,14 @@ const CuratingWarmth = () => {
   const designAspects = detailedData[projectName].designAspects;
   const spatialDesignText = detailedData[projectName].spatialDesignText;
   const mainParagraph = detailedData[projectName].mainParagraph;
+
+  const handleImageClick = (card) => {
+    setZoomedImage(card); // Set the clicked image as the zoomed image
+  };
+
+  const closeZoom = () => {
+    setZoomedImage(null); // Close the zoomed view
+  };
 
   return (
     <div className={styles.fullContainer}>
@@ -125,6 +137,7 @@ const CuratingWarmth = () => {
                   className={imageElement[1]}
                   key={`${projectName} Image ${Number(index) + 1}`}
                   alt={`${projectName} Image ${Number(index) + 1}`}
+                  onClick={() => handleImageClick(imageElement[0])}
                 />
               );
             })}
@@ -170,16 +183,19 @@ const CuratingWarmth = () => {
             </p>
             <p className={styles.paragraph}>{mainParagraph}</p>
             <div className={styles.imageGrid1}>
-              {imageArray.slice(0, 2).map((imageElement, index) => {
-                return (
-                  <Image
-                    src={imageElement[0]}
-                    className={imageElement[1]}
-                    key={`${projectName} Image ${Number(index) + 1}`}
-                    alt={`${projectName} Image ${Number(index) + 1}`}
-                  />
-                );
-              })}
+              {[imageArray[0], imageArray[1], imageArray[5]].map(
+                (imageElement, index) => {
+                  return (
+                    <Image
+                      src={imageElement[0]}
+                      className={imageElement[1]}
+                      key={`${projectName} Image ${Number(index) + 1}`}
+                      alt={`${projectName} Image ${Number(index) + 1}`}
+                      onClick={() => handleImageClick(imageElement[0])}
+                    />
+                  );
+                }
+              )}
             </div>
             <h2 className={`${styles.subHeader} ${juliusSansOne.className}`}>
               DESIGN ASPECTS & KEY CONSIDERATIONS
@@ -197,13 +213,14 @@ const CuratingWarmth = () => {
               })}
             </ol>
             <div className={styles.imageGrid2}>
-              {imageArray.slice(2, 3).map((imageElement, index) => {
+              {[imageArray[2]].map((imageElement, index) => {
                 return (
                   <Image
                     src={imageElement[0]}
                     className={imageElement[1]}
                     key={`${projectName} Image ${Number(index) + 1}`}
                     alt={`${projectName} Image ${Number(index) + 1}`}
+                    onClick={() => handleImageClick(imageElement[0])}
                   />
                 );
               })}
@@ -225,13 +242,14 @@ const CuratingWarmth = () => {
               );
             })}
             <div className={styles.imageGrid3}>
-              {imageArray.slice(3, 6).map((imageElement, index) => {
+              {[imageArray[3], imageArray[4]].map((imageElement, index) => {
                 return (
                   <Image
                     src={imageElement[0]}
                     className={imageElement[1]}
                     key={`${projectName} Image ${Number(index) + 1}`}
                     alt={`${projectName} Image ${Number(index) + 1}`}
+                    onClick={() => handleImageClick(imageElement[0])}
                   />
                 );
               })}
@@ -254,6 +272,17 @@ const CuratingWarmth = () => {
 
         <MobileFooter />
       </div>
+      {zoomedImage && (
+        <div className={styles.fullscreenOverlay} onClick={closeZoom}>
+          <div className={styles.fullscreenImageContainer}>
+            <Image
+              src={zoomedImage}
+              alt="Zoomed Image"
+              className={styles.fullscreenImage}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

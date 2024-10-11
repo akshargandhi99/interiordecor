@@ -53,18 +53,18 @@
 .grid {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  max-height: 700px;
-
-  padding-left: 0;
-  overflow-x: auto;
-  margin-bottom: 100px;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 .pointContainer {
   display: flex;
   flex-direction: column;
-  max-width: 320px;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+  width: 95%;
 }
 
 .conclusion {
@@ -78,6 +78,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  margin-bottom: 100px;
 }
 
 .pill {
@@ -140,22 +141,6 @@
 
 .blogPointHeader::marker {
   font-weight: bold;
-}
-
-@media (max-width: 1200px) {
-  .grid {
-    max-height: 2000px;
-    align-items: flex-start;
-  }
-  .pointContainer {
-    max-width: 95%;
-  }
-}
-
-@media (max-width: 930px) {
-  .grid {
-    align-items: center;
-  }
 }
 
 @media (max-width: 850px) {

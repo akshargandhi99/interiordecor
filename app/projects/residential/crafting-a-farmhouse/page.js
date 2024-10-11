@@ -1,7 +1,10 @@
+"use client";
+
 import styles from "./page.module.css";
 import { juliusSansOne } from "@/app/fonts";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import image1 from "@/public/crafting-a-farmhouse/1.webp";
 import image2 from "@/public/crafting-a-farmhouse/2.webp";
 import image3 from "@/public/crafting-a-farmhouse/3.webp";
@@ -11,6 +14,7 @@ import detailedData from "@/data/detailedPages.json";
 
 const CraftingFarmhouse = () => {
   const projectName = "Crafting a Farmhouse";
+  const [zoomedImage, setZoomedImage] = useState(null); // State to track the zoomed image
   const imageArray = [
     [image1, styles.gridImage1],
     [image2, styles.gridImage2],
@@ -26,6 +30,14 @@ const CraftingFarmhouse = () => {
   const designAspects = detailedData[projectName].designAspects;
   const spatialDesignText = detailedData[projectName].spatialDesignText;
   const mainParagraph = detailedData[projectName].mainParagraph;
+
+  const handleImageClick = (card) => {
+    setZoomedImage(card); // Set the clicked image as the zoomed image
+  };
+
+  const closeZoom = () => {
+    setZoomedImage(null); // Close the zoomed view
+  };
 
   return (
     <div className={styles.fullContainer}>
@@ -121,6 +133,7 @@ const CraftingFarmhouse = () => {
                   className={imageElement[1]}
                   key={`${projectName} Image ${Number(index) + 1}`}
                   alt={`${projectName} Image ${Number(index) + 1}`}
+                  onClick={() => handleImageClick(imageElement[0])}
                 />
               );
             })}
@@ -173,6 +186,7 @@ const CraftingFarmhouse = () => {
                     className={imageElement[1]}
                     key={`${projectName} Image ${Number(index) + 1}`}
                     alt={`${projectName} Image ${Number(index) + 1}`}
+                    onClick={() => handleImageClick(imageElement[0])}
                   />
                 );
               })}
@@ -200,6 +214,7 @@ const CraftingFarmhouse = () => {
                     className={imageElement[1]}
                     key={`${projectName} Image ${Number(index) + 1}`}
                     alt={`${projectName} Image ${Number(index) + 1}`}
+                    onClick={() => handleImageClick(imageElement[0])}
                   />
                 );
               })}
@@ -228,6 +243,7 @@ const CraftingFarmhouse = () => {
                     className={imageElement[1]}
                     key={`${projectName} Image ${Number(index) + 1}`}
                     alt={`${projectName} Image ${Number(index) + 1}`}
+                    onClick={() => handleImageClick(imageElement[0])}
                   />
                 );
               })}
@@ -249,6 +265,17 @@ const CraftingFarmhouse = () => {
         </div>
         <MobileFooter />
       </div>
+      {zoomedImage && (
+        <div className={styles.fullscreenOverlay} onClick={closeZoom}>
+          <div className={styles.fullscreenImageContainer}>
+            <Image
+              src={zoomedImage}
+              alt="Zoomed Image"
+              className={styles.fullscreenImage}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
