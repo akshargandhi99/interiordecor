@@ -40,14 +40,18 @@
 .rightArrow {
   position: absolute;
   top: 40%;
-  right: 10%;
+  right: 50px;
+  height: 35px;
+  width: 25px;
   cursor: pointer;
 }
 
 .leftArrow {
   position: absolute;
   top: 40%;
-  left: 10%;
+  left: 50px;
+  height: 35px;
+  width: 25px;
   cursor: pointer;
   transform: scaleX(-1);
 }
@@ -216,13 +220,13 @@
   .rightArrow {
     height: 25px;
     width: 15px;
-    right: 5%;
+    right: 15px;
   }
 
   .leftArrow {
     height: 25px;
     width: 15px;
-    left: 5%;
+    left: 15px;
   }
 }
 

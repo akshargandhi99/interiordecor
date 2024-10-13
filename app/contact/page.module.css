@@ -251,6 +251,10 @@
   display: none;
 }
 
+.tnc {
+  visibility: hidden;
+}
+
 @media (max-width: 1240px) {
   .formContainer {
     width: 90vw;

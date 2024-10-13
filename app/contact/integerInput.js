@@ -14,6 +14,7 @@ const IntegerInput = () => {
       name="totalFamilyMembers"
       onWheel={preventNumberChangeWithScroll}
       className={styles.formInput1}
+      required
     />
   );
 };

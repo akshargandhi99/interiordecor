@@ -31,6 +31,7 @@ const NavBar = () => {
   let navBarTextColor = "#514d43";
   let logo = logoBrown;
   let hamburger = hamburgerBrown;
+  let horizontalLine = styles.horizontalLineBrown;
 
   switch (pathname) {
     case "/":
@@ -38,8 +39,11 @@ const NavBar = () => {
       navbarColor = "normal";
       navBarTextColor = "white";
       // Initially render logoBrown/hamburgerBrown, then switch once mounted
-      logo = isMounted && !isMobile ? logoWhite : logoBrown;
-      hamburger = isMounted && !isMobile ? hamburgerWhite : hamburgerBrown;
+      logo = isMounted && logoWhite;
+      hamburger = isMounted && hamburgerWhite;
+      // logo = isMounted && !isMobile ? logoWhite : logoBrown;
+      // hamburger = isMounted && !isMobile ? hamburgerWhite : hamburgerBrown;
+      horizontalLine = styles.horizontalLineWhite;
       break;
     case "/projects":
       navbarUnderline = "projects";
@@ -199,7 +203,7 @@ const NavBar = () => {
       <Link href="/">
         <Image src={logo} className={styles.logo} alt="Logo" />
       </Link>
-      <hr className={styles.horizontalLine} />
+      <hr className={horizontalLine} />
       <div className={styles.navbarItemContainer}>
         <Link
           href="/spatial-design"

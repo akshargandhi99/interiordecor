@@ -72,6 +72,7 @@
   font-family: "Century Gothic";
   font-size: 16px;
   text-align: justify;
+  margin-top: 0;
 }
 
 .pillContainer {
@@ -127,6 +128,7 @@
   text-align: justify;
   font-size: 16px;
   font-family: "Century Gothic";
+  margin-top: 0;
 }
 
 .blogPointHeader {
@@ -157,6 +159,11 @@
 
   .blogImage {
     width: 100%;
+  }
+
+  .pill {
+    font-size: 12px;
+    padding: 10px 15px 10px 15px;
   }
 
   .goBack {

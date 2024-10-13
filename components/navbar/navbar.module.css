@@ -44,9 +44,19 @@
   display: none;
 }
 
-.horizontalLine {
+.horizontalLineBrown,
+.horizontalLineWhite {
   width: 100vw;
-  color: white;
+  border: none; /* Remove default border */
+  height: 1px; /* Adjust thickness */
+}
+
+.horizontalLineBrown {
+  background-color: var(--text-color);
+}
+
+.horizontalLineWhite {
+  background-color: white;
 }
 
 .navbarItemContainer {
@@ -105,7 +115,8 @@
     flex-direction: row;
     justify-content: center;
   }
-  .horizontalLine {
+  .horizontalLineBrown,
+  .horizontalLineWhite {
     display: none;
   }
   .navbarItemContainer {

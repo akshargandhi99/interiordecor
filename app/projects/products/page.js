@@ -44,21 +44,21 @@ const OthersProjectCards = () => {
   ];
 
   const cardDescriptions = [
-    "Peach Fuzz Colour of the Year Sofa Design with Metal accent side table.",
-    "A floor touch sofa with piping perfect for a conversational pit.",
-    "Peach fuzz colour of the year armchair and pouf side table.",
-    "Single Armchair with Wooden coffee table - minimalism Ⅰ",
-    "Single Armchair with Wooden coffee table - minimalism Ⅱ",
+    "Peach Fuzz Colour of the Year Sofa Design with Metal Accent Side Table.",
+    "A Floor Touch Sofa with Piping Perfect for a Conversational Pit.",
+    "Peach Fuzz Colour of the Year Armchair and Pouf Side Table.",
+    "Single Armchair with Wooden Coffee Table - Minimalism Ⅰ",
+    "Single Armchair with Wooden Coffee Table - Minimalism Ⅱ",
     "Leather + Brass Coffee Table",
-    "Minimal furniture collection",
+    "Minimal Furniture Collection",
     "Minimal Armchair",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
+    "Three Elements - One Redefined Coffee Table",
+    "Sharp Lines meet Functionality - Console",
+    "Perfect Loveseat - Grounded in Style",
+    "A Modular Sofa - Customise to your Space",
+    "A Sectional Statement of Style",
+    "A Retro Charm with Modern Comfort",
+    "Plush Comfort - Perfect for Two!",
   ];
 
   const handleImageClick = (card) => {

@@ -28,7 +28,7 @@
 .innerCardContainer {
   position: fixed;
   top: 100px;
-
+  margin-top: 10px;
   height: calc(100vh - 120px);
   width: auto;
   display: flex;
@@ -120,10 +120,12 @@
 .spatial {
   font-size: 40px;
   margin-left: 5px;
+  color: var(--text-color);
 }
 
 .projects {
   font-size: 64px;
+  color: var(--text-color);
 }
 
 .btnLink {
@@ -213,10 +215,12 @@
 
   .spatialMobile {
     font-size: 24px;
+    color: var(--text-color);
   }
 
   .projectsMobile {
     font-size: 36px;
+    color: var(--text-color);
   }
 
   .goBack {

@@ -16,11 +16,11 @@ export async function POST(request) {
 
   let vastuValue = "";
 
-  if (vastu === "vastuYes") {
+  if (vastu === "Yes") {
     vastuValue = "Yes";
-  } else if (vastu === "vastuNo") {
+  } else if (vastu === "No") {
     vastuValue = "No";
-  } else if (vastu === "vastuMaybe") {
+  } else if (vastu === "Maybe") {
     vastuValue = "Maybe";
   }
 
@@ -91,7 +91,7 @@ export async function POST(request) {
                 <td style="padding: 10px; border: 1px solid #ddd;">${comments}</td>
               </tr>
             </table>
-            <p style="margin-top: 20px;">Thank you for submitting the form. We will review the details and get back to you soon.</p>
+            
           </div>
         `,
     });

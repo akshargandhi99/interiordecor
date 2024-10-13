@@ -35,7 +35,7 @@ const ArtOfOpenLivingBlog = () => {
           <div className={styles.pointContainer}>
             <li className={styles.header}>Benefits of Open-Concept Living</li>
             <ul className={styles.blogBullet}>
-              <li>
+              <li className={styles.bulletPoint}>
                 <p className={styles.blogPara}>
                   <span className={styles.blogPointHeader}>
                     Enhanced Social Interaction:{" "}
@@ -127,7 +127,7 @@ const ArtOfOpenLivingBlog = () => {
             <li className={styles.header}>
               Strategies for Balancing Privacy and Space
             </li>
-            <ol>
+            <ol className={styles.orderedList}>
               <li>
                 <span className={styles.subpoint}>
                   Use of Furniture to Define Zones:

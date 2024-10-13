@@ -17,9 +17,11 @@ import emailImage from "@/public/static/email.webp";
 
 const Contact = () => {
   const [isMounted, setIsMounted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false); // New state for tracking form submission
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true); // Set to true when submitting
 
     const form = e.target;
     const formData = {
@@ -57,10 +59,16 @@ const Contact = () => {
         console.error(error);
         alert("An error occurred while sending your message");
       } finally {
+        setIsSubmitting(false); // Set back to false after submission
         // setLoading(false);
       }
     } else {
       // Still return thank you state
+      setIsSubmitting(true); // Set to true when submitting
+      setTimeout(() => {
+        form.reset();
+        setIsSubmitting(false); // Set back to false after submission
+      }, 500);
     }
   };
 
@@ -145,6 +153,7 @@ const Contact = () => {
                   id="name"
                   name="name"
                   className={styles.formInput1}
+                  required
                 />
               </div>
               {/* Email */}
@@ -164,6 +173,7 @@ const Contact = () => {
                   id="email"
                   name="email"
                   className={styles.formInput2}
+                  required
                 />
               </div>
 
@@ -198,6 +208,7 @@ const Contact = () => {
                   id="currentAddress"
                   name="currentAddress"
                   className={styles.formInput2}
+                  required
                 />
               </div>
               {/* PROJECT ADDRESS */}
@@ -215,6 +226,7 @@ const Contact = () => {
                   id="projectAddress"
                   name="projectAddress"
                   className={styles.formInput3}
+                  required
                 />
               </div>
               {/* AREA IN SQFT */}
@@ -248,6 +260,7 @@ const Contact = () => {
                   id="possession"
                   name="possession"
                   className={styles.formInput2}
+                  required
                 />
               </div>
               {/* VASTU */}
@@ -265,6 +278,7 @@ const Contact = () => {
                       value="Yes"
                       name="vastu"
                       className={styles.radioInput}
+                      required
                     />
                     <label
                       htmlFor="vastuYes"
@@ -347,7 +361,13 @@ const Contact = () => {
                   Do you agree to the terms and conditions for using our
                   services?
                 </label>
-                <input type="checkbox" id="tnc" name="tnc" value="tncAgree" />
+                <input
+                  type="checkbox"
+                  id="tnc"
+                  name="tnc"
+                  value="tncAgree"
+                  className={styles.tnc}
+                />
               </div>
               {/* SUBMIT */}
               <div
@@ -356,8 +376,10 @@ const Contact = () => {
                 <button
                   type="submit"
                   className={`${styles.submit} ${juliusSansOne.className}`}
+                  disabled={isSubmitting} // Disable the button when submitting
                 >
-                  SUBMIT
+                  {isSubmitting ? "Submitting..." : "Submit"}{" "}
+                  {/* Change button text */}
                 </button>
               </div>
             </form>

@@ -15,6 +15,7 @@ const SqftInput = () => {
       onWheel={preventNumberChangeWithScroll}
       step="0.01"
       className={styles.formInput1}
+      required
     />
   );
 };
