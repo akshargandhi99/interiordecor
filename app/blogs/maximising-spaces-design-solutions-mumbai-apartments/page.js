@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import blogData from "@/data/blogPages.json";
 import blogImage from "@/public/static/blogDetailed7.webp";
+import MobileFooter from "@/components/mobileFooter/mobileFooter";
 
 const MaximizingSpaceBlog = () => {
   const blogName = "Maximising Spaces: Design Solutions Mumbai Apartments";
@@ -325,6 +326,7 @@ const MaximizingSpaceBlog = () => {
           </div>
         </ol>
       </div>
+      <MobileFooter />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import blogData from "@/data/blogPages.json";
 import blogImage from "@/public/static/blogDetailed1.webp";
+import MobileFooter from "@/components/mobileFooter/mobileFooter";
 
 const SustainableDesignBlog = () => {
   const blogName = "Sustainable Interior Design: Materials and Practices";
@@ -234,6 +235,7 @@ const SustainableDesignBlog = () => {
           </div>
         </ol>
       </div>
+      <MobileFooter />
     </div>
   );
 };

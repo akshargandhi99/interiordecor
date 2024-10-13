@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import blogData from "@/data/blogPages.json";
 import blogImage from "@/public/static/blogDetailed5.webp";
+import MobileFooter from "@/components/mobileFooter/mobileFooter";
 
 const CulturalInfluenceBlog = () => {
   const blogName =
@@ -357,6 +358,7 @@ const CulturalInfluenceBlog = () => {
           </div>
         </ol>
       </div>
+      <MobileFooter />
     </div>
   );
 };

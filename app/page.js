@@ -3,8 +3,6 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import ExpandedCard from "@/components/expandedLandingCards/expandedLandingCards";
-import Image from "next/image";
-import arrow from "@/public/static/backArrowWhite.svg";
 import { Fragment, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { ACTION_TYPES, StoreContext } from "@/store/store-context";
@@ -62,13 +60,7 @@ const LandingCard = () => {
               className={`${styles.goBack} ${juliusSansOne.className}`}
               onClick={() => goBack()}
             >
-              {" "}
-              <Image
-                src={arrow}
-                alt="go back arrow"
-                className={styles.goBackArrow}
-              />
-              &nbsp; GO BACK
+              🡠 GO BACK
             </span>
             <span
               className={`${styles.goBackMobile} ${juliusSansOne.className}`}

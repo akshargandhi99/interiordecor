@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import blogData from "@/data/blogPages.json";
 import blogImage from "@/public/static/blogDetailed2.webp";
+import MobileFooter from "@/components/mobileFooter/mobileFooter";
 
 const ArtOfOpenLivingBlog = () => {
   const blogName = "Art of Open-Concept Living: Balancing Privacy and Space";
@@ -318,6 +319,7 @@ const ArtOfOpenLivingBlog = () => {
           </div>
         </ol>
       </div>
+      <MobileFooter />
     </div>
   );
 };
