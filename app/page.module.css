@@ -233,6 +233,9 @@
     left: 15px;
     font-size: 20px;
   }
+  .goBackArrow {
+    z-index: -10;
+  }
 }
 
 @media (max-width: 600px) {
