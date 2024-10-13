@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import { juliusSansOne } from "@/app/fonts";
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import MobileFooter from "@/components/mobileFooter/mobileFooter";
 import IntegerInput from "./integerInput"; // Importing due to use client
 import SqftInput from "./sqftInput"; //  Importing due to use client
@@ -15,6 +16,8 @@ import instagramImage from "@/public/static/instagram.webp";
 import emailImage from "@/public/static/email.webp";
 
 const Contact = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -63,7 +66,11 @@ const Contact = () => {
 
   // Responsive
   const { height, width } = useWindowDimensions();
+
   const isMobile = width <= 1240 ? true : false;
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
   return (
     <div className={styles.fullContainer}>
       <Link href="/">
@@ -124,7 +131,7 @@ const Contact = () => {
               {/* Name */}
               <div
                 className={`${styles.formInputContainer} ${
-                  isMobile && styles.doubleSpan
+                  isMounted && isMobile && styles.doubleSpan
                 }`}
               >
                 <label
@@ -143,7 +150,7 @@ const Contact = () => {
               {/* Email */}
               <div
                 className={`${styles.formInputContainer} ${
-                  isMobile && styles.doubleSpan
+                  isMounted && isMobile && styles.doubleSpan
                 }`}
               >
                 <label
@@ -163,7 +170,7 @@ const Contact = () => {
               {/* TOTAL FAMILY MEMBERS */}
               <div
                 className={`${styles.formInputContainer} ${
-                  isMobile && styles.doubleSpan
+                  isMounted && isMobile && styles.doubleSpan
                 }`}
               >
                 <label
@@ -177,7 +184,7 @@ const Contact = () => {
               {/* CURRENT ADDRESS */}
               <div
                 className={`${styles.formInputContainer} ${
-                  isMobile && styles.doubleSpan
+                  isMounted && isMobile && styles.doubleSpan
                 }`}
               >
                 <label
@@ -213,7 +220,7 @@ const Contact = () => {
               {/* AREA IN SQFT */}
               <div
                 className={`${styles.formInputContainer} ${
-                  isMobile && styles.doubleSpan
+                  isMounted && isMobile && styles.doubleSpan
                 }`}
               >
                 <label
@@ -227,7 +234,7 @@ const Contact = () => {
               {/* POSSESSION */}
               <div
                 className={`${styles.formInputContainer} ${
-                  isMobile && styles.doubleSpan
+                  isMounted && isMobile && styles.doubleSpan
                 }`}
               >
                 <label

@@ -39,7 +39,7 @@
 
 .blogImage {
   height: auto;
-  width: 100%;
+  width: 800px;
 }
 
 .header {
@@ -157,6 +157,10 @@
   .blogPara,
   .blogPointHeader {
     font-size: var(--font-size);
+  }
+
+  .blogImage {
+    width: 100%;
   }
 
   .goBack {

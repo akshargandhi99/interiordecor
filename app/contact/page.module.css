@@ -22,7 +22,7 @@
   flex-direction: column;
   align-items: center;
   width: 1210px;
-  height: 1600px;
+  height: 1150px;
   margin-top: 200px;
   margin-bottom: 150px;
   border: 1px solid var(--text-color);
@@ -255,7 +255,7 @@
   .formContainer {
     width: 90vw;
     height: 1600px;
-    margin-bottom: 0;
+    margin-bottom: 150px;
   }
 
   .formLeft,

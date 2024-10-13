@@ -26,7 +26,6 @@ const NavBar = () => {
     setIsMounted(true);
   }, []);
 
-  console.log({ isMobile });
   let navbarUnderline = "";
   let navbarColor = "";
   let navBarTextColor = "#514d43";
