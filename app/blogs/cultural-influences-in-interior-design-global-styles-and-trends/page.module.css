@@ -14,7 +14,7 @@
 }
 
 .blogContainer {
-  width: 95vw;
+  width: 93%;
 }
 
 .mainHeader {
@@ -26,7 +26,7 @@
   color: rgb(132, 128, 119);
   font-family: "Century Gothic";
   font-size: 20px;
-  text-align: justify;
+  align-self: flex-start;
 }
 
 .firstPara {
@@ -39,7 +39,7 @@
 
 .blogImage {
   height: auto;
-  width: 800px;
+  width: 70vw;
 }
 
 .header {
@@ -53,7 +53,7 @@
 .grid {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   padding: 0;
   margin: 0;
 }
@@ -64,7 +64,7 @@
   align-items: flex-start;
   padding: 0;
   margin: 0;
-  width: 95%;
+  width: 100%;
 }
 
 .conclusion {
@@ -146,7 +146,7 @@
 
 @media (max-width: 850px) {
   .mainHeader {
-    text-align: center;
+    font-size: 26px;
   }
 
   .firstPara,
