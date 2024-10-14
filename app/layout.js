@@ -4,9 +4,10 @@ import NavBar from "@/components/navbar/navbar";
 import StoreProvider from "@/store/store-context";
 
 export const metadata = {
-  title: "Avani Vaidya",
+  title:
+    "Moulding the design around the end user's needs, lifestyle, and daily activities",
   description:
-    "Welcome to AVSDS! I’m Avani Vaidya, I create modern, personalized interiors that balance style and function, reflecting each client’s unique vision. Explore my design portfolio for inspiration.",
+    "Welcome to AVSDS! Specialising in Spatial Interior Design, we cater to the evolving needs of our clients and believe in an informal way of working, where we understand your desires and needs and not limit design to requirements.",
 };
 
 export default function RootLayout({ children }) {
