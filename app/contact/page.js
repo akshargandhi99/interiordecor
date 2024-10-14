@@ -104,27 +104,33 @@ const Contact = () => {
               <p className={styles.decorativeText1}>Design that rhymes</p>
               <p className={styles.decorativeText2}>with your lifestyle!</p>
               <div className={styles.socialContainer}>
-                <Link
-                  className={styles.link}
-                  href="https://wa.me/919930999329"
-                  target="_blank"
-                >
+                <Link href="https://wa.me/919930999329" target="_blank">
                   <Image
                     src={whatsappImage}
                     className={styles.socialMediaImage}
                     alt="Whatsapp Link"
                   />
                 </Link>
-                <Image
-                  src={facebookImage}
-                  className={styles.socialMediaImage}
-                  alt="Facebook Link"
-                />
-                <Image
-                  src={instagramImage}
-                  className={styles.socialMediaImage}
-                  alt="Instagram Link"
-                />
+                <Link
+                  href="https://www.facebook.com/profile.php?id=61567081383232"
+                  target="_blank"
+                >
+                  <Image
+                    src={facebookImage}
+                    className={styles.socialMediaImage}
+                    alt="Facebook Link"
+                  />
+                </Link>
+                <Link
+                  href="https://www.instagram.com/av_spatialdesignstudio/profilecard/?igsh=MTNkempjcTNzeWoxbA=="
+                  target="_blank"
+                >
+                  <Image
+                    src={instagramImage}
+                    className={styles.socialMediaImage}
+                    alt="Instagram Link"
+                  />
+                </Link>
                 <Link href="mailto:info@avsds.in">
                   <Image
                     src={emailImage}

@@ -47,8 +47,20 @@ const Footer = () => {
           </span>
           {expanded && (
             <Fragment>
-              <span className={styles.social}>Instagram</span>
-              <span className={styles.social}>Facebook</span>
+              <Link
+                className={styles.social}
+                href="https://www.instagram.com/av_spatialdesignstudio/profilecard/?igsh=MTNkempjcTNzeWoxbA=="
+                target="_blank"
+              >
+                <span className={styles.social}>Instagram</span>
+              </Link>
+              <Link
+                className={styles.social}
+                href="https://www.facebook.com/profile.php?id=61567081383232"
+                target="_blank"
+              >
+                <span className={styles.social}>Facebook</span>
+              </Link>
             </Fragment>
           )}
         </span>

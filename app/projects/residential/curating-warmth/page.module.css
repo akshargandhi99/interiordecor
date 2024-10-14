@@ -107,7 +107,6 @@
   display: inline-block; /* Allows wrapping of each span individually */
   white-space: normal; /* Allows the span to wrap to the next line */
   margin-top: 10px;
-  width: 210px;
 }
 
 .pill.nobreak {

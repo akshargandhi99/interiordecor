@@ -13,8 +13,21 @@ const MobileFooter = () => {
       </div>
       <div className={`${styles.mobileFooterItem} ${juliusSansOne.className}`}>
         <span>SOCIAL - </span>
-        <span className={styles.mobileFooterUnderline}>Instagram</span> &{" "}
-        <span className={styles.mobileFooterUnderline}>Facebook</span>
+        <Link
+          className={styles.link}
+          href="https://www.instagram.com/av_spatialdesignstudio/profilecard/?igsh=MTNkempjcTNzeWoxbA=="
+          target="_blank"
+        >
+          <span className={styles.mobileFooterUnderline}>Instagram</span>
+        </Link>{" "}
+        &{" "}
+        <Link
+          className={styles.link}
+          href="https://www.facebook.com/profile.php?id=61567081383232"
+          target="_blank"
+        >
+          <span className={styles.mobileFooterUnderline}>Facebook</span>
+        </Link>
       </div>
       <div className={`${styles.mobileFooterItem} ${juliusSansOne.className}`}>
         <span>CONTACT - </span>
