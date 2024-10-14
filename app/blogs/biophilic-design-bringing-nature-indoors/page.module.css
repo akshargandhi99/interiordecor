@@ -26,7 +26,8 @@
   color: rgb(132, 128, 119);
   font-family: "Century Gothic";
   font-size: 18px;
-  margin-top: -10px;
+  margin-top: -3px;
+  margin-bottom: 50px;
   align-self: flex-start;
 }
 
@@ -35,7 +36,7 @@
   font-family: "Century Gothic";
   font-size: 16px;
   text-align: justify;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .blogImage {
@@ -148,7 +149,11 @@
 
 @media (max-width: 850px) {
   .mainHeader {
-    font-size: 24px;
+    font-size: 20px;
+  }
+
+  .subHeader {
+    font-size: 15px;
   }
 
   .firstPara,
