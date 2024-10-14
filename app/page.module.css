@@ -37,13 +37,6 @@
   flex-direction: column;
   align-items: center;
   overflow-y: scroll;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-  user-select: none;
-}
-
-.innerCardContainer::-webkit-scrollbar {
-  display: none;
 }
 
 .card {
