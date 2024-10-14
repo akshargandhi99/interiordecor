@@ -26,7 +26,7 @@
   color: rgb(132, 128, 119);
   font-family: "Century Gothic";
   margin-top: -10px;
-  font-size: 20px;
+  font-size: 18px;
   align-self: flex-start;
 }
 
@@ -155,7 +155,7 @@
 
 @media (max-width: 850px) {
   .mainHeader {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .firstPara,
