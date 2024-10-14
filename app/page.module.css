@@ -80,7 +80,7 @@
   align-items: flex-start;
   justify-content: center;
   height: 100vh;
-
+  overflow-y: hidden;
   z-index: 2;
 }
 
