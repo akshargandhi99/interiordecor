@@ -25,7 +25,8 @@
 .subHeader {
   color: rgb(132, 128, 119);
   font-family: "Century Gothic";
-  font-size: 20px;
+  margin-top: -10px;
+  font-size: 18px;
   align-self: flex-start;
 }
 
