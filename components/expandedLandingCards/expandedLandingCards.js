@@ -283,10 +283,11 @@ const ExpandedCard = (props) => {
         imageOffsetLeft + imageWidth / 2 - viewportWidth / 2;
 
       // Scroll the container to the calculated position
-      container.scrollTo({
-        left: scrollPosition,
-        behavior: "smooth", // Smooth scroll
-      });
+      if ("scrollBehavior" in document.documentElement.style) {
+        container.scrollTo({ left: scrollPosition, behavior: "smooth" });
+      } else {
+        container.scrollLeft = scrollPosition; // Fallback for Safari
+      }
     };
     // Delay the horizontal scroll to allow the vertical scroll to complete
     if (isImmediate) {
