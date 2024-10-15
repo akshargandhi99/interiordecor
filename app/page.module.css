@@ -159,6 +159,17 @@
   z-index: 2;
 }
 
+/* Mobile Footer for Landing page (only padding bottom is different */
+
+.mobileFooter {
+  display: none;
+}
+
+.link {
+  color: var(--text-color);
+  text-decoration: underline;
+}
+
 @media (max-width: 1450px) {
   .pageHeaderContainer {
     left: 10vw;
@@ -245,6 +256,44 @@
   .innerCardContainer {
     height: calc(100vh - 60px);
     top: 60px;
+  }
+
+  .mobileFooter {
+    display: block;
+    margin-top: 40px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    width: 100vw;
+    background: rgba(255, 249, 241, 1);
+    z-index: 1;
+  }
+
+  .mobileFooterItem {
+    text-decoration: none;
+    font-size: var(--font-size);
+    margin-bottom: 20px;
+    padding-left: 28px;
+  }
+
+  .whatsappContainer {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .whatsapp {
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: var(--font-size);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .arrow {
+    margin-left: 5px;
+    height: 12px;
+    width: 12px;
+    cursor: pointer;
   }
 }
 
