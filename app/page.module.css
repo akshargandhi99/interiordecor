@@ -61,11 +61,6 @@
   transition: transform 0.5s; /* Animation */
 }
 
-.emptyDiv {
-  height: 100px;
-  width: 100px;
-}
-
 /* Page Container */
 .pageHeaderContainer {
   position: absolute;
@@ -257,7 +252,7 @@
   }
 
   .innerCardContainer {
-    height: calc(100vh - 60px);
+    height: calc(100vh - 80px);
     top: 60px;
   }
 }

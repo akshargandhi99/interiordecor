@@ -97,8 +97,6 @@ const LandingCard = () => {
         )}
       </div>
       <div className={styles.innerCardContainer}>
-        <div className={styles.emptyDiv} />
-        <div className={styles.emptyDiv} />
         <div className={styles.mobileTitleContainer}>
           <span
             className={`${styles.spatialMobile} ${juliusSansOne.className}`}
@@ -126,10 +124,6 @@ const LandingCard = () => {
         </div>
 
         <MobileFooter />
-        <div className={styles.emptyDiv} />
-        <div className={styles.emptyDiv} />
-        <div className={styles.emptyDiv} />
-        <div className={styles.emptyDiv} />
       </div>
     </div>
   );
