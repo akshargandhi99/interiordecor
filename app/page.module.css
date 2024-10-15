@@ -6,21 +6,12 @@
   height: 100vh;
   max-height: 100vh;
   width: 100vw;
-  overflow-y: hidden;
+  overflow-y: auto;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   user-select: none;
   background-image: url("/static/HiFi_Homepage.webp");
   background-size: cover;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow-y: auto; 
-  position: relative; 
-  min-height: 100vh; 
-  width: 100vw; 
-  padding-top: 100px; 
-  overflow-y: auto; */
 }
 
 .cardContainer::-webkit-scrollbar {
@@ -252,22 +243,10 @@
   }
 
   .innerCardContainer {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 60px);
     top: 60px;
   }
 }
-
-/* @media (max-width: 1050px) {
-  .projects {
-    font-size: 48px;
-  }
-}
-
-@media (max-width: 975px) {
-  .projects {
-    font-size: 40px;
-  }
-} */
 
 .backgroundImage {
   z-index: -1;
