@@ -38,7 +38,9 @@ import refiningClassics3 from "@/public/homepageImages/refiningClassics/image-2.
 import smoothscroll from "smoothscroll-polyfill";
 
 // kick off the polyfill! Fix for smooth scroll Safari.
-smoothscroll.polyfill();
+if (typeof window !== "undefined") {
+  smoothscroll.polyfill();
+}
 
 const ExpandedCard = (props) => {
   // projectName can be curatingWarmth, chasingRed etc. as per the name of the folder
