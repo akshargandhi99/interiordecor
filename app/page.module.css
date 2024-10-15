@@ -6,7 +6,7 @@
   height: 100vh;
   max-height: 100vh;
   width: 100vw;
-  overflow-y: auto;
+  overflow-y: hidden;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   user-select: none;
