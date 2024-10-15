@@ -35,13 +35,6 @@ import refiningClassics1 from "@/public/homepageImages/refiningClassics/image.we
 import refiningClassics2 from "@/public/homepageImages/refiningClassics/image-1.webp";
 import refiningClassics3 from "@/public/homepageImages/refiningClassics/image-2.webp";
 
-import smoothscroll from "smoothscroll-polyfill";
-
-// kick off the polyfill! Fix for smooth scroll Safari.
-if (typeof window !== "undefined") {
-  smoothscroll.polyfill();
-}
-
 const ExpandedCard = (props) => {
   // projectName can be curatingWarmth, chasingRed etc. as per the name of the folder
   const { projectName } = props;
@@ -381,12 +374,12 @@ const ExpandedCard = (props) => {
           className={`${styles.innerExpandedContainer} ${justify}`}
           ref={mainCardContainer}
         >
-          <div className={`${styles.emptyDiv} ${display}`} />
-          <div className={`${styles.emptyDiv} ${display}`} />
-          <div className={`${styles.emptyDiv} ${display}`} />
-          <div className={`${styles.emptyDiv} ${display}`} />
-          <div className={`${styles.emptyDiv} ${display}`} />
-          <div className={`${styles.emptyDiv} ${display}`} />
+          <div className={`${styles.emptyDiv} ${display}`}>&nbsp;</div>
+          <div className={`${styles.emptyDiv} ${display}`}>&nbsp;</div>
+          <div className={`${styles.emptyDiv} ${display}`}>&nbsp;</div>
+          <div className={`${styles.emptyDiv} ${display}`}>&nbsp;</div>
+          <div className={`${styles.emptyDiv} ${display}`}>&nbsp;</div>
+          <div className={`${styles.emptyDiv} ${display}`}>&nbsp;</div>
 
           <div className={`${styles.firstTextContainer} ${display}`}>
             <span
@@ -469,10 +462,10 @@ const ExpandedCard = (props) => {
             );
           })}
 
-          <div className={`${styles.emptyDiv} ${display}`} />
-          <div className={`${styles.emptyDiv} ${display}`} />
-          <div className={`${styles.emptyDiv} ${display}`} />
-          <div className={`${styles.emptyDiv} ${display}`} />
+          <div className={`${styles.emptyDiv} ${display}`}>&nbsp;</div>
+          <div className={`${styles.emptyDiv} ${display}`}>&nbsp;</div>
+          <div className={`${styles.emptyDiv} ${display}`}>&nbsp;</div>
+          <div className={`${styles.emptyDiv} ${display}`}>&nbsp;</div>
         </div>
         <span
           className={`${styles.pageCount} ${juliusSansOne.className} ${display}`}
