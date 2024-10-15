@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./page.module.css";
 import ExpandedCard from "@/components/expandedLandingCards/expandedLandingCards";
 import { Fragment, useEffect } from "react";
@@ -9,6 +10,7 @@ import { ACTION_TYPES, StoreContext } from "@/store/store-context";
 import MobileFooter from "@/components/mobileFooter/mobileFooter";
 import { useContext } from "react";
 import { juliusSansOne } from "@/app/fonts";
+import whiteArrow from "@/public/static/backArrowWhite.svg";
 
 const LandingCard = () => {
   const { dispatch, state } = useContext(StoreContext);
@@ -60,13 +62,19 @@ const LandingCard = () => {
               className={`${styles.goBack} ${juliusSansOne.className}`}
               onClick={() => goBack()}
             >
-              🡠 GO BACK
+              <Image
+                src={whiteArrow}
+                className={styles.goBackArrow}
+                alt="goBackArrow"
+              />
+              &nbsp;GO BACK
             </span>
-            <span
-              className={`${styles.goBackMobile} ${juliusSansOne.className}`}
-              onClick={() => goBack()}
-            >
-              🡠
+            <span onClick={() => goBack()}>
+              <Image
+                src={whiteArrow}
+                className={styles.goBackMobile}
+                alt="goBackArrow"
+              />
             </span>
           </Fragment>
         )}

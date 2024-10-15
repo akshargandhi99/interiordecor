@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import MobileFooter from "@/components/mobileFooter/mobileFooter";
+import brownArrow from "@/public/static/backArrowBrown.svg";
 
 import designProcessSVG from "@/public/spatial-design/designProcess.svg";
 import designProcessMobileSVG from "@/public/spatial-design/designProcessMobile.svg";
@@ -14,11 +15,18 @@ const SpatialDesign = () => {
     <div className={styles.fullContainer}>
       <Link href="/">
         <span className={`${styles.goBack} ${juliusSansOne.className}`}>
-          🡠 GO BACK
+          <Image
+            src={brownArrow}
+            className={styles.goBackArrow}
+            alt="goBackArrow"
+          />
+          &nbsp;GO BACK
         </span>
-        <span className={`${styles.goBackMobile} ${juliusSansOne.className}`}>
-          🡠
-        </span>
+        <Image
+          src={brownArrow}
+          className={styles.goBackMobile}
+          alt="goBackArrow"
+        />
       </Link>
       <h2 className={`${styles.header1} ${juliusSansOne.className}`}>
         WHAT IS SPATIAL DESIGN?

@@ -5,6 +5,7 @@ import Link from "next/link";
 import blogData from "@/data/blogPages.json";
 import blogImage from "@/public/static/blogDetailed2.webp";
 import MobileFooter from "@/components/mobileFooter/mobileFooter";
+import brownArrow from "@/public/static/backArrowBrown.svg";
 
 const ArtOfOpenLivingBlog = () => {
   const blogName = "Art of Open-Concept Living: Balancing Privacy and Space";
@@ -18,11 +19,18 @@ const ArtOfOpenLivingBlog = () => {
     <div className={styles.mainContainer}>
       <Link href="/blogs">
         <span className={`${styles.goBack} ${juliusSansOne.className}`}>
-          🡠 GO BACK
+          <Image
+            src={brownArrow}
+            className={styles.goBackArrow}
+            alt="goBackArrow"
+          />
+          &nbsp;GO BACK
         </span>
-        <span className={`${styles.goBackMobile} ${juliusSansOne.className}`}>
-          🡠
-        </span>
+        <Image
+          src={brownArrow}
+          className={styles.goBackMobile}
+          alt="goBackArrow"
+        />
       </Link>
       <div className={styles.blogContainer}>
         <h1 className={`${styles.mainHeader} ${juliusSansOne.className}`}>

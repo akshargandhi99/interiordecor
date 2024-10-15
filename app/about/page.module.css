@@ -305,8 +305,18 @@
   z-index: 3;
 }
 
+.goBackArrow {
+  transform: translateY(2.4px);
+  padding-bottom: 1px;
+  border-bottom: 2px solid transparent; /* Reserve space for border */
+}
+
 .goBack:hover {
   text-decoration: underline;
+}
+
+.goBack:hover .goBackArrow {
+  border-bottom: 2px solid var(--text-color);
 }
 
 .goBackMobile {
@@ -568,6 +578,7 @@
     display: block;
     top: 80px;
     left: 15px;
-    font-size: 20px;
+    height: 14px;
+    width: 14px;
   }
 }

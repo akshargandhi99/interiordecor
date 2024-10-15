@@ -3,6 +3,7 @@ import Link from "next/link";
 import card1 from "@/public/commercial/Clothing Boutique.webp";
 import card2 from "@/public/commercial/Tropical Cafe.webp";
 import MobileFooter from "@/components/mobileFooter/mobileFooter";
+import brownArrow from "@/public/static/backArrowBrown.svg";
 
 import { juliusSansOne } from "@/app/fonts";
 import styles from "./page.module.css";
@@ -21,13 +22,18 @@ const CommercialProjectCards = () => {
     <div className={styles.fullContainer}>
       <Link href="/projects">
         <span className={`${styles.goBack} ${juliusSansOne.className}`}>
-          🡠 GO BACK
+          <Image
+            src={brownArrow}
+            className={styles.goBackArrow}
+            alt="goBackArrow"
+          />
+          &nbsp;GO BACK
         </span>
-      </Link>
-      <Link href="/projects">
-        <span className={`${styles.goBackMobile} ${juliusSansOne.className}`}>
-          🡠
-        </span>
+        <Image
+          src={brownArrow}
+          className={styles.goBackMobile}
+          alt="goBackArrow"
+        />
       </Link>
 
       <div className={styles.emptyDiv2} />

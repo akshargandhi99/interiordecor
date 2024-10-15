@@ -5,7 +5,7 @@ import Link from "next/link";
 import Marquee from "react-fast-marquee";
 import testimonials from "@/data/testimonials.json";
 import MobileFooter from "@/components/mobileFooter/mobileFooter";
-// import gradient from "@/public/static/MergeGradient1.webp";
+import brownArrow from "@/public/static/backArrowBrown.svg";
 
 import profileImage from "@/public/static/profile image.webp";
 import quoteImage from "@/public/static/quotes.webp";
@@ -68,17 +68,21 @@ const About = () => {
   ];
   // Mobile Responsive
   return (
-    <main
-      className={styles.mainContainer}
-      // style={{ backgroundImage: `url(${gradient.src})` }}
-    >
+    <main className={styles.mainContainer}>
       <Link href="/">
         <span className={`${styles.goBack} ${juliusSansOne.className}`}>
-          🡠 GO BACK
+          <Image
+            src={brownArrow}
+            className={styles.goBackArrow}
+            alt="goBackArrow"
+          />
+          &nbsp;GO BACK
         </span>
-        <span className={`${styles.goBackMobile} ${juliusSansOne.className}`}>
-          🡠
-        </span>
+        <Image
+          src={brownArrow}
+          className={styles.goBackMobile}
+          alt="goBackArrow"
+        />
       </Link>
       <div className={styles.welcome}>
         <Image

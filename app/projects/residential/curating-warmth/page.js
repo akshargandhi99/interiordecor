@@ -13,6 +13,7 @@ import image5 from "@/public/curating-warmth/5.webp";
 import image6 from "@/public/curating-warmth/6.webp";
 import MobileFooter from "@/components/mobileFooter/mobileFooter";
 import detailedData from "@/data/detailedPages.json";
+import brownArrow from "@/public/static/backArrowBrown.svg";
 
 const CuratingWarmth = () => {
   const projectName = "Curating Warmth";
@@ -49,7 +50,12 @@ const CuratingWarmth = () => {
       <div className={styles.topContainer}>
         <Link href={`/projects/${type}`}>
           <span className={`${styles.goBack} ${juliusSansOne.className}`}>
-            🡠 GO BACK
+            <Image
+              src={brownArrow}
+              className={styles.goBackArrow}
+              alt="goBackArrow"
+            />
+            &nbsp;GO BACK
           </span>
         </Link>
         <div className={styles.bodyContainer}>
@@ -147,9 +153,7 @@ const CuratingWarmth = () => {
       {/* Mobile View */}
       <div className={styles.topContainerMobile}>
         <Link href={`/projects/${type}`}>
-          <span className={`${styles.goBack} ${juliusSansOne.className}`}>
-            🡠
-          </span>
+          <Image src={brownArrow} className={styles.goBack} alt="goBackArrow" />
         </Link>
         <div className={styles.bodyContainer}>
           <main className={styles.mainContainer}>

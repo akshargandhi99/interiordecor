@@ -4,6 +4,7 @@ import card1 from "@/public/monochromic-house/8.webp";
 import card2 from "@/public/commercial/Clothing Boutique.webp";
 import card3 from "@/public/others/sofa_with_geometric_accen.webp";
 
+import brownArrow from "@/public/static/backArrowBrown.svg";
 import MobileFooter from "@/components/mobileFooter/mobileFooter";
 import { juliusSansOne } from "@/app/fonts";
 import styles from "./page.module.css";
@@ -26,13 +27,18 @@ const ProjectsMain = () => {
     <div className={styles.fullContainer}>
       <Link href="/">
         <span className={`${styles.goBack} ${juliusSansOne.className}`}>
-          🡠 GO BACK
+          <Image
+            src={brownArrow}
+            className={styles.goBackArrow}
+            alt="goBackArrow"
+          />
+          &nbsp;GO BACK
         </span>
-      </Link>
-      <Link href="/">
-        <span className={`${styles.goBackMobile} ${juliusSansOne.className}`}>
-          🡠
-        </span>
+        <Image
+          src={brownArrow}
+          className={styles.goBackMobile}
+          alt="goBackArrow"
+        />
       </Link>
 
       <div className={styles.emptyDiv2} />

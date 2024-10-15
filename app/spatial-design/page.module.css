@@ -124,12 +124,22 @@
   z-index: 3;
 }
 
-.goBack:hover {
-  text-decoration: underline;
+.goBackArrow {
+  transform: translateY(2.4px);
+  padding-bottom: 1px;
+  border-bottom: 2px solid transparent; /* Reserve space for border */
 }
 
 .goBackMobile {
   display: none;
+}
+
+.goBack:hover {
+  text-decoration: underline;
+}
+
+.goBack:hover .goBackArrow {
+  border-bottom: 2px solid var(--text-color);
 }
 
 @media (max-width: 1200px) {
@@ -206,6 +216,7 @@
     display: block;
     top: 95px;
     left: 15px;
-    font-size: 20px;
+    height: 14px;
+    width: 14px;
   }
 }

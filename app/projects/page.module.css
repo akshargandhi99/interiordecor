@@ -132,6 +132,16 @@
   display: none;
 }
 
+.goBackArrow {
+  transform: translateY(2.4px);
+  padding-bottom: 1px;
+  border-bottom: 2px solid transparent; /* Reserve space for border */
+}
+
+.goBack:hover .goBackArrow {
+  border-bottom: 2px solid var(--text-color);
+}
+
 /* Less than 1100px */
 @media (max-width: 1100px) {
   .gridContainer {
@@ -160,6 +170,7 @@
     display: block;
     top: 100px;
     left: 25px;
-    font-size: 20px;
+    height: 14px;
+    width: 14px;
   }
 }

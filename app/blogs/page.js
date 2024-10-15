@@ -5,6 +5,7 @@ import { juliusSansOne } from "@/app/fonts";
 import Link from "next/link";
 import Image from "next/image";
 import MobileFooter from "@/components/mobileFooter/mobileFooter";
+import brownArrow from "@/public/static/backArrowBrown.svg";
 
 import blogImage1 from "@/public/static/blogDetailed1.webp";
 import blogImage2 from "@/public/static/blog 2.webp";
@@ -52,11 +53,18 @@ const Blog = () => {
     <div className={styles.mainContainer}>
       <Link href="/">
         <span className={`${styles.goBack} ${juliusSansOne.className}`}>
-          🡠 GO BACK
+          <Image
+            src={brownArrow}
+            className={styles.goBackArrow}
+            alt="goBackArrow"
+          />
+          &nbsp;GO BACK
         </span>
-        <span className={`${styles.goBackMobile} ${juliusSansOne.className}`}>
-          🡠
-        </span>
+        <Image
+          src={brownArrow}
+          className={styles.goBackMobile}
+          alt="goBackArrow"
+        />
       </Link>
       <h2 className={`${styles.header} ${juliusSansOne.className}`}>
         LATEST BLOGS

@@ -7,6 +7,7 @@ import card4 from "@/public/residential/CF Bedroom.webp";
 import card5 from "@/public/residential/RC Living Room.webp";
 import card6 from "@/public/residential/MH Bathroom.webp";
 import MobileFooter from "@/components/mobileFooter/mobileFooter";
+import brownArrow from "@/public/static/backArrowBrown.svg";
 
 import { juliusSansOne } from "@/app/fonts";
 import styles from "./page.module.css";
@@ -44,15 +45,19 @@ const ResidentialProjectCards = () => {
     <div className={styles.fullContainer}>
       <Link href="/projects">
         <span className={`${styles.goBack} ${juliusSansOne.className}`}>
-          🡠 GO BACK
+          <Image
+            src={brownArrow}
+            className={styles.goBackArrow}
+            alt="goBackArrow"
+          />
+          &nbsp;GO BACK
         </span>
+        <Image
+          src={brownArrow}
+          className={styles.goBackMobile}
+          alt="goBackArrow"
+        />
       </Link>
-      <Link href="/projects">
-        <span className={`${styles.goBackMobile} ${juliusSansOne.className}`}>
-          🡠
-        </span>
-      </Link>
-
       <div className={styles.emptyDiv2} />
       <div className={styles.emptyDiv2} />
 

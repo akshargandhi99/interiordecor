@@ -5,6 +5,7 @@ import { juliusSansOne } from "@/app/fonts";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import brownArrow from "@/public/static/backArrowBrown.svg";
 import MobileFooter from "@/components/mobileFooter/mobileFooter";
 import IntegerInput from "./integerInput"; // Importing due to use client
 import SqftInput from "./sqftInput"; //  Importing due to use client
@@ -83,11 +84,18 @@ const Contact = () => {
     <div className={styles.fullContainer}>
       <Link href="/">
         <span className={`${styles.goBack} ${juliusSansOne.className}`}>
-          🡠 GO BACK
+          <Image
+            src={brownArrow}
+            className={styles.goBackArrow}
+            alt="goBackArrow"
+          />
+          &nbsp;GO BACK
         </span>
-        <span className={`${styles.goBackMobile} ${juliusSansOne.className}`}>
-          🡠
-        </span>
+        <Image
+          src={brownArrow}
+          className={styles.goBackMobile}
+          alt="goBackArrow"
+        />
       </Link>
       <div className={styles.mobileFooterContainer}>
         <div className={styles.formContainer}>

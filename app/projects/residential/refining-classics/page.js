@@ -12,6 +12,7 @@ import image4 from "@/public/refining-classics/4.webp";
 import image5 from "@/public/refining-classics/5.webp";
 import MobileFooter from "@/components/mobileFooter/mobileFooter";
 import detailedData from "@/data/detailedPages.json";
+import brownArrow from "@/public/static/backArrowBrown.svg";
 
 const RefiningClassics = () => {
   const projectName = "Refining Classics";
@@ -47,7 +48,12 @@ const RefiningClassics = () => {
       <div className={styles.topContainer}>
         <Link href={`/projects/${type}`}>
           <span className={`${styles.goBack} ${juliusSansOne.className}`}>
-            🡠 GO BACK
+            <Image
+              src={brownArrow}
+              className={styles.goBackArrow}
+              alt="goBackArrow"
+            />
+            &nbsp;GO BACK
           </span>
         </Link>
         <div className={styles.bodyContainer}>
@@ -145,9 +151,7 @@ const RefiningClassics = () => {
       {/* Mobile View */}
       <div className={styles.topContainerMobile}>
         <Link href={`/projects/${type}`}>
-          <span className={`${styles.goBack} ${juliusSansOne.className}`}>
-            🡠
-          </span>
+          <Image src={brownArrow} className={styles.goBack} alt="goBackArrow" />
         </Link>
         <div className={styles.bodyContainer}>
           <main className={styles.mainContainer}>

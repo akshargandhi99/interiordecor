@@ -89,6 +89,10 @@
   z-index: 3;
 }
 
+.goBack {
+  text-decoration: underline transparent; /* Prevent shift by reserving space */
+}
+
 .goBack:hover {
   text-decoration: underline;
 }
@@ -96,9 +100,18 @@
 .goBackMobile {
   display: none;
 }
+.goBackArrow {
+  transform: translateY(2.4px);
+  padding-bottom: 1px;
+  border-bottom: 2px solid transparent; /* Reserve space for border */
+}
 
 .goBack:hover {
   text-decoration: underline;
+}
+
+.goBack:hover .goBackArrow {
+  border-bottom: 2px solid #fff;
 }
 
 .titleContainer {
@@ -226,7 +239,8 @@
     display: block;
     top: 95px;
     left: 15px;
-    font-size: 20px;
+    height: 20px;
+    width: 20px;
   }
   .goBackArrow {
     z-index: -10;

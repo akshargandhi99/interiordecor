@@ -19,7 +19,7 @@ import card13 from "@/public/others/sectional_sofa_with_geome.webp";
 import card14 from "@/public/others/sofa_with_geometric_accen.webp";
 import card15 from "@/public/others/comfortable_3-seater_sofa_with_plush_c.webp";
 import MobileFooter from "@/components/mobileFooter/mobileFooter";
-
+import brownArrow from "@/public/static/backArrowBrown.svg";
 import { juliusSansOne } from "@/app/fonts";
 import styles from "./page.module.css";
 
@@ -73,13 +73,18 @@ const OthersProjectCards = () => {
     <div className={styles.fullContainer}>
       <Link href="/projects">
         <span className={`${styles.goBack} ${juliusSansOne.className}`}>
-          🡠 GO BACK
+          <Image
+            src={brownArrow}
+            className={styles.goBackArrow}
+            alt="goBackArrow"
+          />
+          &nbsp;GO BACK
         </span>
-      </Link>
-      <Link href="/projects">
-        <span className={`${styles.goBackMobile} ${juliusSansOne.className}`}>
-          🡠
-        </span>
+        <Image
+          src={brownArrow}
+          className={styles.goBackMobile}
+          alt="goBackArrow"
+        />
       </Link>
       <div className={styles.emptyDiv2} />
       <div className={styles.emptyDiv2} />
