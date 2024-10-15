@@ -112,10 +112,10 @@ const NavBar = () => {
   };
 
   useEffect(() => {
-    if (scrollPosition > 0) {
-      setNavbarBackground(navbarBackgroundColor);
-    } else if (pathname === "/") {
+    if (pathname === "/") {
       setNavbarBackground("rgba(0, 0, 0, 0)");
+    } else if (scrollPosition > 0) {
+      setNavbarBackground(navbarBackgroundColor);
     } else {
       setNavbarBackground("rgba(0, 0, 0, 0)");
     }
