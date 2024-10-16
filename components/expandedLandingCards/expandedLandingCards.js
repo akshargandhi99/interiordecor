@@ -231,6 +231,23 @@ const ExpandedCard = (props) => {
     }
   }, [currentIndex, totalImages]);
 
+  useEffect(() => {
+    if (!isCardOpen) {
+      console.log("USED");
+      // Scroll the container to bring the main image into view
+      const container = mainCardContainer.current;
+      const image = refsArray.current[0]; // The main image
+
+      const imageLeft = image.offsetLeft;
+      const imageWidth = image.clientWidth;
+      const containerWidth = container.clientWidth;
+
+      const scrollPosition = imageLeft + imageWidth / 2 - containerWidth / 2;
+
+      container.scrollLeft = scrollPosition;
+    }
+  }, [isCardOpen]);
+
   const verticalScroll = (refCard) => {
     setTimeout(() => {
       // First, scroll the card into view vertically
