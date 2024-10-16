@@ -231,29 +231,13 @@ const ExpandedCard = (props) => {
     }
   }, [currentIndex, totalImages]);
 
-  useEffect(() => {
-    if (isCardOpen) {
-      // Scroll the card into view vertically
-      verticalScroll(fullImageContainer);
-      // Scroll the main card into view horizontally
-      scrollMainCardToView(refsArray, 0, mainCardContainer, false);
-    }
-  }, [isCardOpen]);
-
-  // const verticalScroll = (refCard) => {
-  //   setTimeout(() => {
-  //     // First, scroll the card into view vertically
-  //     refCard.current.scrollIntoView({
-  //       behavior: "smooth",
-  //       block: isMobile ? "center" : "end",
-  //     });
-  //   });
-  // };
-
   const verticalScroll = (refCard) => {
-    refCard.current.scrollIntoView({
-      behavior: "smooth",
-      block: "start", // Use 'start' to align the top of the element with the top of the viewport
+    setTimeout(() => {
+      // First, scroll the card into view vertically
+      refCard.current.scrollIntoView({
+        behavior: "smooth",
+        block: isMobile ? "center" : "end",
+      });
     });
   };
 
@@ -302,19 +286,6 @@ const ExpandedCard = (props) => {
       payload: { expanded: { ...allZero, [category]: 1 } },
     });
     setCardOpen(true);
-  };
-
-  const goBack = () => {
-    // Reset all and close any open cards
-    const allZero = Object.keys(expanded).reduce((acc, key) => {
-      acc[key] = 0;
-      return acc;
-    }, {});
-
-    dispatch({
-      type: ACTION_TYPES.SET_EXPANDED,
-      payload: { expanded: allZero },
-    });
   };
 
   return (
@@ -430,6 +401,14 @@ const ExpandedCard = (props) => {
                     index === 0
                       ? () => {
                           setCardOpen(true);
+                          // verticalScroll(fullImageContainer);
+                          verticalScroll(fullImageContainer);
+                          scrollMainCardToView(
+                            refsArray,
+                            index,
+                            mainCardContainer,
+                            false
+                          ); // Don't scroll immediately, since we need time for the previous function to get the container into view first
                           addToHomeTitle(projectName);
                         }
                       : null
