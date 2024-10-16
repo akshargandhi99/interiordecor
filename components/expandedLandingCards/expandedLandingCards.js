@@ -40,33 +40,9 @@ const ExpandedCard = (props) => {
   const { projectName } = props;
   const [isCardOpen, setCardOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(1);
-  const scrollContainerRef = useRef(null);
   const maxScrollLeft = 300; // Define the maximum scrollable distance horizontally
-  const [isHovered, setIsHovered] = useState(false);
-  const leaveTimeout = useRef(null); // To keep track of the timeout ID
   const { height, width } = useWindowDimensions();
   const isMobile = width <= 600 ? true : false;
-
-  // const handleMouseEnter = (index) => {
-  //   if (leaveTimeout.current) {
-  //     clearTimeout(leaveTimeout.current);
-  //     leaveTimeout.current = null;
-  //     setIsHovered(true);
-  //     setCardOpen(true);
-  //     scrollMainCardToView(refsArray, index, mainCardContainer, false); // Don't scroll immediately, since we need time for the previous function to get the container into view first
-  //     verticalScroll(fullImageContainer);
-  //     addToHomeTitle();
-  //   }
-  //   // setTimeout(() => {
-  //   // }, 1000);
-  // };
-
-  // const handleMouseLeave = () => {
-  //   setIsHovered(false);
-  //   setTimeout(() => {
-  //     goBack();
-  //   }, 1000);
-  // };
 
   const [isLeftArrow, setIsLeftArrow] = useState(false);
   const [isRightArrow, setIsRightArrow] = useState(true);
@@ -77,7 +53,6 @@ const ExpandedCard = (props) => {
 
   const cardStyle = isCardOpen ? styles.expandedImage : styles.smallImage;
   const display = isCardOpen ? styles.display : styles.noDisplay;
-  const inverseDisplay = isCardOpen ? styles.noDisplay : styles.display;
   const justify = isCardOpen
     ? styles.justifySpaceBetween
     : styles.justifyCenter;
@@ -256,13 +231,29 @@ const ExpandedCard = (props) => {
     }
   }, [currentIndex, totalImages]);
 
+  useEffect(() => {
+    if (isCardOpen) {
+      // Scroll the card into view vertically
+      verticalScroll(fullImageContainer);
+      // Scroll the main card into view horizontally
+      scrollMainCardToView(refsArray, 0, mainCardContainer, false);
+    }
+  }, [isCardOpen]);
+
+  // const verticalScroll = (refCard) => {
+  //   setTimeout(() => {
+  //     // First, scroll the card into view vertically
+  //     refCard.current.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: isMobile ? "center" : "end",
+  //     });
+  //   });
+  // };
+
   const verticalScroll = (refCard) => {
-    setTimeout(() => {
-      // First, scroll the card into view vertically
-      refCard.current.scrollIntoView({
-        behavior: "smooth",
-        block: isMobile ? "center" : "end",
-      });
+    refCard.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start", // Use 'start' to align the top of the element with the top of the viewport
     });
   };
 
@@ -439,14 +430,6 @@ const ExpandedCard = (props) => {
                     index === 0
                       ? () => {
                           setCardOpen(true);
-                          // verticalScroll(fullImageContainer);
-                          verticalScroll(fullImageContainer);
-                          scrollMainCardToView(
-                            refsArray,
-                            index,
-                            mainCardContainer,
-                            false
-                          ); // Don't scroll immediately, since we need time for the previous function to get the container into view first
                           addToHomeTitle(projectName);
                         }
                       : null
