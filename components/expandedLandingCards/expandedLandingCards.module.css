@@ -71,6 +71,7 @@
 
 .justifySpaceBetween {
   justify-content: space-between;
+  scrollbar-width: none;
 }
 
 .justifyCenter {
