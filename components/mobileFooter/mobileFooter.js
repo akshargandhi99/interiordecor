@@ -9,7 +9,9 @@ const MobileFooter = () => {
     <div className={styles.mobileFooter}>
       <div className={`${styles.mobileFooterItem} ${juliusSansOne.className}`}>
         <span>EMAIL - </span>
-        <span className={styles.mobileFooterUnderline}>info@avsds.in</span>
+        <Link href="mailto:info@avsds.in" className={styles.link}>
+          <span className={styles.mobileFooterUnderline}>info@avsds.in</span>
+        </Link>
       </div>
       <div className={`${styles.mobileFooterItem} ${juliusSansOne.className}`}>
         <span>SOCIAL - </span>

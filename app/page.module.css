@@ -1,3 +1,8 @@
+.fadeIn {
+  opacity: 0;
+  transition: opacity 2s ease-in;
+}
+
 .cardContainer {
   position: fixed;
   display: flex;
@@ -12,6 +17,7 @@
   user-select: none;
   background-image: url("/static/HiFi_Homepage.webp");
   background-size: cover;
+  opacity: 1;
 }
 
 .cardContainer::-webkit-scrollbar {

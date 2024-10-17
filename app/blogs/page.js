@@ -8,13 +8,13 @@ import MobileFooter from "@/components/mobileFooter/mobileFooter";
 import brownArrow from "@/public/static/backArrowBrown.svg";
 
 import blogImage1 from "@/public/static/blogDetailed1.webp";
-import blogImage2 from "@/public/static/blog 2.webp";
+import blogImage2 from "@/public/static/blogDetailed2.webp";
 import blogImage3 from "@/public/static/blogDetailed3.webp";
-import blogImage4 from "@/public/static/blog 4.webp";
-import blogImage5 from "@/public/static/blog 5.webp";
-import blogImage6 from "@/public/static/blog 6.webp";
-import blogImage7 from "@/public/static/blog 7.webp";
-import blogImage8 from "@/public/static/blog 8.webp";
+import blogImage4 from "@/public/static/blogDetailed4.webp";
+import blogImage5 from "@/public/static/blogDetailed5.webp";
+import blogImage6 from "@/public/static/blogDetailed6.webp";
+import blogImage7 from "@/public/static/blogDetailed7.webp";
+import blogImage8 from "@/public/static/blogDetailed8.webp";
 
 const Blog = () => {
   const blogImages = [

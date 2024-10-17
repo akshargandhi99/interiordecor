@@ -36,7 +36,11 @@ const Footer = () => {
             EMAIL <b className={styles.plus}>+</b>
           </span>
 
-          {expanded && <span className={styles.email}>info@avsds.in</span>}
+          {expanded && (
+            <Link href="mailto:info@avsds.in" className={styles.email}>
+              <span>info@avsds.in</span>
+            </Link>
+          )}
         </span>
         <span className={`${footerItems} ${juliusSansOne.className}`}>
           <span

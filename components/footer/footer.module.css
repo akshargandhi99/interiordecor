@@ -64,6 +64,7 @@
   text-transform: lowercase;
   margin-top: 10px;
   text-decoration: underline;
+  color: var(--text-color);
 }
 
 .social {

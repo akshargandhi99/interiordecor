@@ -28,6 +28,7 @@
   border: 1px solid var(--text-color);
   border-radius: 20px 20px 0px 0px;
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .formBodyContainer {
@@ -268,7 +269,7 @@
 @media (max-width: 1240px) {
   .formContainer {
     width: 90vw;
-    height: 1600px;
+    height: 1650px;
     margin-bottom: 150px;
   }
 
@@ -303,8 +304,9 @@
 
 @media (max-width: 1000px) {
   .formContainer {
-    height: 1060px;
+    height: 1200px;
     margin-top: 140px;
+    margin-bottom: 15px;
   }
 
   .mobileFooterContainer {
@@ -348,7 +350,7 @@
 
   .goBackMobile {
     display: block;
-    top: 80px;
+    top: 100px;
     left: 15px;
     height: 14px;
     width: 14px;

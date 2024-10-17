@@ -141,7 +141,7 @@
 }
 
 .restOfText {
-  text-align: left;
+  text-align: justify;
   margin-left: 25px;
   margin-right: 25px;
   font-family: "Century Gothic";
