@@ -40,8 +40,7 @@
   align-items: center;
   margin-top: 50px;
   font-size: 12px;
-  width: 90vw;
-  padding-left: 2px;
+  width: 365px;
 }
 
 .breadCrumbLink {
@@ -252,6 +251,8 @@
 
   .breadCrumbMenu {
     transform: translateX(-4px);
+    width: 90vw;
+    padding-left: 2px;
   }
 
   .mainHeader {
