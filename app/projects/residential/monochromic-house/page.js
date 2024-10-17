@@ -5,6 +5,7 @@ import { juliusSansOne } from "@/app/fonts";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import breadCrumbArrow from "@/public/static/breadCrumbArrow.svg";
 import image1 from "@/public/monochromic-house/1.webp";
 import image2 from "@/public/monochromic-house/5.webp";
 import image3 from "@/public/monochromic-house/6.webp";
@@ -64,18 +65,18 @@ const MonochromicHouse = () => {
               <Link href="/" className={styles.breadCrumbLink}>
                 HOME
               </Link>{" "}
-              <span className={styles.breadCrumbArrow}>▶</span>{" "}
+              <Image src={breadCrumbArrow} alt="bread crumb menu arrow" />
               <Link href="/projects" className={styles.breadCrumbLink}>
                 PROJECTS{" "}
               </Link>
-              <span className={styles.breadCrumbArrow}>▶</span>{" "}
+              <Image src={breadCrumbArrow} alt="bread crumb menu arrow" />
               <Link
                 href={`/projects/${type}`}
                 className={styles.breadCrumbLink}
               >
                 {type}
               </Link>
-              <span className={styles.breadCrumbArrow}>▶</span>{" "}
+              <Image src={breadCrumbArrow} alt="bread crumb menu arrow" />
               <span className={styles.active}>{projectName}</span>
             </div>
             <h1 className={`${styles.mainHeader} ${juliusSansOne.className}`}>
@@ -161,18 +162,18 @@ const MonochromicHouse = () => {
               <Link href="/" className={styles.breadCrumbLink}>
                 HOME
               </Link>{" "}
-              <span className={styles.breadCrumbArrow}>▶</span>{" "}
+              <Image src={breadCrumbArrow} alt="bread crumb menu arrow" />
               <Link href="/projects" className={styles.breadCrumbLink}>
                 PROJECTS{" "}
               </Link>
-              <span className={styles.breadCrumbArrow}>▶</span>{" "}
+              <Image src={breadCrumbArrow} alt="bread crumb menu arrow" />
               <Link
                 href={`/projects/${type}`}
                 className={styles.breadCrumbLink}
               >
                 {type}
               </Link>
-              <span className={styles.breadCrumbArrow}>▶</span>{" "}
+              <Image src={breadCrumbArrow} alt="bread crumb menu arrow" />
               <span className={styles.active}>{projectName}</span>
             </div>
             <h1 className={`${styles.mainHeader} ${juliusSansOne.className}`}>

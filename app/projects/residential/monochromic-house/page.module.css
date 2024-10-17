@@ -49,12 +49,6 @@
   text-transform: uppercase;
 }
 
-.breadCrumbArrow {
-  font-size: 6px;
-  color: rgba(217, 217, 217, 1);
-  vertical-align: middle;
-}
-
 .active {
   color: rgba(126, 53, 19, 1);
   text-transform: uppercase;
