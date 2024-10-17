@@ -95,7 +95,7 @@ const LandingCard = () => {
           isMounted && isMobile
             ? `${
                 styles.cardContainer
-              } ${"animate__animated animate__fadeIn animate__delay-1s"}`
+              } ${"animate__animated animate__fadeIn animate__delay-2s"}`
             : styles.cardContainer
         }
         onAnimationEndCapture={handleAnimationEnd}
