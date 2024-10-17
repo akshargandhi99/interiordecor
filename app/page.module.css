@@ -1,6 +1,13 @@
-.fadeIn {
-  opacity: 0;
-  transition: opacity 2s ease-in;
+@keyframes fadeOutBackground {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+.introContainer {
+  display: none;
 }
 
 .cardContainer {
@@ -17,7 +24,6 @@
   user-select: none;
   background-image: url("/static/HiFi_Homepage.webp");
   background-size: cover;
-  opacity: 1;
 }
 
 .cardContainer::-webkit-scrollbar {
@@ -300,6 +306,27 @@
     height: 12px;
     width: 12px;
     cursor: pointer;
+  }
+
+  .introContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    animation-fill-mode: forwards;
+    background-image: url("/static/HiFi_Homepage.webp");
+  }
+
+  .spatialIntro {
+    font-size: 150px;
+    margin-left: 5px;
+    color: white;
+    font-family: "Brown Sugar";
   }
 }
 
