@@ -49,7 +49,6 @@
   width: 100vw;
   border: none; /* Remove default border */
   height: 1px; /* Adjust thickness */
-  clear: both;
 }
 
 .horizontalLineBrown {
