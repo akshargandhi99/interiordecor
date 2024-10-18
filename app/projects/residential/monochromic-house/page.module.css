@@ -128,6 +128,18 @@
   margin-bottom: 200px;
 }
 
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.desktopImage {
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 .gridImage1,
 .gridImage2,
 .gridImage3,

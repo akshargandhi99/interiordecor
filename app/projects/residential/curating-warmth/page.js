@@ -139,13 +139,18 @@ const CuratingWarmth = () => {
           <div className={styles.imageGrid}>
             {imageArray.map((imageElement, index) => {
               return (
-                <Image
-                  src={imageElement[0]}
-                  className={imageElement[1]}
+                <div
+                  className={`${imageElement[1]} ${styles.imageWrapper}`}
                   key={`${projectName} Image ${Number(index) + 1}`}
-                  alt={`${projectName} Image ${Number(index) + 1}`}
-                  onClick={() => handleImageClick(imageElement[0])}
-                />
+                >
+                  <Image
+                    src={imageElement[0]}
+                    fill
+                    className={styles.desktopImage}
+                    alt={`${projectName} Image ${Number(index) + 1}`}
+                    onClick={() => handleImageClick(imageElement[0])}
+                  />
+                </div>
               );
             })}
           </div>
