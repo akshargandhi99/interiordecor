@@ -306,7 +306,7 @@
   .formContainer {
     height: 1200px;
     margin-top: 140px;
-    margin-bottom: 15px;
+    margin-bottom: 37px;
   }
 
   .mobileFooterContainer {
@@ -337,6 +337,11 @@
   .radioLabels {
     font-size: 12px;
     margin-bottom: 5px;
+  }
+
+  .submit {
+    margin-top: 50px;
+    font-size: 16px;
   }
 
   .decorativeText1,

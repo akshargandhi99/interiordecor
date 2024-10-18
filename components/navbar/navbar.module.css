@@ -170,6 +170,6 @@
 
   .mobileMenuLine {
     width: 99%;
-    color: rgba(223, 219, 233, 1);
+    color: gray;
   }
 }
