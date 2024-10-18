@@ -150,7 +150,7 @@ const NavBar = () => {
       className={`${navbarColorStyle}`}
       style={{
         background: navbarBackground,
-        borderBottom: mobileWhiteLine,
+        borderBottom: isMobile && mobileWhiteLine,
       }}
       // style={{ backgroundImage: `url(${gradient.src})` }}
     >
