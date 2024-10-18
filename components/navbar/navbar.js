@@ -32,6 +32,7 @@ const NavBar = () => {
   let logo = logoBrown;
   let hamburger = hamburgerBrown;
   let horizontalLine = styles.horizontalLineBrown;
+  let mobileWhiteLine = "";
 
   switch (pathname) {
     case "/":
@@ -44,6 +45,7 @@ const NavBar = () => {
       // logo = isMounted && !isMobile ? logoWhite : logoBrown;
       // hamburger = isMounted && !isMobile ? hamburgerWhite : hamburgerBrown;
       horizontalLine = styles.horizontalLineWhite;
+      mobileWhiteLine = "1px solid white";
       break;
     case "/projects":
       navbarUnderline = "projects";
@@ -145,8 +147,11 @@ const NavBar = () => {
 
   return (
     <nav
-      className={navbarColorStyle}
-      style={{ background: navbarBackground }}
+      className={`${navbarColorStyle}`}
+      style={{
+        background: navbarBackground,
+        borderBottom: mobileWhiteLine,
+      }}
       // style={{ backgroundImage: `url(${gradient.src})` }}
     >
       {/* Hamburger: Mobile Only*/}
