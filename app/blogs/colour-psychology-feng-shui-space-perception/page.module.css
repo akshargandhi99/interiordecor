@@ -24,7 +24,7 @@
 
 .subHeader {
   color: rgb(132, 128, 119);
-  font-family: "Century Gothic";
+  font-family: var(--century-gothic);
   margin-top: -3px;
   font-size: 18px;
   margin-bottom: 50px;
@@ -33,7 +33,7 @@
 
 .firstPara {
   color: rgb(81, 77, 67);
-  font-family: "Century Gothic";
+  font-family: var(--century-gothic);
   font-size: 16px;
   text-align: justify;
   margin-bottom: 20px;
@@ -71,7 +71,7 @@
 
 .conclusion {
   color: rgb(81, 77, 67);
-  font-family: "Century Gothic";
+  font-family: var(--century-gothic);
   font-size: 16px;
   text-align: justify;
   margin-top: 0;
@@ -131,7 +131,7 @@
 .subpoint {
   color: rgb(81, 77, 67);
   text-decoration: underline;
-  font-family: "Century Gothic";
+  font-family: var(--century-gothic);
 }
 
 .blogPara,
@@ -139,7 +139,7 @@
   color: rgb(81, 77, 67);
   text-align: justify;
   font-size: 16px;
-  font-family: "Century Gothic";
+  font-family: var(--century-gothic);
 }
 
 .blogPara {

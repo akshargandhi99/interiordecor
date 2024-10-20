@@ -52,7 +52,7 @@
 .projectDescription {
   position: absolute;
   color: rgba(132, 130, 130, 1);
-  font-family: "Century Gothic", "Arial";
+  font-family: var(--century-gothic);
   width: 300px;
   text-wrap: wrap;
   overflow-y: visible;
@@ -64,7 +64,7 @@
   display: flex;
   justify-content: left;
   align-items: center;
-  font-family: "Century Gothic";
+  font-family: var(--century-gothic);
   font-size: 16px;
   opacity: 0; /* Initially hidden */
   top: 60%;

@@ -35,7 +35,7 @@
 .paragraph {
   margin-top: 15px;
   font-size: 18px;
-  font-family: "Century Gothic";
+  font-family: var(--century-gothic);
   color: var(--text-color);
   width: 80vw;
   text-align: center;
@@ -64,7 +64,7 @@
   position: absolute;
   transform: rotate(90deg);
   transform-origin: left top;
-  font-family: "Brown Sugar";
+  font-family: var(--brown-sugar);
   letter-spacing: 2px;
   color: #c1a798;
   font-size: 70px;

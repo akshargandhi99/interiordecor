@@ -48,7 +48,7 @@
 
 .decorativeText1,
 .decorativeText2 {
-  font-family: "Brown Sugar";
+  font-family: var(--brown-sugar);
   font-size: 18px;
   width: 280px;
   letter-spacing: 3px;
@@ -115,17 +115,17 @@
 
 .formInput1 {
   width: 285px;
-  font-family: "Century Gothic";
+  font-family: var(--century-gothic);
 }
 
 .formInput2 {
   width: 333px;
-  font-family: "Century Gothic";
+  font-family: var(--century-gothic);
 }
 
 .formInput3 {
   width: 656px;
-  font-family: "Century Gothic";
+  font-family: var(--century-gothic);
 }
 
 .doubleSpan {

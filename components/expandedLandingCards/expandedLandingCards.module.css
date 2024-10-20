@@ -28,7 +28,7 @@
   font-size: 14px;
   margin-left: 5%;
   margin-bottom: 10px;
-  font-family: "Century Gothic";
+  font-family: var(--century-gothic);
   color: rgba(81, 77, 67, 1);
   z-index: 2;
 }
@@ -120,21 +120,21 @@
 
 .firstText {
   text-align: right;
-  font-family: "Century Gothic";
+  font-family: var(--century-gothic);
   width: 300px;
   color: var(--text-color);
   font-size: 16px;
 }
 
 .firstTextHeader {
-  font-family: "Century Gothic";
+  font-family: var(--century-gothic);
   text-align: end;
   font-size: 24px;
   color: rgba(81, 77, 67, 1);
 }
 
 .firstTextSubheader {
-  font-family: "Century Gothic";
+  font-family: var(--century-gothic);
   text-align: right;
   font-size: 20px;
   color: rgba(81, 77, 67, 1);
@@ -144,7 +144,7 @@
   text-align: justify;
   margin-left: 25px;
   margin-right: 25px;
-  font-family: "Century Gothic";
+  font-family: var(--century-gothic);
   min-width: 300px;
   color: var(--text-color);
   font-size: 16px;
@@ -165,7 +165,7 @@
     rgba(21, 21, 21, 0.12)
   );
   color: white;
-  font-family: "Century Gothic";
+  font-family: var(--century-gothic);
   border-radius: 5px;
   padding: 10px 20px 10px 20px;
   border: 1px;
@@ -181,7 +181,7 @@
     rgba(255, 255, 255, 0) 100%
   );
   color: white;
-  font-family: "Century Gothic";
+  font-family: var(--century-gothic);
   border-radius: 5px;
   padding: 10px 20px 10px 20px;
   border: 1px;

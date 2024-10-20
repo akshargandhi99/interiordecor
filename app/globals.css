@@ -27,4 +27,6 @@ body {
 :root {
   --text-color: #514d43;
   --font-size: 14px;
+  --century-gothic: "Century Gothic", Helvetica, Tahoma, Verdana, sans-serif;
+  --brown-sugar: "Brown Sugar", Helvetica, Tahoma, Verdana, sans-serif;
 }
