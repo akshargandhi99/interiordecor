@@ -170,6 +170,9 @@
 
   .mobileMenuLine {
     width: 99%;
-    border-color: #f4f4f4;
+    border: none;
+    background-color: #f4f4f4;
+
+    height: 1px;
   }
 }
