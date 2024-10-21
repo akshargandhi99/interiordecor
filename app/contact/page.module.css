@@ -229,6 +229,25 @@
   cursor: pointer;
   transform: translateY(-10px);
 }
+
+.submit:disabled {
+  cursor: not-allowed;
+}
+
+.disabledSubmit {
+  background: rgb(246, 246, 246);
+  color: rgb(184, 184, 184);
+
+  border-radius: 5px;
+  padding: 10px 20px 10px 20px;
+
+  border: 1px solid rgb(217, 216, 212);
+  letter-spacing: 1px;
+  width: 163px;
+  cursor: not-allowed;
+  transform: translateY(-10px);
+}
+
 .emptyDiv {
   height: 200px;
   width: 200px;
@@ -339,7 +358,8 @@
     margin-bottom: 5px;
   }
 
-  .submit {
+  .submit,
+  .disabledSubmit {
     margin-top: 50px;
     font-size: 16px;
   }

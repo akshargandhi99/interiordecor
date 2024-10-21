@@ -7,8 +7,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import brownArrow from "@/public/static/backArrowBrown.svg";
 import MobileFooter from "@/components/mobileFooter/mobileFooter";
-import IntegerInput from "./integerInput"; // Importing due to use client
-import SqftInput from "./sqftInput"; //  Importing due to use client
+
 import useWindowDimensions from "@/hooks/windowDimensions";
 import formImage from "@/public/static/aboutFormImage.webp";
 import whatsappImage from "@/public/static/whatsapp.webp";
@@ -19,6 +18,55 @@ import emailImage from "@/public/static/email.webp";
 const Contact = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false); // New state for tracking form submission
+
+  // Disable Submit Button until all required fields are filled
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [totalFamilyMembers, setTotalFamilyMembers] = useState("");
+  const [currentAddress, setCurrentAddress] = useState("");
+  const [projectAddress, setProjectAddress] = useState("");
+  const [areaInSqft, setAreaInSqft] = useState("");
+  const [possession, setPossession] = useState("");
+  const [vastuSelection, setVastuSelection] = useState("");
+  const [isValid, setIsValid] = useState(false);
+
+  useEffect(() => {
+    if (
+      name.trim() &&
+      email.trim() &&
+      totalFamilyMembers.trim() &&
+      currentAddress.trim() &&
+      projectAddress.trim() &&
+      areaInSqft.trim() &&
+      possession.trim() &&
+      vastuSelection.trim()
+    ) {
+      setIsValid(true);
+    } else {
+      setIsValid(false);
+    }
+  }, [
+    name,
+    email,
+    totalFamilyMembers,
+    currentAddress,
+    projectAddress,
+    areaInSqft,
+    possession,
+    vastuSelection,
+  ]);
+
+  const formReset = () => {
+    setName("");
+    setEmail("");
+    setTotalFamilyMembers("");
+    setCurrentAddress("");
+    setProjectAddress("");
+    setAreaInSqft("");
+    setPossession("");
+    setVastuSelection("");
+    setIsValid(false);
+  };
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -53,6 +101,7 @@ const Contact = () => {
         if (response.ok) {
           // setSuccessMessage('Thank you for contacting us!');
           form.reset();
+          formReset();
         } else {
           throw new Error("Failed to send email");
         }
@@ -68,9 +117,14 @@ const Contact = () => {
       setIsSubmitting(true); // Set to true when submitting
       setTimeout(() => {
         form.reset();
+        formReset();
         setIsSubmitting(false); // Set back to false after submission
       }, 500);
     }
+  };
+
+  const preventNumberChangeWithScroll = (e) => {
+    e.target.blur();
   };
 
   // Responsive
@@ -167,6 +221,8 @@ const Contact = () => {
                   id="name"
                   name="name"
                   className={styles.formInput1}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   required
                 />
               </div>
@@ -187,6 +243,8 @@ const Contact = () => {
                   id="email"
                   name="email"
                   className={styles.formInput2}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                 />
               </div>
@@ -203,7 +261,16 @@ const Contact = () => {
                 >
                   TOTAL FAMILY MEMBERS
                 </label>
-                <IntegerInput />
+                <input
+                  type="number"
+                  id="totalFamilyMembers"
+                  name="totalFamilyMembers"
+                  onWheel={preventNumberChangeWithScroll}
+                  className={styles.formInput1}
+                  value={totalFamilyMembers}
+                  onChange={(e) => setTotalFamilyMembers(e.target.value)}
+                  required
+                />
               </div>
               {/* CURRENT ADDRESS */}
               <div
@@ -222,6 +289,8 @@ const Contact = () => {
                   id="currentAddress"
                   name="currentAddress"
                   className={styles.formInput2}
+                  value={currentAddress}
+                  onChange={(e) => setCurrentAddress(e.target.value)}
                   required
                 />
               </div>
@@ -240,6 +309,8 @@ const Contact = () => {
                   id="projectAddress"
                   name="projectAddress"
                   className={styles.formInput3}
+                  value={projectAddress}
+                  onChange={(e) => setProjectAddress(e.target.value)}
                   required
                 />
               </div>
@@ -255,7 +326,17 @@ const Contact = () => {
                 >
                   AREA IN SQFT
                 </label>
-                <SqftInput />
+                <input
+                  type="number"
+                  id="areaInSqft"
+                  name="areaInSqft"
+                  onWheel={preventNumberChangeWithScroll}
+                  step="0.01"
+                  className={styles.formInput1}
+                  value={areaInSqft}
+                  onChange={(e) => setAreaInSqft(e.target.value)}
+                  required
+                />
               </div>
               {/* POSSESSION */}
               <div
@@ -274,6 +355,8 @@ const Contact = () => {
                   id="possession"
                   name="possession"
                   className={styles.formInput2}
+                  value={possession}
+                  onChange={(e) => setPossession(e.target.value)}
                   required
                 />
               </div>
@@ -292,6 +375,8 @@ const Contact = () => {
                       value="Yes"
                       name="vastu"
                       className={styles.radioInput}
+                      checked={vastuSelection === "Yes"}
+                      onChange={(e) => setVastuSelection(e.target.value)}
                       required
                     />
                     <label
@@ -307,6 +392,8 @@ const Contact = () => {
                       id="vastuNo"
                       value="No"
                       name="vastu"
+                      checked={vastuSelection === "No"}
+                      onChange={(e) => setVastuSelection(e.target.value)}
                       className={styles.radioInput}
                     />
                     <label
@@ -322,6 +409,8 @@ const Contact = () => {
                       id="vastuMaybe"
                       value="Maybe"
                       name="vastu"
+                      checked={vastuSelection === "Maybe"}
+                      onChange={(e) => setVastuSelection(e.target.value)}
                       className={styles.radioInput}
                     />
                     <label
@@ -389,8 +478,10 @@ const Contact = () => {
               >
                 <button
                   type="submit"
-                  className={`${styles.submit} ${juliusSansOne.className}`}
-                  disabled={isSubmitting} // Disable the button when submitting
+                  className={`${
+                    isValid ? styles.submit : styles.disabledSubmit
+                  } ${juliusSansOne.className}`}
+                  disabled={isSubmitting || !isValid} // Disable the button when submitting
                 >
                   {isSubmitting ? "Submitting..." : "Submit"}{" "}
                   {/* Change button text */}
