@@ -214,7 +214,7 @@ const Contact = () => {
                   htmlFor="name"
                   className={`${styles.label} ${juliusSansOne.className}`}
                 >
-                  NAME
+                  NAME *
                 </label>
                 <input
                   type="text"
@@ -236,7 +236,7 @@ const Contact = () => {
                   htmlFor="email"
                   className={`${styles.label} ${juliusSansOne.className}`}
                 >
-                  EMAIL
+                  EMAIL *
                 </label>
                 <input
                   type="email"
@@ -259,7 +259,7 @@ const Contact = () => {
                   htmlFor="totalFamilyMembers"
                   className={`${styles.label} ${juliusSansOne.className}`}
                 >
-                  TOTAL FAMILY MEMBERS
+                  TOTAL FAMILY MEMBERS *
                 </label>
                 <input
                   type="number"
@@ -269,6 +269,7 @@ const Contact = () => {
                   className={styles.formInput1}
                   value={totalFamilyMembers}
                   onChange={(e) => setTotalFamilyMembers(e.target.value)}
+                  min="0"
                   required
                 />
               </div>
@@ -282,7 +283,7 @@ const Contact = () => {
                   htmlFor="currentAddress"
                   className={`${styles.label} ${juliusSansOne.className}`}
                 >
-                  CURRENT ADDRESS
+                  CURRENT ADDRESS *
                 </label>
                 <input
                   type="text"
@@ -302,7 +303,7 @@ const Contact = () => {
                   htmlFor="projectAddress"
                   className={`${styles.label} ${juliusSansOne.className}`}
                 >
-                  PROJECT ADDRESS
+                  PROJECT ADDRESS *
                 </label>
                 <input
                   type="text"
@@ -324,7 +325,7 @@ const Contact = () => {
                   htmlFor="areaInSqft"
                   className={`${styles.label} ${juliusSansOne.className}`}
                 >
-                  AREA IN SQFT
+                  AREA IN SQFT *
                 </label>
                 <input
                   type="number"
@@ -335,6 +336,7 @@ const Contact = () => {
                   className={styles.formInput1}
                   value={areaInSqft}
                   onChange={(e) => setAreaInSqft(e.target.value)}
+                  min="0"
                   required
                 />
               </div>
@@ -348,7 +350,7 @@ const Contact = () => {
                   htmlFor="possession"
                   className={`${styles.label} ${juliusSansOne.className}`}
                 >
-                  POSSESSION
+                  POSSESSION *
                 </label>
                 <input
                   type="text"
@@ -365,7 +367,7 @@ const Contact = () => {
                 className={`${styles.formInputContainer} ${styles.doubleSpan}`}
               >
                 <p className={`${styles.label} ${juliusSansOne.className}`}>
-                  DOES THE SPACE NEED TO BE VASTU COMPLIANT?
+                  DOES THE SPACE NEED TO BE VASTU COMPLIANT? *
                 </p>
                 <div className={styles.radioBtnContainer}>
                   <div className={styles.radioOptionContainer}>
@@ -462,7 +464,7 @@ const Contact = () => {
                   className={`${styles.label} ${juliusSansOne.className}`}
                 >
                   Do you agree to the terms and conditions for using our
-                  services?
+                  services? *
                 </label>
                 <input
                   type="checkbox"
