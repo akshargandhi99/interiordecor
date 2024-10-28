@@ -18,7 +18,7 @@ import emailImage from "@/public/static/email.webp";
 const Contact = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false); // New state for tracking form submission
-  const [isSubmitted, setIsSubmitted] = useState(true);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   // Disable Submit Button until all required fields are filled
   const [name, setName] = useState("");
@@ -112,13 +112,14 @@ const Contact = () => {
       } finally {
         setIsSubmitting(false); // Set back to false after submission
         setIsSubmitted(true);
-
+        window.scrollTo({ top: 0, behavior: "smooth" });
         // setLoading(false);
       }
     } else {
       // Still return thank you state
       setIsSubmitting(true); // Set to true when submitting
       setIsSubmitted(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
       setTimeout(() => {
         form.reset();
         formReset();
