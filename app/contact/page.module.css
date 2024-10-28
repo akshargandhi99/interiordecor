@@ -258,13 +258,14 @@
 
 .successHeader {
   font-size: 24px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 .successBody {
   font-size: 20px;
   font-family: var(--century-gothic);
   margin-bottom: 30px;
+  color: var(--text-color);
 }
 
 .btnContainer {
@@ -273,16 +274,16 @@
 
 .goToBlogsBtn {
   background: linear-gradient(
-    to bottom right,
-    rgba(108, 63, 53, 0.5) 5%,
-    #f7f4f3
+    152.97deg,
+    rgba(126, 53, 19, 0.3) 0%,
+    rgba(255, 255, 255, 0) 100%
   );
 
   color: rgb(108, 63, 53);
   font-family: var(--century-gothic);
+  border: none;
   border-radius: 5px;
   padding: 10px 20px 10px 20px;
-  border: 1px solid rgb(111, 75, 67);
   height: 38px;
   width: 191px;
   letter-spacing: 1px;
@@ -293,9 +294,9 @@
 .goBackBtn {
   background: linear-gradient(to right, #8a8777 50%, #d3d0c4);
   color: white;
+  border: none;
   border-radius: 5px;
   padding: 10px 20px 10px 20px;
-  border: 1px solid #6d6a5c;
 
   letter-spacing: 1px;
   height: 38px;
@@ -440,16 +441,28 @@
 @media (max-width: 650px) {
   .success {
     width: 100%;
-    margin-left: 5px;
+    margin-left: 15px;
     margin-right: 5px;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .successHeader,
   .successBody {
-    text-align: center;
+    text-align: left;
     width: 90%;
+  }
+  .goToBlogsBtn {
+    transform: translateY(-20px);
+  }
+
+  .goBackBtn,
+  .goToBlogsBtn {
+    align-self: flex-start;
+  }
+
+  .successBody {
+    font-size: 16px;
   }
 
   .goToBlogsBtn {
