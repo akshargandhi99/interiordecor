@@ -18,7 +18,7 @@ import emailImage from "@/public/static/email.webp";
 const Contact = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false); // New state for tracking form submission
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(true);
 
   // Disable Submit Button until all required fields are filled
   const [name, setName] = useState("");
