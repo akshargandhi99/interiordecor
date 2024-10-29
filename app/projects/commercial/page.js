@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import card1 from "@/public/commercial/Clothing Boutique.webp";
 import card2 from "@/public/commercial/Tropical Cafe.webp";
 import MobileFooter from "@/components/mobileFooter/mobileFooter";
@@ -9,6 +11,8 @@ import { juliusSansOne } from "@/app/fonts";
 import styles from "./page.module.css";
 
 const CommercialProjectCards = () => {
+  const [zoomedImage, setZoomedImage] = useState(null); // State to track the zoomed image
+
   const cards = [card1, card2];
 
   const cardTitles = ["Clothing Boutique", "Tropical Cafe"];
@@ -18,6 +22,14 @@ const CommercialProjectCards = () => {
     "A warm, light-filled haven where the natural beauty of the tropics enhances culinary experience in a serene environment.",
   ];
   const cardLinks = ["", "", ""];
+
+  const handleImageClick = (card) => {
+    setZoomedImage(card); // Set the clicked image as the zoomed image
+  };
+
+  const closeZoom = () => {
+    setZoomedImage(null); // Close the zoomed view
+  };
   return (
     <div className={styles.fullContainer}>
       <Link href="/projects">
@@ -42,7 +54,11 @@ const CommercialProjectCards = () => {
       <div className={styles.gridContainer}>
         {cards.map((card, key) => {
           return (
-            <div className={styles.projectImageContainer} key={key}>
+            <div
+              className={styles.projectImageContainer}
+              key={key}
+              onClick={() => handleImageClick(card)} // Click event to zoom in
+            >
               <div className={styles.projectImageOverlayContainer}>
                 <Link href={cardLinks[key]} className={styles.projectLink}>
                   {/* <div className={styles.projectImage}></div> */}
@@ -78,6 +94,17 @@ const CommercialProjectCards = () => {
         <div className={styles.emptyDiv} />
         <div className={styles.emptyDiv} />
       </div>
+      {zoomedImage && (
+        <div className={styles.fullscreenOverlay} onClick={closeZoom}>
+          <div className={styles.fullscreenImageContainer}>
+            <Image
+              src={zoomedImage}
+              alt="Zoomed Image"
+              className={styles.fullscreenImage}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
