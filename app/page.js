@@ -200,7 +200,7 @@ const LandingCard = () => {
               <span>SOCIAL - </span>
               <Link
                 className={styles.link}
-                href="https://www.instagram.com/av_spatialdesignstudio/profilecard/?igsh=MTNkempjcTNzeWoxbA=="
+                href="https://www.instagram.com/avsds_interiors?igsh=MWx6YXd6M3A2c2hq"
                 target="_blank"
               >
                 <span className={styles.mobileFooterUnderline}>Instagram</span>
